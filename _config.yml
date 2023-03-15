@@ -1,0 +1,45 @@
+# Site Info
+title: "MultifokalHirn"
+description: "Personal Website of MultifokalHirn"
+# google_verify: abc123 # Put your Google Verification here
+# google_analytics: UA-123
+
+# Author Info
+author_name: "Lennard Wolf" # Your name here
+author_email: lw@signatrix.com # Your email here
+author_gravatar: aa4d7d1621a82415168ad023db78c870 # Your Gravatar md5 hash here for logo
+
+# Site Settings
+url: https://multifokalhirn.github.io # Change to your site
+# baseurl:
+permalink: /posts/:title # Post permalink
+timezone: Europe/Berlin # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax: true # enables support for mathjax - set to false to disable
+
+# Site Build
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+sass:
+  style: :compressed
+
+# Other Params
+include: ["robots.txt"]
+exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile"]
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "null"
+  - scope:
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      type: "posts"
+    values:
+      layout: "post"
