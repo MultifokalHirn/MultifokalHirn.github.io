@@ -1,5 +1,4 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'bourbon'
-gem 'github-pages'
-gem 'jekyll-paginate'
+gem 'github-pages', group: :jekyll_plugins
+gem "webrick", "~> 1.8"

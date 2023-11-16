@@ -6,40 +6,47 @@ description: "Personal Website of MultifokalHirn"
 
 # Author Info
 author_name: "Lennard Wolf" # Your name here
-author_email: lw@signatrix.com # Your email here
+# author_email: ? # Your email here
 author_gravatar: aa4d7d1621a82415168ad023db78c870 # Your Gravatar md5 hash here for logo
 
 # Site Settings
 url: https://multifokalhirn.github.io # Change to your site
-# baseurl:
-permalink: /posts/:title # Post permalink
-timezone: Europe/Berlin # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-mathjax: true # enables support for mathjax - set to false to disable
+remote_theme: aterenin/minima-reboot
 
-# Site Build
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  input: GFM
-sass:
-  style: :compressed
-
-# Other Params
-include: ["robots.txt"]
-exclude: ["LICENSE", "README.md", "CNAME", "vendor", "Gemfile"]
 plugins:
-  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-redirect-from
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "null"
-  - scope:
-      type: "pages"
-    values:
-      layout: "page"
-  - scope:
-      type: "posts"
-    values:
-      layout: "post"
+# base_url: /gh-pages-minima-starter # TODO: ?
+repository: MultifokalHirn/multifokalhirn.github.io
+
+# Minima social links
+github_username: MultifokalHirn
+linkedin_username: lennardwolf
+rss: rss
+
+# Minima: show excerpts in the frontpage
+show_excerpts: true
+
+minima_reboot:
+  date_format: "%b %-d, %Y"
+  date_format_short: "%b %-d"
+
+# Minima: custom header links
+header_pages:
+  - _pages/frontpage.md
+  - _pages/about.md
+  - _pages/archive.md
+
+include:
+  - _pages
+
+exclude:
+  - .gitignore
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
