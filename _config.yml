@@ -13,11 +13,11 @@ author_gravatar: aa4d7d1621a82415168ad023db78c870 # Your Gravatar md5 hash here 
 url: https://multifokalhirn.github.io # Change to your site
 remote_theme: aterenin/minima-reboot
 
-plugins:
-  - jekyll-seo-tag
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-redirect-from
+# plugins:
+#   - jekyll-seo-tag
+#   - jekyll-paginate
+#   - jekyll-feed
+#   - jekyll-redirect-from
 
 # base_url: /gh-pages-minima-starter # TODO: ?
 repository: MultifokalHirn/multifokalhirn.github.io
@@ -42,6 +42,7 @@ header_pages:
 
 include:
   - _pages
+  - _posts
 
 exclude:
   - .gitignore
