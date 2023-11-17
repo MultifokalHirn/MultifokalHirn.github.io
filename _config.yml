@@ -1,31 +1,33 @@
 # Site Info
-title: "MultifokalHirn"
-description: "Personal Website of MultifokalHirn"
+title: "Lennard Wolf's Homepage"
+description: "Lennard Wolf's Homepage"
 # google_verify: abc123 # Put your Google Verification here
 # google_analytics: UA-123
 
 # Author Info
 author_name: "Lennard Wolf" # Your name here
+author: "Lennard Wolf" # Your name here
 # author_email: ? # Your email here
 author_gravatar: aa4d7d1621a82415168ad023db78c870 # Your Gravatar md5 hash here for logo
 
 # Site Settings
-url: https://multifokalhirn.github.io # Change to your site
+url: https://multifokalhirn.github.io
 remote_theme: aterenin/minima-reboot
 
-# plugins:
+plugins:
+  - jekyll-redirect-from
+  # - faraday-retry
 #   - jekyll-seo-tag
 #   - jekyll-paginate
 #   - jekyll-feed
-#   - jekyll-redirect-from
 
 # base_url: /gh-pages-minima-starter # TODO: ?
 repository: MultifokalHirn/multifokalhirn.github.io
 
 # Minima social links
-github_username: MultifokalHirn
-linkedin_username: lennardwolf
-rss: rss
+# github_username: MultifokalHirn
+# linkedin_username: lennardwolf
+# rss: rss
 
 # Minima: show excerpts in the frontpage
 show_excerpts: true
@@ -34,11 +36,28 @@ minima_reboot:
   date_format: "%b %-d, %Y"
   date_format_short: "%b %-d"
 
+# Generate social links in footer. to add icons go to https://github.com/jekyll/minima/tree/master/_includes/social-icons
+social_links:
+  - { platform: "github", user_url: "https://github.com/MultifokalHirn" }
+  # - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  # - {
+  #     platform: "linkedin",
+  #     user_url: "https://www.linkedin.com/in/lennardwolf",
+  #   }
+  # - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+
+footer_icons:
+  - { icon: "github", url: "https://github.com/MultifokalHirn" }
+  # - { icon: "linkedin", url: "https://www.linkedin.com/in/lennardwolf" }
+  # - { icon: instagram,      user_url: "https://www.instagram.com/jekyll" }
+  # - { icon: youtube,        user_url: "https://www.youtube.com/jekyll" }
+
 # Minima: custom header links
 header_pages:
-  - _pages/frontpage.md
-  - _pages/about.md
-  - _pages/archive.md
+  - _pages/home.md
+  - _pages/blog.md
+  # - _pages/github.md
+  # - _pages/linkedin.md
 
 include:
   - _pages
