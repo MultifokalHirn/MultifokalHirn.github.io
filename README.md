@@ -10,3 +10,5 @@ Personal website of [MultifokalHirn](https://multifokalhirn.github.io/).
 
 
 [def]: https://img.shields.io/badge/license-MIT-blue.svg
+
+https://github.com/jekyll/minima/blob/master/_includes/footer.html

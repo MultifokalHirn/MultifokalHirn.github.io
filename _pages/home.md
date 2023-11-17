@@ -14,12 +14,3 @@ During those studies I met one of the founders of a (back then) very early stage
 <br />
 <br />
 <h2 class="page-heading">Recent Posts </h2>
-  <!-- {%- if page.title -%}
-  {%- endif -%} -->
-
-<!-- [gh-site]: https://pages.github.com/
-[minima]: https://github.com/jekyll/minima/tree/2.5-stable
-[jk]: https://jekyllrb.com/
-[gh]: https://help.github.com/en/github/working-with-github-pages
-[issue]: https://github.com/jsanz/gh-pages-minima-starter/issues/new/choose
-[contact]: https://jorgesanz.net/contact/ -->
