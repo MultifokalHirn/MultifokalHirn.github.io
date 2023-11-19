@@ -12,7 +12,9 @@ After receiving my B.Sc in *IT System Engineering* from [Hasso Plattner Institut
 During those studies I met one of the founders of a (back then) very early stage computer vision startup named [Signatrix](https://www.signatrix.com), which I joined as the first non-founding Software Engineer half a year later.
 
 <br />
-<h3>Recent Posts</h3>
+<h3>
+<a href="{{ "/posts" | relative_url }}">Recent Posts</a>
+</h3>
 
 {% if site.paginate %}
 {% assign posts = paginator.posts %}

@@ -35,22 +35,25 @@
         </ul>
       </div>
       {% endif %} -->
-      <!-- <ul class="social-media-list"> -->
-      {% if site.social_links %}
-      <!-- <div class="col-3 col-lg-3"> -->
-      <div class="footer-col">
-        <ul class="list-unstyled">
-          <li>
-            {%- for entry in site.social_links -%}
-            {%- include social-item.html item = entry -%}
-            {%- endfor -%}
-          </li>
-        </ul>
-        {% endif %}
-        <!-- <div class="col-12 col-lg">
-          <p class="text-secondary text-justify">{{ site.description | escape }}</p>
-        </div> -->
-      </div>
 
+      <!-- <ul class="social-media-list"> -->
+
+      <!-- {% if site.social_links %}
+         <div class="col-3 col-lg-3"> 
+       <div class="footer-col"> 
+      <ul class="list-unstyled">
+        {%- for entry in site.social_links -%}
+        <li>
+          {%- include social-item.html item = entry -%}
+        </li>
+        {%- endfor -%}
+      </ul>
+      {% endif %} -->
+
+      <!-- <div class="col-12 col-lg">
+        <p class="text-secondary text-justify">{{ site.description | escape }}</p>
+      </div> -->
+      <!-- </div> -->
     </div>
+    <p align="right" class="text-secondary">© {{ site.time | date: '%Y' }} {{ site.author | escape }} </p>
 </footer>

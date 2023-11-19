@@ -66,9 +66,9 @@ header_pages:
   # - _pages/home.md
   - _pages/about.md
   - _pages/resume.md
+  - _pages/posts.md
   - _pages/github.md
   - _pages/linkedin.md
-  - _pages/posts.md
 
 include:
   - _pages
