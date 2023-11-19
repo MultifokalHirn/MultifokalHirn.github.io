@@ -16,10 +16,10 @@ remote_theme: aterenin/minima-reboot
 
 plugins:
   - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-feed
   # - faraday-retry
-#   - jekyll-seo-tag
-#   - jekyll-paginate
-#   - jekyll-feed
 
 # base_url: /gh-pages-minima-starter # TODO: ?
 repository: MultifokalHirn/multifokalhirn.github.io
@@ -35,6 +35,11 @@ show_excerpts: true
 minima_reboot:
   date_format: "%b %-d, %Y"
   date_format_short: "%b %-d"
+
+collections:
+  tags:
+    output: true
+    permalink: tags/:path/
 
 # Generate social links in footer. to add icons go to https://github.com/jekyll/minima/tree/master/_includes/social-icons
 social_links:
@@ -66,6 +71,7 @@ include:
 exclude:
   - .gitignore
   - docker-compose.yml
+  - Dockerfile
   - Gemfile
   - Gemfile.lock
   - LICENSE
