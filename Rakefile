@@ -2,7 +2,7 @@ require "rubygems"
 require "tmpdir"
 require "bundler/setup"
 require "jekyll"
-
+require 'bundler/gem_tasks'
 GITHUB_REPONAME = "MultifokalHirn/MultifokalHirn.github.io"
 
 namespace :site do

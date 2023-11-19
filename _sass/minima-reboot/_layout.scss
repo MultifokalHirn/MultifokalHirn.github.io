@@ -4,6 +4,7 @@ $layout-color-syntax-highlighting-background: #f8f9fa !default;
 $layout-responsive-nav-cutoff: 768px !default;
 
 body {
+  font-family: $base-font-family;
   background-color: $layout-color-background;
 }
 
@@ -13,7 +14,7 @@ body {
 }
 
 #nav-container {
-  height: 3.5rem;
+  height: 4rem;
 }
 
 #nav-menu-container {
@@ -57,7 +58,7 @@ body {
 
 
 #site-footer {
-  border-top: 1px solid $layout-color-border;
+  border-top: 2px solid $layout-color-border;
 }
 
 .highlight pre {

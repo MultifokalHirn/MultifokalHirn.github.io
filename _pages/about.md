@@ -1,7 +1,7 @@
 ---
-permalink: /
+permalink: /    
 layout: page
-title: About
+title: /
 ---
 
 Hi, my name is [Lennard Wolf](https://www.linkedin.com/in/lennardwolf/) and I am a Software Engineer from Berlin, currently working as Tech Lead at [*Signatrix*](https://www.signatrix.com).
