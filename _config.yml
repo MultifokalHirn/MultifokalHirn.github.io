@@ -19,6 +19,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-paginate
   - jekyll-feed
+  - tag-page-generator
   # - faraday-retry
 
 # base_url: /gh-pages-minima-starter # TODO: ?
@@ -59,7 +60,8 @@ footer_icons:
 
 # Minima: custom header links
 header_pages:
-  - _pages/home.md
+  # - _pages/home.md
+  - _pages/about.md
   - _pages/blog.md
   # - _pages/github.md
   # - _pages/linkedin.md

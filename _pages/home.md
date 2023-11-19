@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /home
 layout: home
 title: Home
 list_title: My blog posts

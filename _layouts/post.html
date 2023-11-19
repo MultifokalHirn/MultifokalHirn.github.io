@@ -4,7 +4,7 @@ layout: default
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="pt-4 pb-3">
-    <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+    <h2 itemprop="name headline">{{ page.title | escape }}</h2>
     <p class="text-secondary">
       {% if page.author %}
       {% if page.author_url %}
@@ -29,12 +29,10 @@ layout: default
   </div>
 
   {% for tag in post.tags %}
-    {% assign tag_slug = tag | slugify: "raw" %}
-    <a class="tag-link"
-      href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
-      rel="category tag">
-      #{{ tag }}
-    </a>
+  {% assign tag_slug = tag | slugify: "raw" %}
+  <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
+    #{{ tag }}
+  </a>
   {% endfor %}
 
   <!-- <span>[
