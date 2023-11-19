@@ -4,18 +4,36 @@
 
 
 @font-face {
-  font-family: "Latex";
+  font-family: "Latex Regular";
   src: url("../../assets/fonts/LM/LM-regular.ttf");
 }
 
-$base-font-family: "Latex", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
-$code-font-family: "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+@font-face {
+  font-family: "Latex Bold";
+  src: url("../../assets/fonts/LM/LM-italic.ttf");
+}
+
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("../../assets/fonts/Geist/GeistMonoVF.ttf");
+  font-weight: "medium";
+}
+
+@font-face {
+  font-family: "FiraCode";
+  src: url("../../assets/fonts/FiraCode/FiraCode-Medium.ttf");
+  // font-weight: "medium";
+}
+
+$base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family: "FiraCode", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 $base-font-size: 16px !default;
 $base-font-weight: 400 !default;
 $small-font-size: $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 $brand-color: #007bff !default;
-$spacing-unit: 30px !default;
+$spacing-unit: 25px !default;
 
 $table-text-align: left !default;
 
