@@ -10,12 +10,14 @@ redirect_from:
     <br />
     <span>
     My name is Lennard Wolf and I am a programmer working and living in Berlin, Germany.
+        <br />
     I am Tech Lead at <a href="https://www.signatrix.com"><i>Signatrix</i></a>, where I contribute to the development of a suite of computer vision applications and the infrastructure around them.
     </span>
     <br />
-    Professionally, my focus is on software engineering with a particular focus on Python and creating (infra-)structures to ensure robust processes and environments. You can view my <a href="{{ "/resume" | relative_url }}">CV</a> for more details.
     <br />
-    <i>IRL</i> I enjoy spending time with wife and my dog, gardening, and working on music and photography. 
+    Professionally, my focus is classic software engineering, as well as creating (infra-)structures to ensure robust processes and/or environments (see my <a href="{{ "/resume" | relative_url }}">CV</a> for more details).
+    <i>IRL</i> I prefer spending time with my wife and dog, doing gardening/renovation work, or finding an outlet for my creativity in music, visual art, or audiobook adjacent formats.
+    <br />
     <br />
     <h3>
     <!-- <a href="{{ "/posts" | relative_url }}">Recent Posts</a> -->
