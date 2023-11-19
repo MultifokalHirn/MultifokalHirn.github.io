@@ -1,5 +1,5 @@
 ---
 title: GitHub
-redirect_to:
-  - https://www.github.com/MultifokalHirn
+permalink: /github
+redirect_to: https://www.github.com/MultifokalHirn
 ---

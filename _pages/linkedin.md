@@ -1,5 +1,5 @@
 ---
 title: LinkedIn
-redirect_to:
-  - https://www.linkedin.com/in/lennardwolf/
+permalink: /linkedin
+redirect_to: https://www.linkedin.com/in/lennardwolf/
 ---
