@@ -7,14 +7,15 @@ layout: default
     <h1 itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="text-secondary">
       {% if page.author %}
-        {% if page.author_url %}
-          <a href="{{ page.author_url }}">
+      {% if page.author_url %}
+      <a href="{{ page.author_url }}">
         {% endif %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+            itemprop="name">{{ page.author }}</span></span>
         {% if page.author_url %}
-          </a>
-        {% endif %}
-        &bull;
+      </a>
+      {% endif %}
+      &bull;
       {% endif %}
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
@@ -28,6 +29,6 @@ layout: default
   </div>
 
   {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
+  {% include disqus_comments.html %}
   {% endif %}
 </article>
