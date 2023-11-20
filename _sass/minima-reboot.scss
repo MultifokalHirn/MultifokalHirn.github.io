@@ -28,41 +28,60 @@
 
 $base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
 $code-font-family: "FiraCode", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
-$base-font-size: 16px !default;
+$base-font-size: 1rem !default; // using rem for scalability
 $base-font-weight: 400 !default;
-$small-font-size: $base-font-size * 0.875 !default;
+$small-font-size: 0.875rem !default; // using rem for scalability
 $base-line-height: 1.5 !default;
 $brand-color: #007bff !default;
-$spacing-unit: 25px !default;
+$spacing-unit: 1.5rem !default; // using rem for scalability
 
 $table-text-align: left !default;
 
-// Width of the content area
-$content-width: 800px !default;
+// Base content width for small devices
+$content-width: 100% !default;
 
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
+// Breakpoints for different sizes
+$breakpoint-palm: 600px !default;
+$breakpoint-laptop: 800px !default;
+$breakpoint-desktop: 1024px !default;
 
-$on-medium: $on-palm !default;
-$on-large: $on-laptop !default;
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//   .wrapper {
-//     padding-right: $spacing-unit / 2;
-//     padding-left: $spacing-unit / 2;
-//   }
-// }
-// Notice the following mixin uses max-width, in a deprecated, desktop-first
-// approach, whereas media queries used elsewhere now use min-width.
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
+// Mobile-first approach using min-width
+@mixin media-query($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
     @content;
   }
 }
 
 @mixin relative-font-size($ratio) {
-  font-size: #{$ratio}rem;
+  font-size: #{$ratio}rem; // using rem for scalability
+}
+
+// Base styles
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+// Adjust content width and spacing for larger screens
+@include media-query($breakpoint-palm) {
+  .wrapper {
+    max-width: $breakpoint-palm;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+  }
+}
+
+@include media-query($breakpoint-laptop) {
+  .wrapper {
+    max-width: $breakpoint-laptop;
+  }
+}
+
+@include media-query($breakpoint-desktop) {
+  .wrapper {
+    max-width: $content-width;
+  }
 }
 
 
