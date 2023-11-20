@@ -1,7 +1,7 @@
 $layout-color-border: #e9ecef !default;
 $layout-color-background: #fdfdfd !default;
 $layout-color-syntax-highlighting-background: #f8f9fa !default;
-$layout-responsive-nav-cutoff: 768px !default;
+$layout-responsive-nav-cutoff: 768px !default; // Consider adjusting based on design needs
 
 body {
   font-family: $base-font-family;
@@ -15,17 +15,22 @@ body {
 }
 
 #nav-container {
-  height: 3.5rem;
+  height: 3.5rem; // Consider using rem units if necessary
 }
 
 #nav-menu-container {
   font-family: $base-font-family;
   // font-weight: "medium";
 
+  @media (min-width: $layout-responsive-nav-cutoff) {
+    position: relative; // Adjust if needed for larger screens
+    border: none;
+    background-color: transparent;
+  }
+
   @media (max-width: $layout-responsive-nav-cutoff - 1) {
     position: absolute;
     z-index: 100;
-    // top: 0.4375rem;
     right: 1rem;
     border: 1px solid $layout-color-border;
     border-radius: .25rem;
@@ -44,15 +49,15 @@ body {
   h3,
   h4 {
     font-family: "Latex Regular";
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 2rem; // Consider using rem units
+    margin-bottom: 1rem; // Consider using rem units
     text-align: left;
   }
 
   blockquote {
     border-left: 4px solid $layout-color-border;
-    padding-left: 1rem;
-    font-style: italic
+    padding-left: 1rem; // Consider using rem units
+    font-style: italic;
   }
 
   .footnotes {
@@ -60,20 +65,18 @@ body {
   }
 }
 
-
-
 #site-footer {
   border-top: 1px solid $layout-color-border;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+  padding-top: 0.75rem; // Consider using rem units
+  padding-bottom: 0.75rem; // Consider using rem units
 }
 
 .highlight pre {
   border: 1px solid $layout-color-border;
   border-radius: .25rem;
   background-color: $layout-color-syntax-highlighting-background;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem; // Consider using rem units
+  margin-bottom: 1rem; // Consider using rem units
   white-space: pre-wrap;
 }
 
@@ -85,6 +88,6 @@ body {
 
 .footer-col-wrapper,
 .social-links {
-  @include relative-font-size(0.9375);
+  @include relative-font-size(0.9375); // Adjust if needed
   color: $brand-color;
 }
