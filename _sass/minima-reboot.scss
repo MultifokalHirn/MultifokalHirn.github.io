@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-// Define defaults for each variable.
-
-
 @font-face {
   font-family: "Latex Regular";
   src: url("../../assets/fonts/LM/LM-regular.ttf");
@@ -26,15 +23,27 @@
   // font-weight: "medium";
 }
 
-$base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
-$code-font-family: "FiraCode", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
-$base-font-size: 1rem !default; // using rem for scalability
-$base-font-weight: 400 !default;
-$small-font-size: 0.875rem !default; // using rem for scalability
-$base-line-height: 1.5 !default;
-$brand-color: #007bff !default;
-$spacing-unit: 1.5rem !default; // using rem for scalability
+@font-face {
+  font-family: "FiraCodeNerdFontMonoLight";
+  src: url("../../assets/fonts/FiraCode/FiraCodeNerdFontMono-Light.ttf");
+  // font-weight: "medium";
+}
 
+@font-face {
+  font-family: "FiraCodeNerdFontMono";
+  src: url("../../assets/fonts/FiraCode/FiraCodeNerdFontMono-Medium.ttf");
+  // font-weight: "medium";
+}
+
+$base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
+$code-font-family: "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-size: 1.1rem !default;
+$base-font-weight: 500 !default;
+$small-font-size: 0.875rem !default;
+$base-line-height: 1.55 !default;
+$brand-color: blue !default;
+$spacing-unit: 1.55rem !default;
+// $base-text-decoration-thickness: 1px !default;
 $table-text-align: left !default;
 
 // Base content width for small devices
@@ -53,7 +62,7 @@ $breakpoint-desktop: 1024px !default;
 }
 
 @mixin relative-font-size($ratio) {
-  font-size: #{$ratio}rem; // using rem for scalability
+  font-size: #{$ratio}rem;
 }
 
 // Base styles
@@ -83,8 +92,6 @@ body {
     max-width: $content-width;
   }
 }
-
-
 
 @import "minima-reboot/layout",
 "minima-reboot/syntax-highlighting"

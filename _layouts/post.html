@@ -4,8 +4,8 @@ layout: default
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="pt-4 pb-3">
-    <h2 itemprop="name headline">{{ page.title | escape }}</h2>
-    <p class="text-secondary">
+    <h2 itemprop="name headline"> <i>{{ page.title | escape }}</i></h2>
+    <p class="text-secondary" style="font-family: 'FiraCodeNerdFontMono'; font-size: small;">
       {% if page.author %}
       {% if page.author_url %}
       <a href="{{ page.author_url }}">
