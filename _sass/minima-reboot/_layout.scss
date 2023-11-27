@@ -74,7 +74,7 @@ body {
 
 header {
   // overflow: hidden
-  color: black
+  color: black;
 }
 
 #nav-header {
@@ -108,16 +108,19 @@ header {
 
   @media (min-width: $layout-responsive-nav-cutoff) {
     position: relative; // Adjust if needed for larger screens
-    border: none;
+    // z-index: 100;
+    right: 0rem;
+    // border: 1px solid $layout-color-border;
     background-color: transparent;
   }
 
   @media (max-width: $layout-responsive-nav-cutoff - 1) {
     position: absolute;
     z-index: 100;
-    right: 1rem;
-    border: 1px solid $layout-color-border;
-    border-radius: .25rem;
+    // top: 0.1rem;
+    right: 0rem;
+    // border: 1px solid $layout-color-border;
+    // border-radius: .25rem;
     background-color: $layout-color-background;
   }
 }
@@ -125,16 +128,25 @@ header {
 
 #nav-trigger:checked~#nav-menu {
   display: block !important;
+  // position: relative !important;
+  // margin-bottom: -5%;
+  border: 1px solid $layout-color-border;
+  font-size: medium;
+}
+
+#nav-trigger:checked~.navbar-toggler-icon {
+  // display: hidden;
 }
 
 .navbar-toggler-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 
 
 #content-container {
+  padding-top: 1.5rem;
   // border-top: 5px solid $layout-color-border !important;
   // border-top: 1px solid green !important;
 }
@@ -168,6 +180,7 @@ header {
   font-size: small;
   font-family: "FiraCodeNerdFontMonoLight";
   text-align: right;
+
   // border-left: 1px dashed $layout-color-border;
   // border-right: 1px dashed $layout-color-border;
 
@@ -185,6 +198,7 @@ header {
 .text-secondary {
   // color: #555555 !important;
   color: black !important;
+  margin-bottom: 0.5rem;
 }
 
 .highlight pre {

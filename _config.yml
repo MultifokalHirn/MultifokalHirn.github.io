@@ -25,13 +25,7 @@ sass:
   sass_dir: _sass
   style: compact
 
-# base_url: /gh-pages-minima-starter # TODO: ?
 repository: MultifokalHirn/multifokalhirn.github.io
-
-# Minima social links
-# github_username: MultifokalHirn
-# linkedin_username: lennardwolf
-# rss: rss
 
 # Minima: show excerpts in the frontpage
 show_excerpts: true
@@ -45,25 +39,23 @@ collections:
     output: true
     permalink: tags/:path/
 
-# Generate social links in footer. to add icons go to https://github.com/jekyll/minima/tree/master/_includes/social-icons
-social_links:
-  - { platform: "github", user_url: "https://github.com/MultifokalHirn" }
-  # - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
-  # - {
-  #     platform: "linkedin",
-  #     user_url: "https://www.linkedin.com/in/lennardwolf",
-  #   }
-  # - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
+# # Generate social links in footer. to add icons go to https://github.com/jekyll/minima/tree/master/_includes/social-icons
+# social_links:
+#   - { platform: "github", user_url: "https://github.com/MultifokalHirn" }
+#   # - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
+#   # - {
+#   #     platform: "linkedin",
+#   #     user_url: "https://www.linkedin.com/in/lennardwolf",
+#   #   }
+#   # - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
 
-footer_icons:
-  - { icon: "github", url: "https://github.com/MultifokalHirn" }
-  # - { icon: "linkedin", url: "https://www.linkedin.com/in/lennardwolf" }
-  # - { icon: instagram,      user_url: "https://www.instagram.com/jekyll" }
-  # - { icon: youtube,        user_url: "https://www.youtube.com/jekyll" }
+# footer_icons:
+#   - { icon: "github", url: "https://github.com/MultifokalHirn" }
+#   # - { icon: "linkedin", url: "https://www.linkedin.com/in/lennardwolf" }
+#   # - { icon: instagram,      user_url: "https://www.instagram.com/jekyll" }
+#   # - { icon: youtube,        user_url: "https://www.youtube.com/jekyll" }
 
-# Minima: custom header links
 header_pages:
-  # - _pages/home.md
   - _pages/about.md
   - _pages/resume.md
   - _pages/posts.md

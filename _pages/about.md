@@ -20,4 +20,3 @@ redirect_from:
     <br />
     <i>IRL</i> I prefer spending time with my wife and dog, doing gardening/renovation work, or finding an outlet for my creativity in music, visual art, or audiobook adjacent formats.
 </span>
-
