@@ -5,5 +5,4 @@ title: Posts
 redirect_from:
     - /blog
 ---
-
-# Posts
+<!-- # Posts -->

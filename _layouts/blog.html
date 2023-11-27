@@ -6,19 +6,17 @@ layout: default
 {% else %}
 {% assign posts = site.posts %}
 {% endif %}
-
-<header class="pt-4 pb-2">
+<header class="pt-4 pb-2" style="margin-bottom: 2%;">
     <h2>{{ page.title | escape }}</h2>
 </header>
-
 <div id="content">
     {% if posts.size == 0 %}
     <p>No posts <i>yet</i>.</p>
     {% else %}
-    <ul class="list-unstyled m-0">
+    <ul class="list-unstyled m-0" style="padding-left: 2%; padding-bottom: 2%;">
         {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
         {% for post in posts %}
-        <li class="py-2" style="padding-left: 2%; padding-bottom: 2%; border-bottom: 1px dashed #e9ecef">
+        <li class="py-2" style="padding-left: 2%; padding-bottom: 2%; border-bottom: 1px dotted #e9ecef">
             <span class="text-secondary" style="font-family: 'FiraCodeNerdFontMono'; font-size: small;">
                 {{ post.date | date: date_format }}
             </span>

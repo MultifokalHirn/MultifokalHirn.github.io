@@ -5,9 +5,40 @@ $layout-color-syntax-highlighting-background: #f8f9fa !default;
 $layout-responsive-nav-cutoff: 768px !default; // Consider adjusting based on design needs
 $base-text-decoration-thickness: 5px !default;
 
+html {
+
+  // body,
+  // header {
+  //   border-bottom: 1px dashed $layout-color-border;
+  // }
+
+  header {
+    border-bottom: 1px dashed $layout-color-border;
+
+    color: #000 !important;
+    // text-decoration-thickness: $base-text-decoration-thickness;
+    // color: $brand-color !important;
+    // text-decoration: underline;
+    // text-decoration-thickness: 2.5px;
+    text-decoration-style: dotted;
+    // text-decoration-color: $brand-color !important;
+  }
+
+  footer {
+    border-top: 1px dashed $layout-color-border;
+
+    .container {
+      border-left: 1px dashed $layout-color-border;
+      border-right: 1px dashed $layout-color-border;
+    }
+  }
+}
+
+
+
 a {
   // text-decoration-thickness: $base-text-decoration-thickness;
-  color: $brand-color !important;
+  color: $brand-color;
   text-decoration: underline;
   // text-decoration-thickness: 2.5px;
   text-decoration-style: dotted;
@@ -20,32 +51,48 @@ a {
 
 // main {
 //   #main {
-//     border-bottom: 1px dashed $layout-color-border !important;
+//     border-left: 1px dashed $layout-color-border;
+//     border-right: 1px dashed $layout-color-border;
 //   }
+
+
 // }
 
 body {
+  // border-left: 1px dashed $layout-color-border;
+  // border-right: 1px dashed $layout-color-border;
   font-family: $base-font-family;
   background-color: $layout-color-background;
+
   // text-decoration-thickness: $base-text-decoration-thickness;
+  .container {
+    // border-bottom: 1px dashed $layout-color-border !important;
+    border-left: 1px dashed $layout-color-border;
+    border-right: 1px dashed $layout-color-border;
+  }
 }
 
 header {
-  overflow: hidden
+  // overflow: hidden
+  color: black
 }
 
 #nav-header {
   font-family: "Latex Bold";
-  // border-top: 3px dashed !important;
+  color: black; // border-top: 3px dashed !important;
   // overflow: hidden;
   text-decoration-thickness: $base-text-decoration-thickness;
   // text-decoration-thickness: 5px
+  // border-left: 1px dashed $layout-color-border;
+  // border-right: 1px dashed $layout-color-border;
 
 }
 
 
 #nav-container {
   height: 4.5rem;
+  border-left: 1px dashed $layout-color-border;
+  border-right: 1px dashed $layout-color-border;
   // box-shadow: 1rem 1rem 2rem 2rem rgba(0, 0, 0, 0.975);
   // -moz-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
   // -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
@@ -55,6 +102,7 @@ header {
 #nav-menu-container {
   font-family: $base-font-family;
   // font-weight: "medium";
+  color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
   // overflow: hidden;
 
@@ -88,8 +136,7 @@ header {
 
 #content-container {
   // border-top: 5px solid $layout-color-border !important;
-  border-top: 1px solid green !important;
-
+  // border-top: 1px solid green !important;
 }
 
 #content {
@@ -117,21 +164,34 @@ header {
 
 #site-footer {
   // border-top: 1px dashed $layout-color-border;
-  padding-top: 0.75rem;
+
   font-size: small;
   font-family: "FiraCodeNerdFontMonoLight";
   text-align: right;
+  // border-left: 1px dashed $layout-color-border;
+  // border-right: 1px dashed $layout-color-border;
+
+  .container {
+    // border-bottom: 1px dashed $layout-color-border !important;
+    border-right: 1px dashed $layout-color-border;
+    border-left: 1px dashed $layout-color-border;
+    padding-top: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.2rem;
+  }
 }
 
 .text-secondary {
-  color: #555555 !important;
+  // color: #555555 !important;
+  color: black !important;
 }
 
 .highlight pre {
   // border: 1px solid $layout-color-border;
   border-radius: .25rem;
   background-color: $layout-color-syntax-highlighting-background;
-  padding: 0.75rem;
+  // padding: 0.75rem;
   margin-bottom: 1rem;
   white-space: pre-wrap;
 }

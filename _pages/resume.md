@@ -7,9 +7,9 @@ description: Lennard Wolf Resume
 
 <div align="center">
     <object data="../assets/lennard-wolf_cv_2023-11-25.pdf"
-            border="5"
+            border="0"
             width="800"
-            height="1131"
+            height="1100"
             type='application/pdf'
             standby="Loading CV..." 
             style="overflow-y: scroll;">

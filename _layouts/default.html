@@ -2,23 +2,22 @@
 layout: compress
 ---
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
 {% include head.html %}
 
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 
   {% include header.html %}
-
-  <main id="main" aria-label="Content" style="flex: 1;">
-    <div id="content-container" class="container">
+  <div id="content-container" class="container" style="flex: 1;">
+    <main id="main" aria-label="Content">
       <br />
       <br />
       {{ content }}
-    </div>
-    <br />
-    <br />
-  </main>
+      <br />
+      <br />
+    </main>
+  </div>
 
   {% include footer.html %}
 
