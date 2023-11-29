@@ -73,14 +73,12 @@ body {
 }
 
 header {
-  // overflow: hidden
   color: black;
 }
 
 #nav-header {
   font-family: "Latex Bold";
-  color: black; // border-top: 3px dashed !important;
-  // overflow: hidden;
+  color: black; // border-top: 3px dashed !important;;
   text-decoration-thickness: $base-text-decoration-thickness;
   // text-decoration-thickness: 5px
   // border-left: 1px dashed $layout-color-border;
@@ -104,7 +102,7 @@ header {
   // font-weight: "medium";
   color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
-  // overflow: hidden;
+  ;
 
   @media (min-width: $layout-responsive-nav-cutoff) {
     position: relative; // Adjust if needed for larger screens
