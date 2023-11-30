@@ -74,7 +74,8 @@
 [data-ty="input"]:before,
 [data-ty-prompt]:before {
     margin-right: 0.75em;
-    color: var(--color-text-subtle);
+    /* color: var(--color-text-subtle); */
+    color: #77d951;
 }
 
 [data-ty="input"]:before {
