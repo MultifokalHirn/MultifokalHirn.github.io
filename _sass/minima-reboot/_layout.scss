@@ -2,7 +2,8 @@
 $layout-color-border: black !default;
 $layout-color-background: #fdfdfd !default;
 $layout-color-syntax-highlighting-background: #f8f9fa !default;
-$layout-responsive-nav-cutoff: 768px !default; // Consider adjusting based on design needs
+// $layout-responsive-nav-cutoff: 768px !default; // Consider adjusting based on design needs
+$layout-responsive-nav-cutoff: 1024px !default; // Consider adjusting based on design needs
 $base-text-decoration-thickness: 5px !default;
 
 html {
@@ -112,7 +113,8 @@ header {
     background-color: transparent;
   }
 
-  @media (max-width: $layout-responsive-nav-cutoff - 1) {
+  @media (max-width: 80%) {
+    //$layout-responsive-nav-cutoff - 1) {
     position: absolute;
     z-index: 100;
     // top: 0.1rem;

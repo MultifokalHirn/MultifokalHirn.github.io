@@ -1,0 +1,9 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/asciinema-player.css">
+<div id="{{ include.id }}"></div>
+<script src="/assets/js/asciinema-player.min.js"></script>
+<script>
+
+    AsciinemaPlayer.create('{{ include.cast }}', document.getElementById('{{ include.id }}'), {
+        terminalFontFamily: 'Hack Nerd Font Mono',
+    });
+</script>

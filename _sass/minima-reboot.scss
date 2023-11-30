@@ -35,8 +35,17 @@
   // font-weight: "medium";
 }
 
+@font-face {
+  font-family: "Hack Nerd Font Mono";
+  src: local(Hack Nerd Font Mono Regular),
+    url("/assets/fonts/Hack/HackNerdFontMono-Regular.ttf") format("truetype");
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+}
+
 $base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
-$code-font-family: "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 $base-font-size: 1.1rem !default;
 $base-font-weight: 500 !default;
 $small-font-size: 0.875rem !default;
@@ -52,7 +61,7 @@ $content-width: 100% !default;
 // Breakpoints for different sizes
 $breakpoint-palm: 600px !default;
 $breakpoint-laptop: 800px !default;
-$breakpoint-desktop: 1024px !default;
+$breakpoint-desktop: 1400px !default;
 
 // Mobile-first approach using min-width
 @mixin media-query($breakpoint) {
