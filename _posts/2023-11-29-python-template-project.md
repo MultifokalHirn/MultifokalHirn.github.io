@@ -4,6 +4,7 @@ author: Lennard Wolf
 layout: post
 icon: fa-lightbulb
 ---
+<!-- This is [my](https://github.com/MultifokalHirn) personal template for python projects containing everything needed to start developing. -->
 
 ![py3](https://img.shields.io/badge/python->=3.8.1%20<=3.12.0-3776AB?logo=python&logoColor=FFFFFF&style=flat-square)
 ![pdm](https://img.shields.io/badge/depedency_manager-pdm-blueviolet?logoColor=FFFFFF&style=flat-square)
@@ -11,13 +12,12 @@ icon: fa-lightbulb
 ![ruff](https://img.shields.io/badge/linter-ruff-006400?&style=flat-square)
 ![mypy](https://img.shields.io/badge/typechecker-mypy-blue?&style=flat-square)
 
-This is [my](https://github.com/MultifokalHirn) personal template for python projects containing everything needed to start developing.
 
 ### Installation
 
 #### Pre-requisites
 
-<!-- <div class="row text-justify" style="display: flex; flex-direction: row;"> -->
+
 <div class="text-justify">
 
 {% highlight bash %}

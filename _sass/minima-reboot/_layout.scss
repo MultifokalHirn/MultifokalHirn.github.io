@@ -14,7 +14,7 @@ html {
   // }
 
   header {
-    border-bottom: 1px dashed $layout-color-border;
+    border-bottom: 1px solid $layout-color-border;
 
     color: #000 !important;
     // text-decoration-thickness: $base-text-decoration-thickness;
@@ -63,7 +63,8 @@ body {
   // border-left: 1px dashed $layout-color-border;
   // border-right: 1px dashed $layout-color-border;
   font-family: $base-font-family;
-  background-color: $layout-color-background;
+  background-color: $layout-color-background !important;
+  // margin-top: 2%;
 
   // text-decoration-thickness: $base-text-decoration-thickness;
   .container {
@@ -74,6 +75,7 @@ body {
 }
 
 header {
+  border-bottom: 1px solid $layout-color-border;
   color: black;
 }
 
@@ -103,14 +105,15 @@ header {
   // font-weight: "medium";
   color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
-  ;
+  background-color: $layout-color-background;
 
   @media (min-width: $layout-responsive-nav-cutoff) {
     position: relative; // Adjust if needed for larger screens
     // z-index: 100;
     right: 0rem;
     // border: 1px solid $layout-color-border;
-    background-color: transparent;
+    // background-color: transparent;
+    background-color: $layout-color-background;
   }
 
   @media (max-width: 80%) {
