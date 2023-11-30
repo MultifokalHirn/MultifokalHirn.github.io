@@ -2,16 +2,15 @@
 layout: default
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="pt-4 pb-3">
+  <header class="pt-2 pb-3">
     <h2 itemprop="name headline"> <i>{{ page.title | escape }}</i></h2>
-    <p class="text-secondary" style="font-family: 'FiraCodeNerdFontMono'; font-size: small;">
+    <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
       {% if page.author %}
       {% if page.author_url %}
       <a href="{{ page.author_url }}">
         {% endif %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
-            itemprop="name">{{ page.author }}</span></span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">
+            {{ page.author }}</span></span>
         {% if page.author_url %}
       </a>
       {% endif %}
@@ -24,9 +23,8 @@ layout: default
     </p>
   </header>
 
-  <div class="text-justify" itemprop="articleBody" id="content" style="padding: 2%;">
+  <div class="text-justify" itemprop="articleBody" id="content" style="padding-left: 2%; padding-right: 2%;">
     {{ content }}
-
   </div>
 
   {% for tag in post.tags %}

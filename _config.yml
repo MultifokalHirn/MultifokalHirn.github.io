@@ -30,7 +30,7 @@ repository: MultifokalHirn/multifokalhirn.github.io
 
 # Minima: show excerpts in the frontpage
 show_excerpts: true
-
+excerpt_separator: <!--more-->
 minima_reboot:
   date_format: "%b %-d, %Y"
   date_format_short: "%b %-d"
