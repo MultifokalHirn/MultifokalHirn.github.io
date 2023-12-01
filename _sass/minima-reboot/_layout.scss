@@ -186,7 +186,7 @@ img.mystery-green-area {
 .menu-opts:hover {
   font-size: 1.1rem !important;
   text-decoration-color: blue !important;
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-decoration-style: wavy !important;
   text-decoration: underline;
 }
@@ -197,6 +197,7 @@ img.mystery-green-area {
   margin-top: 4.2rem;
   border: 1px dashed $layout-color-border;
   padding: 4% !important;
+  padding-right: 5%;
   font-size: medium;
 }
 
@@ -227,8 +228,8 @@ img.mystery-green-area {
   background-color: black;
 }
 
-#link-area-lw,
-a {
+
+a #link-area-lw {
   text-decoration: none;
   text-decoration-style: dotted;
 
@@ -308,8 +309,8 @@ li:hover {
 }
 
 .author-image:hover {
-  background-color: rgba(255, 0, 0, 0.08);
-  transition: background-color 0.2s;
+  background-color: rgba(255, 0, 0, 0.05);
+  transition: background-color 0.1s;
   transition-delay: 0s;
 }
 
@@ -374,7 +375,7 @@ li:hover {
 .text-secondary {
   // color: #555555 !important;
   font-family: "Hack Nerd Font Mono";
-  font-size: small;
+  // font-size: small;
   color: black !important;
   margin-bottom: 0.5rem;
   font-size: 1rem
@@ -391,7 +392,7 @@ li:hover {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   white-space: break-spaces;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none !important;
 }
 

@@ -11,7 +11,7 @@
       <label for="nav-trigger" aria-label="button" class="m-2 d-inline-block d-md-none navbar-toggler-icon">
         <i class="fas fa-bars" style="cursor: pointer;"></i>
       </label>
-      <!-- </input> -->
+      </input>
       <div id="nav-menu" class="d-none d-md-flex">
         {% for path in page_paths %}
         {% assign my_page = site.pages | where: "path", path | first %}
