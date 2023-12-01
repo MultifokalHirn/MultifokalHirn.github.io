@@ -4,7 +4,7 @@ layout: default
 {% include blog.html post=post%}
 
 {% comment %}
-{% if site.paginate %}
+<!-- {% if site.paginate %}
 {% assign posts = paginator.posts %}
 {% else %}
 {% assign posts = site.posts %}
@@ -22,13 +22,13 @@ layout: default
         {% for post in posts %}
         <li class="py-2"
             style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%; border-left: 0px dashed blue; border-bottom: 0px dotted #dcdee0">
-            <span class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
-                {{ post.date | date: date_format }}
-            </span>
             <h3 class="h3 mt-1 mb-2">
                 <a class="h3" style="text-decoration: underline; text-decoration-color: blue; color: #000000"
                     href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
             </h3>
+            <span class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
+                {{ post.date | date: date_format }}
+            </span>
             <div class="text-justify"
                 style="padding-left: 2%; padding-right: 2%; padding-bottom: 1%; margin-bottom: 3%; border-top: 2px dashed #dcdee0; border-left: 2px dashed #dcdee0; border-bottom: 0px dashed #dcdee0;">
                 {{ post.excerpt }}
@@ -59,4 +59,5 @@ layout: default
     {% endif %}
 
 </div>
+ -->
 {% endcomment %}

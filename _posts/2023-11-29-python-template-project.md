@@ -42,7 +42,7 @@ rm -rf .git/ && git init
 #### Development Setup
 
 <div class="row" style="display: flex; flex-direction: row;">
-<div class="col-md-4" style="flex: 1;">
+<div class="col" style="flex: 1;">
 
 {% highlight bash %}
 # ensure python3 is installed
@@ -60,7 +60,7 @@ make test
 {% endhighlight %}
 </div>
 
-<div class="col-md-6" style="flex: 1;">
+<div class="col" style="min-width: 0% !important; flex: 1;">
 {% include asciinema.html id="template-project-make2" cast="/assets/casts/template-project-make-2.cast" %}
 </div>
 </div>

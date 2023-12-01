@@ -3,33 +3,37 @@
 {% else %}
 {% assign posts = site.posts %}
 {% endif %}
-<header class="pt-2 pb-3" style="padding-left: 1%;">
+<div class="pt-2 pb-3" style="padding-left: 1%;">
     <h1>Posts</h1>
-</header>
+</div>
 <div id="content">
     {% if posts.size == 0 %}
     <p>No posts <i>yet</i>.</p>
     {% else %}
     <ul class="list-unstyled m-0"
-        style="margin-top: 2%; padding-top: 2%; padding-left: 1%; padding-right: 1%; padding-bottom: 2%;">
+        style="margin-top: 2%; padding-top: 0%; margin-left: 0% ;padding-left: 1%; padding-right: 1%; margin-bottom: 2%;">
         {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
         {% for post in posts %}
-        <a class="link-area-lw" href="{{ post.url | relative_url }}">
-            <li class="py-2"
-                style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%; border-left: 0px dashed blue; border-bottom: 0px dotted #dcdee0">
-                <span class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
-                    {{ post.date | date: date_format }}
-                </span>
-                <h3 class="h3 mt-1 mb-4"
-                    style="text-decoration: underline; text-decoration-color: blue; color: #000000">
+        <a class="link-area-lw" href="{{ post.url | relative_url }}" style="border-left: 0px dashed blue !important; ">
+            <li class="py-0"
+                style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%; margin-bottom: 2%; border: 2px dotted blue; border-bottom: 2px dotted blue;">
+
+                <h3 class="mt-0"
+                    style="padding-top: 2%;  text-decoration: underline; text-decoration-color: blue; color: #000000">
                     {{ post.title | escape }}
                 </h3>
+                <span class="text-secondary"
+                    style="padding: 0%; margin-bottom: 5%; font-family: 'Hack Nerd Font Mono'; font-size: small;">
+                    {{ post.date | date: date_format }}
+                </span>
                 <div class="text-justify"
-                    style="padding-left: 2%; padding-right: 2%; padding-bottom: 1%; margin-bottom: 3%; border-top: 0px dashed #dcdee0; border: 2px dashed #dcdee0;">
+                    style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%; margin-top: 2%; margin-bottom: 1%; border-top: 0% dashed #dcdee0; border: 0px dashed #dcdee0;">
                     {{ post.excerpt }}
 
                 </div>
             </li>
+            <br />
+            <br />
         </a>
         {% endfor %}
     </ul>
