@@ -1,7 +1,7 @@
 ---
 permalink: /    
 layout: about
-title: _⌂_
+title: ⌂
 redirect_from:
     - /home
     - /about

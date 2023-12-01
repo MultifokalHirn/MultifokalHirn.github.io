@@ -14,7 +14,7 @@ html {
   // }
 
   header {
-    border-bottom: 1px dashed $layout-color-border;
+    border-bottom: 1px dotted $layout-color-border;
     white-space: nowrap;
     color: #000 !important;
     // text-decoration-thickness: $base-text-decoration-thickness;
@@ -176,7 +176,7 @@ header {
 
 #link-area-lw,
 a {
-  text-decoration-style: none;
+  text-decoration: none;
 
   // text-decoration-thickness: $base-text-decoration-thickness;
   #link-in-text {
@@ -276,13 +276,16 @@ img:hover {
 
 
 .highlight pre {
-  border: 1px dot ted $layout-color-border;
+  font-family: "Hack Nerd Font Mono";
+  border: 1px dotted $layout-color-border;
   // border-radius: .25rem;
   background-color: $layout-color-syntax-highlighting-background;
   padding: 0.75rem;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
   white-space: break-spaces;
-  font-size: 1rem
+  font-size: 1rem;
+  text-decoration: none !important;
 }
 
 .contact-list,
