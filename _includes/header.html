@@ -1,12 +1,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<header id="nav-header" class="border-left- border-right-0">
+<header id="nav-header" class="border-left-0 border-right-0">
   <div id="nav-container" class="container position-relative d-flex justify-content-between align-items-center">
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
-    <a class="h3 m-0 mr-0"
-      style="font-size: 1.7rem; line-height: auto; text-decoration: underline; text-decoration-thickness: 3px;
-      text-decoration-style: wavy !important ; text-decoration-color: green !important; color: black; max-width: 90%; overflow-x: visible;"
-      href="{{ '/' | relative_url }}"><i>{{ site.title | escape }}</i></a>
+    <a class="website-title h3 m-0 mr-0" href="{{ '/' | relative_url }}"><i>{{ site.title | escape }}</i></a>
 
     {% if page_paths %}
     <nav id="nav-menu-container" class="text-right navbar-light">
@@ -19,8 +16,7 @@
         {% for path in page_paths %}
         {% assign my_page = site.pages | where: "path", path | first %}
         {% if my_page.title %}
-        <a class="p-1 d-block d-md-inline-block"
-          style="font-size: 1.0rem; line-height: auto; text-decoration: underline; text-decoration-style: dotted; text-decoration-thickness: 2px; color: black; text-decoration-color: blue;"
+        <a class="menu-opts p-1 d-block d-md-inline-block"
           href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
         {% endif %}
         {% endfor %}
