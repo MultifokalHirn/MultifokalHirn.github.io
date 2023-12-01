@@ -10,7 +10,7 @@ html {
 
   // body,
   // header {
-  //   border-bottom: 1px dashed $layout-color-border;
+  //   border-bottom: 2px dashed $layout-color-border;
   // }
 
   header {
@@ -26,11 +26,11 @@ html {
   }
 
   footer {
-    border-top: 1px dashed $layout-color-border;
+    border-top: 2px dashed $layout-color-border;
 
     .container {
-      border-left: 1px dashed $layout-color-border;
-      border-right: 1px dashed $layout-color-border;
+      border-left: 2px dashed $layout-color-border;
+      border-right: 2px dashed $layout-color-border;
     }
   }
 }
@@ -47,8 +47,8 @@ body {
 }
 
 body {
-  // border-left: 1px dashed $layout-color-border;
-  // border-right: 1px dashed $layout-color-border;
+  // border-left: 2px dashed $layout-color-border;
+  // border-right: 2px dashed $layout-color-border;
   font-family: $base-font-family;
   background-color: $layout-color-background !important;
   // margin-top: 2%;
@@ -56,9 +56,9 @@ body {
 
   // text-decoration-thickness: $base-text-decoration-thickness;
   .container {
-    // border-bottom: 1px dashed $layout-color-border !important;
-    border-left: 1px dashed $layout-color-border;
-    border-right: 1px dashed $layout-color-border;
+    // border-bottom: 2px dashed $layout-color-border !important;
+    border-left: 2px dashed $layout-color-border;
+    border-right: 2px dashed $layout-color-border;
   }
 }
 
@@ -90,8 +90,8 @@ header {
   }
 
   // text-decoration-thickness: 5px
-  // border-left: 1px dashed $layout-color-border;
-  // border-right: 1px dashed $layout-color-border;
+  // border-left: 2px dashed $layout-color-border;
+  // border-right: 2px dashed $layout-color-border;
   #p2,
   a:hover {
     text-decoration-thickness: 1px;
@@ -103,8 +103,8 @@ header {
 
 #nav-container {
   height: 4.8rem;
-  border-left: 1px dashed $layout-color-border;
-  border-right: 1px dashed $layout-color-border;
+  border-left: 2px dashed $layout-color-border;
+  border-right: 2px dashed $layout-color-border;
   // background: rgba(0, 0, 255, 0.02);
   // box-shadow: 1rem 1rem 2rem 2rem rgba(0, 0, 0, 0.975);
   // -moz-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
@@ -244,19 +244,19 @@ img:hover {
 }
 
 #site-footer {
-  // border-top: 1px dashed $layout-color-border;
+  // border-top: 2px dashed $layout-color-border;
 
   font-size: small;
   font-family: "FiraCodeNerdFontMonoLight";
   text-align: right;
 
-  // border-left: 1px dashed $layout-color-border;
-  // border-right: 1px dashed $layout-color-border;
+  // border-left: 2px dashed $layout-color-border;
+  // border-right: 2px dashed $layout-color-border;
 
   .container {
-    // border-bottom: 1px dashed $layout-color-border !important;
-    border-right: 1px dashed $layout-color-border;
-    border-left: 1px dashed $layout-color-border;
+    // border-bottom: 2px dashed $layout-color-border !important;
+    border-right: 2px dashed $layout-color-border;
+    border-left: 2px dashed $layout-color-border;
     padding-top: 0.75rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
