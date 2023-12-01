@@ -40,16 +40,16 @@
   src: local(Hack Nerd Font Mono Regular),
     url("/assets/fonts/Hack/HackNerdFontMono-Regular.ttf") format("truetype");
   font-stretch: normal;
-  font-style: normal;
-  font-weight: 700;
+  // font-style: normal;
+  // font-weight: 700;
 }
 
 $base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
 $code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
-$base-font-size: 1.1rem !default;
+$base-font-size: 1.0rem !default;
 $base-font-weight: 500 !default;
 $small-font-size: 0.875rem !default;
-$base-line-height: 1.55 !default;
+$base-line-height: 1.35 !default;
 $brand-color: blue !default;
 $spacing-unit: 1.55rem !default;
 // $base-text-decoration-thickness: 1px !default;
@@ -75,7 +75,8 @@ $breakpoint-desktop: 1400px !default;
 }
 
 // Base styles
-body {
+body,
+pre {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;

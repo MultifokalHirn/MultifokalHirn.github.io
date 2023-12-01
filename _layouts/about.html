@@ -1,13 +1,14 @@
 ---
 layout: default
 ---
-
+<br />
 <div id="content">
-    <div itemprop="articleBody">
+    <div style=" margin: 1%" itemprop="articleBody">
         <div class="row text-justify">
             <div class="col-md-3">
-                <div style="margin: 1% 1% 5% 1%; width: auto; height: auto; border: 0px solid black; " align="center">
-                    <img src="{{ site.baseurl }}/assets/images/author.jpeg" style="width: 100%; ; " alt="author" />
+                <div style=" margin: 1% 1% 5% 1%; width: auto; height: auto; border: 0px solid black; " align="center">
+                    <img src="{{ site.baseurl }}/assets/images/author.jpeg"
+                        style="width: 100%; padding: 3%; border: 3px solid blue;; " alt="author" />
                 </div>
             </div>
             <div class="col-md-8 text-justify" style="min-width: 70%; margin: 1% 1% 2% 1%">
@@ -15,49 +16,52 @@ layout: default
             </div>
         </div>
     </div>
-    <br />
 
 
+    {% include blog.html %}
+    {% comment %}
+    <!-- <div style="padding-left: 2%; padding-right: 2%; border: 2px dashed #e9ecef; margin-top: 2%; margin-bottom: 3%;">
     {% if site.paginate %}
     {% assign posts = paginator.posts %}
     {% else %}
     {% assign posts = site.posts %}
     {% endif %}
+        {% if posts.size > 0 %}
+            <h2 class="mb-4" style="margin-top: 2%; margin-bottom: 5%;"">
+                <u>Recent Posts</u>
+            </h2>
 
-    {% if posts.size > 0 %}
-    <!-- <br /> -->
-    <div style="padding-left: 2%; padding-right: 2%; border: 2px dashed #e9ecef; margin-top: 2%; margin-bottom: 3%;">
-        <h2 class="mb-4" style="margin-top: 2%; margin-bottom: 5%;"">
-        <u>Recent Posts</u>
-        </h2>
-
-    {% assign date_format = site.minima_reboot.date_format | default: " %b %-d, %Y" %} <ul class="list-unstyled m-0">
-            {% for post in posts %}
-            <li class="py-2"
-                style="margin: 1%; padding-left: 2%; padding-right: 2%;  padding-bottom: 2%; border-bottom: 1px dashed #e9ecef">
-                <span class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
-                    {{ post.date | date: date_format }}
-                </span>
-                <h3 class="mt-1 mb-4">
-                    <a style="text-decoration: underline; text-decoration-color: blue; color: #000000"
-                        href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-                </h3>
-                <div class="text-justify"
-                    style="padding-left: 2%; padding-right: 2%; padding-top: 1%;  padding-bottom: 1%; margin-bottom: 1%; border-left: 1px solid #e9ecef;">
-                    {{ post.excerpt }}
-                </div>
-            </li>
-            {% endfor %}
+            {% assign date_format = site.minima_reboot.date_format | default: " %b %-d, %Y" %} 
+            <ul class="list-unstyled m-0">
+                {% for post in posts %}
+                    <li class="py-2"
+                        style="margin: 1%; padding-left: 2%; padding-right: 2%;  padding-bottom: 2%; border-bottom: 1px dashed #e9ecef">
+                        <span class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
+                            {{ post.date | date: date_format }}
+                        </span>
+                        <h3 class="mt-1 mb-4">
+                            <a style="text-decoration: underline; text-decoration-color: blue; color: #000000"
+                                href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                        </h3>
+                        <div class="text-justify"
+                            style="padding-left: 2%; padding-right: 2%; padding-top: 1%;  padding-bottom: 1%; margin-bottom: 1%; border-left: 1px solid #e9ecef;">
+                            {{ post.excerpt }}
+                        </div>
+                    </li>
+                {% endfor %}
             </ul>
+            {% if posts.size < 0 %}
+                <div>
+                    <br />
+                    <iframe id="terminal" src="https://multifokalhirn.github.io/homepage/" width="100%" height="333px"
+                        float="center" loading="lazy" title="Lennard Wolf CV" style="overflow-y: scroll; z-index: -1;"></iframe>
+                    <br />
+                    <script>
+                        document.getElementById("terminal")[0].contentWindow.document.body.focus();
+                    </script>
+                </div>
             {% endif %}
-            <!-- <div>
-            <br />
-            <iframe id="terminal" src="https://multifokalhirn.github.io/homepage/" width="100%" height="333px"
-                float="center" loading="lazy" title="Lennard Wolf CV" style="overflow-y: scroll; z-index: -1;"></iframe>
-            <br />
-            <script>
-                document.getElementById("terminal")[0].contentWindow.document.body.focus();
-            </script>
-        </div> -->
-    </div>
+        {% endif %}
+    </div> -->
+    {% endcomment %}
 </div>

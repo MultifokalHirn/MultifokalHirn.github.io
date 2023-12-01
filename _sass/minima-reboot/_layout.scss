@@ -14,7 +14,7 @@ html {
   // }
 
   header {
-    border-bottom: 1px solid $layout-color-border;
+    border-bottom: 1px dashed $layout-color-border;
     white-space: nowrap;
     color: #000 !important;
     // text-decoration-thickness: $base-text-decoration-thickness;
@@ -38,33 +38,13 @@ html {
 html,
 body {
   overflow-x: hidden;
+
+  // color: $brand-color !important;
 }
 
 body {
   position: relative
 }
-
-a {
-  // text-decoration-thickness: $base-text-decoration-thickness;
-  color: $brand-color;
-  text-decoration: underline;
-  // text-decoration-thickness: 2.5px;
-  text-decoration-style: dotted;
-  // text-decoration-color: $brand-color !important;
-}
-
-#link {
-  color: $brand-color !important;
-}
-
-// main {
-//   #main {
-//     border-left: 1px dashed $layout-color-border;
-//     border-right: 1px dashed $layout-color-border;
-//   }
-
-
-// }
 
 body {
   // border-left: 1px dashed $layout-color-border;
@@ -161,6 +141,24 @@ header {
   // border-top: 1px solid green !important;
 }
 
+#link-area-lw,
+a {
+  // text-decoration-thickness: $base-text-decoration-thickness;
+  color: black !important;
+  font-size: inherit;
+  text-decoration: inherit;
+  text-decoration-style: dotted !important;
+  // text-decoration-thickness: 2.5px;
+  text-decoration-color: inherit;
+
+  #link-in-text {
+    // text-decoration-thickness: $base-text-decoration-thickness;
+    color: blue !important;
+    font-size: inherit;
+  }
+}
+
+
 #content {
 
   h1,
@@ -172,6 +170,17 @@ header {
     margin-bottom: 1rem;
     text-align: left;
   }
+
+  a,
+  #link {
+    // text-decoration-thickness: $base-text-decoration-thickness;
+    color: $brand-color;
+    text-decoration: underline;
+    // text-decoration-thickness: 2.5px;
+    text-decoration-style: dotted;
+    // text-decoration-color: $brand-color !important;
+  }
+
 
   blockquote {
     border-left: 4px solid $layout-color-border;
@@ -210,6 +219,8 @@ header {
   color: black !important;
   margin-bottom: 0.5rem;
 }
+
+
 
 .highlight pre {
   border: 1px dotted $layout-color-border;

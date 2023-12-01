@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
   font-family: "Hack Nerd Font Mono";
   src: local(Hack Nerd Font Mono Regular),
     url("/assets/fonts/Hack/HackNerdFontMono-Regular.ttf") format("truetype");
   font-stretch: normal;
   font-style: normal;
   font-weight: 700;
-}
+} */
 
 div.ap-wrapper {
   outline: none;

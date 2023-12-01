@@ -13,10 +13,9 @@ icon: fa-lightbulb
 ![mypy](https://img.shields.io/badge/typechecker-mypy-blue?&style=flat-square)
 
 
-### Installation
+### Setup
 
 #### Pre-requisites
-
 
 <div class="text-justify">
 
@@ -24,7 +23,7 @@ icon: fa-lightbulb
 # clone the repo
 mkdir my_new_project && cd my_new_project
 git clone https://github.com/MultifokalHirn/python_template_repo.git .
-
+<!--more-->
 # optional: remove the git history to start fresh
 rm -rf .git/ && git init
 
