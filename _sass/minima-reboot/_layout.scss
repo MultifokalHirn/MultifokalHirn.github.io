@@ -93,28 +93,36 @@ header {
 
 }
 
+img.mystery-green-area {
+  visibility: hidden;
+}
+
 .mystery-green-area {
-  padding: 4%;
+  padding: 1% 1% 1% 1%;
+  font-size: 1.1rem;
   // padding-bottom: 10%; // min-height: 5%;
-  border: 4px dotted rgba(136, 221, 136, 0.9);
-  border-bottom: 5px dashed rgba(136, 221, 136, 0.7);
+  border: 0px dotted rgba(0, 128, 0, 0.9);
+  border-bottom: 0px dashed rgba(0, 128, 0, 0.7);
   background: rgba(30, 200, 30, 0.02);
   opacity: 1;
   // max-height: 20%;
   transition: opacity 2.5s ease-in-out;
   transition-delay: 3s;
+  // display: flex
+
 }
 
 .mystery-green-area:hover {
   // border: 5px dotted rgba(136, 221, 136, 0.5);
-  transition: border 1s ease;
-  opacity: 0;
+  // opacity: 0;
   transition: opacity 1s ease;
   transition-delay: 0.8s;
+  transition-delay: unset;
+  transition: border 1s ease;
 }
 
 #nav-container {
-  height: 4.8rem;
+  height: 4.9rem;
   border-left: 2px dashed $layout-color-border;
   border-right: 2px dashed $layout-color-border;
   // background: rgba(0, 0, 255, 0.02);
@@ -130,11 +138,13 @@ header {
   color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
   background-color: $layout-color-background;
+  margin-top: 0rem;
 
   @media (min-width: $layout-responsive-nav-cutoff) {
     position: relative; // Adjust if needed for larger screens
-    // z-index: 100;
-    right: 0rem;
+    z-index: 100;
+    // right: 0.5rem;
+
     // border: 1px solid $layout-color-border;
     // background-color: transparent;
     background-color: $layout-color-background;
@@ -145,49 +155,59 @@ header {
     position: absolute;
     z-index: 100;
     // top: 0.1rem;
-    right: 0rem;
+    // right: 0.5rem;
+
     // border: 1px solid $layout-color-border;
     // border-radius: .25rem;
     background-color: $layout-color-background;
   }
 
-  a,
-  .menu-opts {
-    // padding: 5%;
-    text-decoration-style: dotted !important;
-    text-decoration-thickness: 2px;
-    color: black;
-    text-decoration-color: blue;
-    font-size: 1.0rem !important;
-    line-height: 1.4rem;
-    // text-decoration-style: wavy !important;
-  }
 
-  // text-decoration-thickness: 5px
-  // border-left: 2px dashed $layout-color-border;
-  // border-right: 2px dashed $layout-color-border;
-  a.menu-opts:hover {
-    font-size: 1.1rem !important;
-    text-decoration-thickness: 1px;
-    text-decoration-style: wavy !important;
-  }
+
 }
 
+.menu-opts {
+  // padding: 5%;
+  padding-right: 3%;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 2px;
+  color: black;
+  font-size: 1.1rem !important;
+  text-decoration-color: blue !important;
+  // font-size: 1.0rem !important;
+  line-height: 1.6rem;
+  text-decoration: underline;
+  // text-decoration-style: wavy !important;
+}
+
+// text-decoration-thickness: 5px
+// border-left: 2px dashed $layout-color-border;
+// border-right: 2px dashed $layout-color-border;
+.menu-opts:hover {
+  font-size: 1.1rem !important;
+  text-decoration-color: blue !important;
+  text-decoration-thickness: 1px;
+  text-decoration-style: wavy !important;
+  text-decoration: underline;
+}
 
 #nav-trigger:checked~#nav-menu {
   display: block !important;
-  // position: relative !important;
-  // margin-bottom: -5%;
-  border: 1px solid $layout-color-border;
+  position: relative !important;
+  margin-top: 4.2rem;
+  border: 1px dashed $layout-color-border;
+  padding: 4% !important;
   font-size: medium;
 }
 
 #nav-trigger:checked~.navbar-toggler-icon {
-  // display: hidden;
+  display: hidden;
+  cursor: pointer;
+  // margin-top: 5%;
 }
 
 .navbar-toggler-icon {
-  // display: flex;
+  display: flex;
   // justify-content: center;
   // align-items: center;
 }
@@ -256,7 +276,7 @@ li:hover {
 
 .website-title {
   // font-size: 1.7rem;
-  font-size: 1.7rem !important;
+  font-size: 1.8rem !important;
   line-height: auto;
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -274,6 +294,7 @@ li:hover {
   // text-decoration: underline;
   text-decoration-thickness: 5px;
   text-decoration-style: wavy !important;
+  transition-delay: 0s;
   // text-decoration-color: green !important;
   transition: text-decoration-thickness 0.05s;
 }
@@ -289,7 +310,7 @@ li:hover {
 .author-image:hover {
   background-color: rgba(255, 0, 0, 0.08);
   transition: background-color 0.2s;
-  // transition-delay: 1s;
+  transition-delay: 0s;
 }
 
 #content {
@@ -302,12 +323,13 @@ li:hover {
     margin-top: 2rem;
     margin-bottom: 1rem;
     text-align: left;
+    text-justify: auto;
   }
 
   a,
   #link {
     // text-decoration-thickness: $base-text-decoration-thickness;
-    color: $brand-color;
+    color: $brand-color !important;
     text-decoration: underline;
     // text-decoration-thickness: 2.5px;
     text-decoration-style: dotted;
