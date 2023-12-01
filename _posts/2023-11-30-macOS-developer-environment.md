@@ -12,7 +12,7 @@ icon: apple
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 <!--more-->
-##### brew packages
+#### brew packages
 
 ```bash
 brew install \
@@ -39,11 +39,19 @@ brew install \
     wget \
     zsh \
     zsh-completions \
+```
 
+```bash
 brew install --cask osxfuse dozer
 
 ```
-##### oh-my-zsh
+
+```bash
+brew install orbstack glances
+```
+
+
+#### oh-my-zsh
 
 ```bash
 cd ~/.oh-my-zsh/custom/plugins/
@@ -52,7 +60,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-completions
 ```
 
-##### ruby
+#### ruby
 
 ```bash
 $ brew install rbenv ruby
@@ -69,7 +77,7 @@ $ ruby -v
 ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x86_64-darwin21]
 ```
 
-##### rust
+#### rust
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -79,12 +87,9 @@ cargo install illa du-dust exa bat broot
 cargo install bottom --locked
 ```
 
+#### super optional
 
-```
-
-##### super optional
-
-###### fonts & icons
+##### fonts & icons
 
 ```bash
 brew tap shaunsingh/SFMono-Nerd-Font-Ligaturized
@@ -93,6 +98,4 @@ brew install hicolor-icon-theme
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip ~/Downloads/Hack.zip
 ```
 
-```bash
-brew install orbstack glances
-```
+
