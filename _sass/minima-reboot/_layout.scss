@@ -221,7 +221,7 @@ img.mystery-green-area {
 }
 
 #my-hover-class {
-  background-color: inherit;
+  // background-color: inherit;
 }
 
 #my-hover-class:hover {
@@ -253,26 +253,30 @@ a #link-area-lw {
 
 #link-area-lw,
 li {
+  background-color: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   transition: background-color 0.5s ease-out;
-  background-color: rgb(255, 255, 255);
   // transition-delay: 0.1s;
   // transition: border 0.25s linear;
   // transition-delay: 0.5s;
   // transition-delay: 0.3s;
   border: 3px dashed blue;
-  border-bottom: 2px dotted blue
+  border-bottom: 3px dotted blue;
+  border-top: 0px dotted blue
 }
 
 #link-area-lw,
 li:hover {
-  background-color: rgba(0, 0, 255, 0.04);
-  // transition: background-color 0.1s;
+  background-color: linear-gradient(rgba(0, 0, 255, 1.0), rgba(0, 0, 255, 0.4), rgba(0, 0, 255, 0.2), rgba(0, 0, 255, 0.9)) !important;
+  background-color: blue($color: #000000);
+  transition: background-color 1s;
+  transition-delay: 0.1s;
   // border-spacing: 1px;
   border: 3px solid blue;
   // transition: border 0.1s linear;
   // transition-delay: 0.1s;
   // border-spacing: -100px;
-  border-bottom: 2px dotted blue
+  border-bottom: 3px solid blue;
+  border-top: 0px dotted blue
 }
 
 .website-title {
@@ -304,12 +308,12 @@ pre {
   color: black;
   text-decoration: none;
   font-size: 0.9rem;
-  ;
 }
 
 a {
   color: blue;
   text-decoration: none;
+  background-color: inherit;
 }
 
 
@@ -317,6 +321,7 @@ a {
   background-color: rgba(255, 0, 0, 0.0);
   transition: background-color 0.8s ease;
   transition-delay: 0.3s;
+  padding-bottom: 1%;
 }
 
 .author-image:hover {
