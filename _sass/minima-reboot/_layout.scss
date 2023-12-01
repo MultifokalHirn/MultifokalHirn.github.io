@@ -1,7 +1,7 @@
 // $layout-color-border: #e9ecef !default;
 $layout-color-border: black !default;
 $layout-color-background: #fdfdfd !default;
-$layout-color-syntax-highlighting-background: #f8f9fa !default;
+$layout-color-syntax-highlighting-background: #fafafa !default;
 // $layout-responsive-nav-cutoff: 768px !default; // Consider adjusting based on design needs
 $layout-responsive-nav-cutoff: 1024px !default; // Consider adjusting based on design needs
 $base-text-decoration-thickness: 5px !default;
@@ -68,12 +68,24 @@ header {
 }
 
 #nav-header {
+
   font-family: "Latex Bold";
   color: black; // border-top: 3px dashed !important;;
   text-decoration-thickness: $base-text-decoration-thickness;
+
+  a:hover {
+    text-decoration: underline;
+    // text-decoration-style: wavy !important;
+  }
+
   // text-decoration-thickness: 5px
   // border-left: 1px dashed $layout-color-border;
   // border-right: 1px dashed $layout-color-border;
+  #p2,
+  a:hover {
+    text-decoration-thickness: 1px;
+    text-decoration-style: wavy !important;
+  }
 
 }
 
@@ -82,6 +94,7 @@ header {
   height: 4.5rem;
   border-left: 1px dashed $layout-color-border;
   border-right: 1px dashed $layout-color-border;
+  // background: rgba(0, 0, 255, 0.02);
   // box-shadow: 1rem 1rem 2rem 2rem rgba(0, 0, 0, 0.975);
   // -moz-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
   // -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
@@ -142,22 +155,40 @@ header {
   // border-top: 1px solid green !important;
 }
 
+#my-hover-class {
+  background-color: inherit;
+}
+
+#my-hover-class:hover {
+  background-color: black;
+}
+
 #link-area-lw,
 a {
+
   // text-decoration-thickness: $base-text-decoration-thickness;
+  #link-in-text {
+    // text-decoration-thickness: $base-text-decoration-thickness;
+    color: blue;
+    font-size: inherit;
+    text-decoration-style: inherit;
+  }
+
   color: black !important;
   font-size: inherit;
-  text-decoration: inherit;
-  text-decoration-style: dotted !important;
+  // text-decoration: inherit;
+  // text-decoration-style: inherit;
   // text-decoration-thickness: 2.5px;
   text-decoration-color: inherit;
 
-  #link-in-text {
-    // text-decoration-thickness: $base-text-decoration-thickness;
-    color: blue !important;
-    font-size: inherit;
-  }
+
 }
+
+#link-area-lw,
+li:hover {
+  background: rgba(0, 0, 255, 0.02);
+}
+
 
 
 #content {
