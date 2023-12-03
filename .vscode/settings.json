@@ -1,0 +1,37 @@
+{
+    "[markdown]": {
+        "editor.formatOnSave": true,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "[liquid]": {
+        "editor.defaultFormatter": "sissel.shopify-liquid",
+        "editor.formatOnSave": false
+    },
+    "[scss]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.formatOnSave": true
+    },
+    // Liquid Validations
+    //
+    // This setting will enable/disable validations in {% schema %} JSON
+    //
+    "liquid.validate.schema": true,
+    // Liquid Hover Descriptions
+    //
+    // These settings will enable/disable hover descriptions from showing
+    //
+    "liquid.hover.tags": true,
+    "liquid.hover.filters": true,
+    "liquid.hover.objects": true,
+    "liquid.hover.schema": true,
+    "html-css-class-completion.enableScssFindUsage": true,
+    "editor.formatOnSave": true,
+}

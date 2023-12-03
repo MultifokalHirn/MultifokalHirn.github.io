@@ -6,3 +6,6 @@ gem "webrick", "~> 1.8"
 gem "faraday-retry", "~> 2.2"
 
 gem "jekyll-minifier", "~> 0.1.10"
+group :jekyll_plugins do
+    gem 'jekyll-pre-commit'
+  end
