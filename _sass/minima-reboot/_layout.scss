@@ -7,7 +7,6 @@ $layout-responsive-nav-cutoff: 1024px !default; // Consider adjusting based on d
 $base-text-decoration-thickness: 5px !default;
 
 html {
-
   // body,
   // header {
   //   border-bottom: 2px dashed $layout-color-border;
@@ -44,10 +43,8 @@ body {
   // color: $brand-color !important;
 }
 
-
-
 body {
-  position: relative
+  position: relative;
 }
 
 body {
@@ -63,8 +60,6 @@ body {
     // border-bottom: 2px dashed $layout-color-border !important;
     border-left: 2px solid $layout-color-border;
     border-right: 2px solid $layout-color-border;
-
-
   }
 }
 
@@ -85,12 +80,9 @@ header {
 }
 
 #nav-header {
-
   font-family: "Latex Bold";
   color: black; // border-top: 3px dashed !important;;
   text-decoration-thickness: $base-text-decoration-thickness;
-
-
 }
 
 img.mystery-green-area {
@@ -109,7 +101,6 @@ img.mystery-green-area {
   transition: opacity 2.5s ease-in-out;
   transition-delay: 3s;
   // display: flex
-
 }
 
 .mystery-green-area:hover {
@@ -161,9 +152,6 @@ img.mystery-green-area {
     // border-radius: .25rem;
     background-color: $layout-color-background;
   }
-
-
-
 }
 
 .menu-opts {
@@ -191,7 +179,7 @@ img.mystery-green-area {
   text-decoration: underline;
 }
 
-#nav-trigger:checked~#nav-menu {
+#nav-trigger:checked ~ #nav-menu {
   display: block !important;
   position: relative !important;
   margin-top: 4.2rem;
@@ -201,7 +189,7 @@ img.mystery-green-area {
   font-size: medium;
 }
 
-#nav-trigger:checked~.navbar-toggler-icon {
+#nav-trigger:checked ~ .navbar-toggler-icon {
   display: hidden;
   cursor: pointer;
   // margin-top: 5%;
@@ -212,7 +200,6 @@ img.mystery-green-area {
   // justify-content: center;
   // align-items: center;
 }
-
 
 #content-container {
   padding-top: 1.5rem;
@@ -227,7 +214,6 @@ img.mystery-green-area {
 #my-hover-class:hover {
   background-color: black;
 }
-
 
 a #link-area-lw {
   text-decoration: none;
@@ -247,8 +233,6 @@ a #link-area-lw {
   // text-decoration-style: inherit;
   // text-decoration-thickness: 2.5px;
   text-decoration-color: white;
-
-
 }
 
 #link-area-lw,
@@ -261,12 +245,17 @@ li {
   // transition-delay: 0.3s;
   border: 3px dashed blue;
   border-bottom: 3px dotted blue;
-  border-top: 0px dotted blue
+  border-top: 0px dotted blue;
 }
 
 #link-area-lw,
 li:hover {
-  background-color: linear-gradient(rgba(0, 0, 255, 1.0), rgba(0, 0, 255, 0.4), rgba(0, 0, 255, 0.2), rgba(0, 0, 255, 0.9)) !important;
+  background-color: linear-gradient(
+    rgba(0, 0, 255, 1),
+    rgba(0, 0, 255, 0.4),
+    rgba(0, 0, 255, 0.2),
+    rgba(0, 0, 255, 0.9)
+  ) !important;
   background-color: blue($color: #000000);
   transition: background-color 1s;
   transition-delay: 0.1s;
@@ -276,7 +265,7 @@ li:hover {
   // transition-delay: 0.1s;
   // border-spacing: -100px;
   border-bottom: 3px solid blue;
-  border-top: 0px dotted blue
+  border-top: 0px dotted blue;
 }
 
 .website-title {
@@ -316,9 +305,8 @@ a {
   background-color: inherit;
 }
 
-
 .author-image {
-  background-color: rgba(255, 0, 0, 0.0);
+  background-color: rgba(255, 0, 0, 0);
   transition: background-color 0.8s ease;
   transition-delay: 0.3s;
   padding-bottom: 1%;
@@ -331,7 +319,6 @@ a {
 }
 
 #content {
-
   h1,
   h2,
   h3,
@@ -345,7 +332,6 @@ a {
     text-decoration-thickness: 0px;
   }
 
-
   a #link {
     // text-decoration-thickness: $base-text-decoration-thickness;
     color: $brand-color !important;
@@ -355,12 +341,11 @@ a {
     // text-decoration-color: $brand-color !important;
   }
 
-
   blockquote {
     border-left: 4px solid $layout-color-border;
     // padding-left: 1rem;
     font-style: italic;
-    font-size: 1rem
+    font-size: 1rem;
   }
 
   .footnotes {
@@ -369,8 +354,6 @@ a {
 }
 
 #site-footer {
-
-
   font-size: small;
   font-family: "FiraCodeNerdFontMonoLight";
   text-align: right;
@@ -396,10 +379,8 @@ a {
   // font-size: small;
   color: black !important;
   margin-bottom: 0.5rem;
-  font-size: 1rem
+  font-size: 1rem;
 }
-
-
 
 .highlight pre {
   font-family: "Hack Nerd Font Mono";

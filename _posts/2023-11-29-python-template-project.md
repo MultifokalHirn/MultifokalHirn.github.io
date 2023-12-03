@@ -12,7 +12,6 @@ icon: fa-lightbulb
 ![ruff](https://img.shields.io/badge/linter-ruff-006400?&style=flat-square)
 ![mypy](https://img.shields.io/badge/typechecker-mypy-blue?&style=flat-square)
 
-
 ### Setup
 
 #### Pre-requisites
@@ -20,11 +19,14 @@ icon: fa-lightbulb
 <div class="text-justify">
 
 {% highlight bash %}
+
 # clone the repo
+
 mkdir my_new_project && cd my_new_project
 git clone https://github.com/MultifokalHirn/python_template_repo.git .
 <!--more-->
 # optional: remove the git history to start fresh
+
 rm -rf .git/ && git init
 
 {% endhighlight %}
@@ -38,23 +40,27 @@ rm -rf .git/ && git init
 </div>
 </div> -->
 
-
 #### Development Setup
 
 <div class="row" style="display: flex; flex-direction: row;">
 <div class="col" style="flex: 1;">
 
 {% highlight bash %}
+
 # ensure python3 is installed
+
 python3 --version # should be >= 3.8.1
 
 make bootstrap  
+
 # creates a fresh virtualenv & installs prod requirements
 
 make dev
+
 # this will install all the dev requirements
 
 make test
+
 # this will run all the tests
 
 {% endhighlight %}
@@ -64,13 +70,17 @@ make test
 {% include asciinema.html id="template-project-make2" cast="/assets/casts/template-project-make-2.cast" %}
 </div>
 </div>
+
 ### pre-commit hooks
+
 {% highlight bash %}
 
 # install the pre-commit hooks
+
 pre-commit install && pre-commit install --hook-type commit-msg
 
 # run the pre-commit hooks on all files to start with a clean slate
+
 pre-commit run --all-files
 {% endhighlight %}
 
@@ -78,8 +88,8 @@ pre-commit run --all-files
 <br />
 
 ### Project Status
+
 [![Tests](https://github.com/MultifokalHirn/python_template_repo/actions/workflows/python-checks.yaml/badge.svg?branch=main)](https://github.com/MultifokalHirn/python_template_repo/actions/workflows/python-checks.yaml)
 ![GitHub last commit](https://img.shields.io/github/last-commit/MultifokalHirn/python_template_repo)
 ![GitHub issues](https://img.shields.io/github/issues/MultifokalHirn/python_template_repo)
 ![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/MultifokalHirn/python_template_repo)
-

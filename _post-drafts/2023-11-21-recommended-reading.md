@@ -19,8 +19,6 @@ The conversation also touches on Object-Oriented Design, illustrating how depend
 
 The article concludes with the young developer struggling to grasp these concepts, implying that a deeper understanding of software architecture may come with experience and an open mind towards these principles.
 
-
-
 ## Effective Engineering Teams
 
 [Link](https://addyosmani.com/blog/effective-teams/)
@@ -28,6 +26,7 @@ The article concludes with the young developer struggling to grasp these concept
 The blog article "Effective Engineering Teams," is based on Google's Project Aristotle, which sought to understand what makes a team effective. The project followed the earlier Project Oxygen and was driven by the idea that a team's whole is greater than the sum of its parts. It distinguished between work groups and teams by their level of interdependence and sought to define team effectiveness beyond traditional metrics like code lines or bug fixes.
 
 Key Findings of Project Aristotle:
+
 1. **Psychological Safety**: This emerged as the most crucial factor. It's about the team's comfort in taking risks without fear of negative repercussions, encouraging innovation and learning.
 2. **Dependability**: Relates to team members consistently delivering high-quality work on time.
 3. **Structure and Clarity**: Involves clear understanding of job roles, processes, and performance consequences.

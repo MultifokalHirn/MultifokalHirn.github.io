@@ -50,7 +50,6 @@ brew install --cask osxfuse dozer
 brew install orbstack glances
 ```
 
-
 #### oh-my-zsh
 
 ```bash
@@ -97,5 +96,3 @@ brew install --cask font-sf-mono-nerd-font-ligaturized
 brew install hicolor-icon-theme
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip ~/Downloads/Hack.zip
 ```
-
-

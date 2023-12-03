@@ -4,4 +4,4 @@ author: Lennard Wolf
 layout: post
 ---
 
-https://docs.python.org/3/library/warnings.html
+<https://docs.python.org/3/library/warnings.html>

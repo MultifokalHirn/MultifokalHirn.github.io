@@ -33,8 +33,5 @@ def greet() -> None:
 
 {% endhighlight %} -->
 
-
-
 {% include termynal.html id="content1" content=page.content1 %}
 <!-- {% include termynal.html id="content2" content=page.content2 %} -->
-

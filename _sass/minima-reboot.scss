@@ -10,7 +10,6 @@
   src: url("../../assets/fonts/LM/LM-italic.ttf");
 }
 
-
 @font-face {
   font-family: "Geist Mono";
   src: url("../../assets/fonts/Geist/GeistMonoVF.ttf");
@@ -37,16 +36,30 @@
 
 @font-face {
   font-family: "Hack Nerd Font Mono";
-  src: local(Hack Nerd Font Mono Regular),
+  src:
+    local(Hack Nerd Font Mono Regular),
     url("/assets/fonts/Hack/HackNerdFontMono-Regular.ttf") format("truetype");
   font-stretch: normal;
   // font-style: normal;
   // font-weight: 700;
 }
 
-$base-font-family: "Latex Regular", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif !default;
-$code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono", "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
-$base-font-size: 1.0rem !default;
+$base-font-family:
+  "Latex Regular",
+  -apple-system,
+  system-ui,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Apple Color Emoji",
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif !default;
+$code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono",
+  "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+$base-font-size: 1rem !default;
 $base-font-weight: 500 !default;
 $small-font-size: 0.875rem !default;
 $base-line-height: 1.35 !default;
@@ -103,6 +116,4 @@ pre {
   }
 }
 
-@import "minima-reboot/layout",
-"minima-reboot/syntax-highlighting"
-;
+@import "minima-reboot/layout", "minima-reboot/syntax-highlighting";
