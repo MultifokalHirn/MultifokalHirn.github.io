@@ -67,8 +67,9 @@ $code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inco
   "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
 $base-font-size: 1.2rem !default;
 $base-font-weight: 500 !default;
-$small-font-size: 0.8rem !default;
+$small-font-size: 0.9rem !default;
 $base-line-height: 1.35 !default;
+$small-line-height: 0.95rem !default;
 $brand-color: blue !default;
 $spacing-unit: 1.2rem !default;
 // $base-text-decoration-thickness: 1px !default;
@@ -94,8 +95,7 @@ $breakpoint-desktop: 1400px !default;
 }
 
 // Base styles
-body,
-pre {
+body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -113,6 +113,28 @@ th {
   text-decoration-style: none;
 }
 
+code {
+  font-family: $code-font-family;
+  font-size: $small-font-size;
+  // line-height: 1rem;
+  // font-weight: $base-font-weight;
+  // line-height: $base-line-height;
+  color: black;
+  text-decoration: none;
+  text-decoration-style: none;
+
+  span,
+  p {
+    font-family: $code-font-family;
+    font-size: $small-font-size;
+    // line-height: 1rem;
+    // font-weight: $base-font-weight;
+    // line-height: $base-line-height;
+    // color: black;
+    text-decoration: none;
+    text-decoration-style: none;
+  }
+}
 // Adjust content width and spacing for larger screens
 @include media-query($breakpoint-palm) {
   .wrapper {

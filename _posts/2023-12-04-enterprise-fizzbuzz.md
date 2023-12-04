@@ -21,7 +21,6 @@ But:
   for multiples of three, print "Fizz" instead of the number;
   for multiples of five, print "Buzz" instead of the number;
   for multiples of both three and five, print "FizzBuzz"  instead of the number.
-
 ```
 
 A solution in Python:
@@ -42,6 +41,40 @@ fizzbuzz()
 ```
 
 ### Enterprise FizzBuzz
+
+Enterprise FizzBuzz is a joke term poking fun at seemingly overengineered or at least wildly intransparent architectures of large scale organizations, with it's root perhaps in the actual implementation [`FizzBuzzEnterpriseEdition`](https://github.com/EnterpriseQualityCoding/FizzBuzzEnterpriseEdition) in *Java*. Just to give you an idea of what I mean, here is the `Main.java` file in which the FizzBuzz is actually executed:
+
+``` java
+package com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.impl.parameters.DefaultFizzBuzzUpperLimitParameter;
+import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.interfaces.FizzBuzz;
+import com.seriouscompany.business.java.fizzbuzz.packagenamingpackage.interfaces.parameters.FizzBuzzUpperLimitParameter;
+
+/**
+ * Main
+ */
+public final class Main {
+
+    /**
+     * @param args
+     */
+    public static void main(final String[] args) {
+        final ApplicationContext context = new ClassPathXmlApplicationContext(Constants.SPRING_XML);
+        final FizzBuzz myFizzBuzz = (FizzBuzz) context.getBean(Constants.STANDARD_FIZZ_BUZZ);
+        final FizzBuzzUpperLimitParameter fizzBuzzUpperLimit = new DefaultFizzBuzzUpperLimitParameter();
+        myFizzBuzz.fizzBuzz(fizzBuzzUpperLimit.obtainUpperLimitValue());
+
+        ((ConfigurableApplicationContext) context).close();
+
+    }
+
+}
+```
 
 {% comment %}
 

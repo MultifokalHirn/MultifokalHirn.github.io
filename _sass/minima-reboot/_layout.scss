@@ -272,9 +272,9 @@ li:hover {
     rgba(0, 0, 255, 0.2),
     rgba(0, 0, 255, 0.9)
   ) !important;
-  background-color: blue($color: #000000);
+
   transition: background-color 1s;
-  transition-delay: 0.1s;
+  // transition-delay: 0.1s;
   // border-spacing: 1px;
   border: 3px solid blue;
   // transition: border 0.1s linear;
@@ -282,7 +282,20 @@ li:hover {
   // border-spacing: -100px;
   border-bottom: 3px solid blue;
   border-top: 0px dotted blue;
-  border-top: 0px dotted blue;
+  // border-top: 0px dotted blue;
+  // invert all colors
+  // background-color: blue;
+
+  // transition: color 1s;
+  // p,
+  // span,
+  // h1,
+  // h2,
+  // h3,
+  // h4 {
+  //   color: white !important;
+  //   transition: color 0.2s;
+  // }
 }
 
 .website-title {
@@ -387,26 +400,26 @@ li:hover {
   margin-bottom: 0.5rem;
   // font-size: 0.8rem;
 }
-.highlight {
-  font-size: 0.8rem;
-}
+// .highlight div {
+//   width: 90%;
+//   margin: 0 1.25rem auto auto;
+// }
 .highlight pre {
   font-family: "Hack Nerd Font Mono";
   border: 1px dotted $layout-color-border;
-  // border-radius: .25rem;
+  border-radius: 0.1rem;
+  width: 95%;
+  line-height: 1.1rem;
+  margin: 0.5rem auto 1.25rem auto;
+  padding: 1rem 1rem 1.5rem 1rem;
   background-color: $layout-color-syntax-highlighting-background;
-  padding: 0.75rem;
-  // font-size: 0.9rem;
-  margin-bottom: 1rem;
-  white-space: break-spaces;
-  font-size: 0.8rem;
+  // padding: 1rem;
+  // margin-bottom: 1.25rem;
+  // white-space: break-spaces;
+  // font-size: 0.8rem;
   text-decoration: none !important;
 }
-// .highlight p,
-// .hightlight span {
-//   // color: black;
-//   font-size: 0.8rem;
-// }
+
 .contact-list,
 .social-media-list {
   list-style: none;

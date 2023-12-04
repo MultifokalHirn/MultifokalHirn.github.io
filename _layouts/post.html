@@ -4,7 +4,7 @@ layout: default
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <header class="pt-2 pb-3">
     <h3 itemprop="name headline"
-      style="text-decoration: underline; text-decoration-thickness: 3px;  text-decoration-color: blue; margin-bottom: 1rem">
+      style="text-decoration: underline; text-decoration-thickness: 2px;  text-decoration-color: blue; margin-bottom: 1rem">
       {{ page.title | escape }}
     </h3>
     <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; ">
@@ -40,8 +40,8 @@ layout: default
     #{{ tag }}
   </a>
   {% endfor %}
-
-  <span>[
+  <br />
+  <span style="font-size: small">[
     {% for tag in page.tags %}
     {% capture tag_name %}{{ tag }}{% endcapture %}
     <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
