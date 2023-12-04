@@ -47,13 +47,17 @@ body {
   position: relative;
 }
 
+// span,
+// p {
+//   font-size: 1.2rem;
+// }
+
 body {
   // border-left: 2px dashed $layout-color-border;
   // border-right: 2px dashed $layout-color-border;
   font-family: $base-font-family;
   background-color: $layout-color-background !important;
   // margin-top: 2%;
-  font-size: medium;
 
   // text-decoration-thickness: $base-text-decoration-thickness;
   .container {
@@ -61,6 +65,12 @@ body {
     border-left: 2px solid $layout-color-border;
     border-right: 2px solid $layout-color-border;
   }
+  // .content {
+  //   a {
+  //     color: blue;
+  //     text-decoration: none;
+  //     background-color: inherit;
+  //   }
 }
 
 header {
@@ -68,7 +78,7 @@ header {
   color: black;
 
   h2 {
-    font-family: "Latex Bold";
+    font-family: "Latex Italic";
     font-style: normal;
     // text-decoration-thickness: $base-text-decoration-thickness;
     // color: $brand-color !important;
@@ -80,7 +90,7 @@ header {
 }
 
 #nav-header {
-  font-family: "Latex Bold";
+  font-family: "Latex Regular";
   color: black; // border-top: 3px dashed !important;;
   text-decoration-thickness: $base-text-decoration-thickness;
 }
@@ -94,7 +104,7 @@ img.mystery-green-area {
   font-size: 1.1rem;
   // padding-bottom: 10%; // min-height: 5%;
   border: 0px dotted rgba(0, 128, 0, 0.9);
-  border-bottom: 0px dashed rgba(0, 128, 0, 0.7);
+  border-bottom: 0.3rem dashed rgba(0, 128, 0, 0.7);
   background: rgba(30, 200, 30, 0.02);
   opacity: 1;
   // max-height: 20%;
@@ -156,11 +166,11 @@ img.mystery-green-area {
 
 .menu-opts {
   // padding: 5%;
-  padding-right: 3%;
+  padding-right: 2rem;
   text-decoration-style: dotted !important;
   text-decoration-thickness: 2px;
   color: black;
-  font-size: 1.1rem !important;
+  font-size: 1.2rem !important;
   text-decoration-color: blue !important;
   // font-size: 1.0rem !important;
   line-height: 1.6rem;
@@ -203,41 +213,47 @@ img.mystery-green-area {
 
 #content-container {
   padding-top: 1.5rem;
+  // font-size: 1.2rem;
   // border-top: 5px solid $layout-color-border !important;
   // border-top: 1px solid green !important;
 }
 
-#my-hover-class {
-  // background-color: inherit;
-}
-
-#my-hover-class:hover {
-  background-color: black;
-}
-
-a #link-area-lw {
+.link-area-lw {
   text-decoration: none;
-  text-decoration-style: dotted;
-
+  text-decoration-style: none;
   // text-decoration-thickness: $base-text-decoration-thickness;
-  #link-in-text {
-    // text-decoration-thickness: $base-text-decoration-thickness;
-    color: blue;
+  a,
+  p,
+  span {
+    // color: black;
+    text-decoration: none;
     font-size: inherit;
-    // text-decoration-style: inherit;
+    // font-size: 1.2rem;
+  }
+  .highlight pre {
+    font-size: 0.8rem;
   }
 
   color: black !important;
-  font-size: inherit;
+  // font-size: inherit;
   // text-decoration: inherit;
   // text-decoration-style: inherit;
   // text-decoration-thickness: 2.5px;
-  text-decoration-color: white;
+  // text-decoration-color: white;
+}
+
+#overlayed-link div {
+  p,
+  span {
+    color: inherit;
+    font-size: inherit;
+    // text-decoration: none;
+  }
 }
 
 #link-area-lw,
 li {
-  background-color: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   transition: background-color 0.5s ease-out;
   // transition-delay: 0.1s;
   // transition: border 0.25s linear;
@@ -266,6 +282,7 @@ li:hover {
   // border-spacing: -100px;
   border-bottom: 3px solid blue;
   border-top: 0px dotted blue;
+  border-top: 0px dotted blue;
 }
 
 .website-title {
@@ -293,19 +310,8 @@ li:hover {
   transition: text-decoration-thickness 0.05s;
 }
 
-pre {
-  color: black;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-a {
-  color: blue;
-  text-decoration: none;
-  background-color: inherit;
-}
-
 .author-image {
+  background-color: rgba(255, 0, 0, 0);
   background-color: rgba(255, 0, 0, 0);
   transition: background-color 0.8s ease;
   transition-delay: 0.3s;
@@ -332,20 +338,20 @@ a {
     text-decoration-thickness: 0px;
   }
 
-  a #link {
-    // text-decoration-thickness: $base-text-decoration-thickness;
-    color: $brand-color !important;
-    text-decoration: underline;
-    // text-decoration-thickness: 2.5px;
-    text-decoration-style: dotted;
-    // text-decoration-color: $brand-color !important;
-  }
+  // .link a {
+  //   // text-decoration-thickness: $base-text-decoration-thickness;
+  //   color: $brand-color !important;
+  //   text-decoration: underline;
+  //   // text-decoration-thickness: 2.5px;
+  //   text-decoration-style: dotted;
+  //   // text-decoration-color: $brand-color !important;
+  // }
 
   blockquote {
     border-left: 4px solid $layout-color-border;
     // padding-left: 1rem;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .footnotes {
@@ -355,7 +361,7 @@ a {
 
 #site-footer {
   font-size: small;
-  font-family: "FiraCodeNerdFontMonoLight";
+  font-family: "Hack Nerd Font Mono";
   text-align: right;
 
   // border-left: 2px dashed $layout-color-border;
@@ -379,22 +385,28 @@ a {
   // font-size: small;
   color: black !important;
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  // font-size: 0.8rem;
 }
-
+.highlight {
+  font-size: 0.8rem;
+}
 .highlight pre {
   font-family: "Hack Nerd Font Mono";
   border: 1px dotted $layout-color-border;
   // border-radius: .25rem;
   background-color: $layout-color-syntax-highlighting-background;
   padding: 0.75rem;
-  font-size: 0.9rem;
+  // font-size: 0.9rem;
   margin-bottom: 1rem;
   white-space: break-spaces;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-decoration: none !important;
 }
-
+// .highlight p,
+// .hightlight span {
+//   // color: black;
+//   font-size: 0.8rem;
+// }
 .contact-list,
 .social-media-list {
   list-style: none;

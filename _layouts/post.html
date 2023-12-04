@@ -3,14 +3,17 @@ layout: default
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
   <header class="pt-2 pb-3">
-    <h2 itemprop="name headline">{{ page.title | escape }}</h2>
-    <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; font-size: small;">
+    <h3 itemprop="name headline"
+      style="text-decoration: underline; text-decoration-thickness: 3px;  text-decoration-color: blue; margin-bottom: 1rem">
+      {{ page.title | escape }}
+    </h3>
+    <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; ">
       {% if page.author %}
       {% if page.author_url %}
       <a href="{{ page.author_url }}">
         {% endif %}
         <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name">
+          <span itemprop="name" style="font-size: 1.2rem;">
             {{ page.author }}
           </span>
         </span>
@@ -27,7 +30,7 @@ layout: default
   </header>
 
   <div class="text-justify" itemprop="articleBody" id="content"
-    style="width: 98%; padding-top: 2%; padding-left: 2%; padding-right: 2%; font-size: medium;">
+    style="width: 98%; padding-top: 2%; padding-left: 2%; padding-right: 2%; border-top: 2px dashed blue">
     {{ content }}
   </div>
 
@@ -38,12 +41,12 @@ layout: default
   </a>
   {% endfor %}
 
-  <!-- <span>[
+  <span>[
     {% for tag in page.tags %}
-      {% capture tag_name %}{{ tag }}{% endcapture %}
-      <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
     {% endfor %}
-  ]</span> -->
+    ]</span>
 
   <!-- {% if site.disqus.shortname %}
     {% include disqus_comments.html %}

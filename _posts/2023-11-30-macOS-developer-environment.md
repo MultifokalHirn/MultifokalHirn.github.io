@@ -4,6 +4,13 @@ author: Lennard Wolf
 layout: post
 icon: apple
 ---
+
+
+This is a guide to setting up a developer environment on macOS. It is a living document and will be updated as I learn new things.
+The repository for this guide will be published soon.
+
+
+<!--more-->
 ### Basics
 
 #### brew

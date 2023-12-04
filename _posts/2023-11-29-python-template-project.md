@@ -11,28 +11,28 @@ icon: fa-lightbulb
 ![pytest](https://img.shields.io/badge/test%20suite-pytest-0A9EDC?logo=pytest&logoColor=FFFFFF&style=flat-square)
 ![ruff](https://img.shields.io/badge/linter-ruff-006400?&style=flat-square)
 ![mypy](https://img.shields.io/badge/typechecker-mypy-blue?&style=flat-square)
+<!--more-->
 
 ### Setup
 
 #### Pre-requisites
 
-<div class="text-justify">
+<!-- <div class="text-justify"> -->
 
 {% highlight bash %}
 
 # clone the repo
 
 mkdir my_new_project && cd my_new_project
-git clone https://github.com/MultifokalHirn/python_template_repo.git .
-<!--more-->
+git clone <https://github.com/MultifokalHirn/python_template_repo.git> .
+
 # optional: remove the git history to start fresh
 
 rm -rf .git/ && git init
 
 {% endhighlight %}
-<!--more-->
 
-</div>
+<!-- </div> -->
 <!-- <div class="row text-justify" style="display: flex; flex-direction: row;">
 <div class="col-md-4"  style="flex: 1;"> </div>
 <div class="col-md-6"  style="flex: 1;">
@@ -42,8 +42,8 @@ rm -rf .git/ && git init
 
 #### Development Setup
 
-<div class="row" style="display: flex; flex-direction: row;">
-<div class="col" style="flex: 1;">
+<!-- <div class="row" style="display: flex; flex-direction: row;"> -->
+<!-- <div class="col" style="flex: 1;"> -->
 
 {% highlight bash %}
 
@@ -64,11 +64,11 @@ make test
 # this will run all the tests
 
 {% endhighlight %}
-</div>
+<!-- </div> -->
 
-<div class="col" style="min-width: 0% !important; flex: 1;">
+<!-- <div class="col" style="min-width: 0% !important; flex: 1;"> -->
 {% include asciinema.html id="template-project-make2" cast="/assets/casts/template-project-make-2.cast" %}
-</div>
+<!-- </div> -->
 </div>
 
 ### pre-commit hooks

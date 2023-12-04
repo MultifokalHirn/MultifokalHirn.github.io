@@ -6,7 +6,7 @@
 <div class="pt-2 pb-3" style="padding-left: 1%;">
     <h1>Posts</h1>
 </div>
-<div id="content">
+<div id="content" style="width: 100%;">
     {% if posts.size == 0 %}
     <p>No posts <i>yet</i>.</p>
     {% else %}
@@ -19,21 +19,22 @@
                 style="width: 96%; padding-left: 2%; margin-left: 2%; padding-right: 2%; margin-right: 2%; padding-bottom: 2%; margin-bottom: 2%; ">
 
                 <h3 class="mt-0"
-                    style="padding-top: 0%; text-decoration: underline; text-decoration-thickness: 3px;  text-decoration-color: blue; color: #000000; margin-bottom: 0.5%">
+                    style="padding-top: 0%; text-decoration: underline; text-decoration-thickness: 3px;  text-decoration-color: blue; color: #000000; margin-bottom: 1%">
                     {{ post.title | escape }}
                 </h3>
                 <span class="text-secondary"
                     style="padding: 0%; margin-bottom: 5%; font-family: 'Hack Nerd Font Mono'; font-size: small;">
                     {{ post.date | date: date_format }}
                 </span>
-                <div class="text-justify"
-                    style="font-size: 1rem; padding-left: 1%; padding-right: 1%; padding-bottom: 2%; margin-top: 2%; margin-bottom: 1%; border-top: 0% dashed #dcdee0; border: 0px dashed #dcdee0; border-top: 2px dashed blue">
+                <div class="overlayed-link"
+                    style="padding-left: 1%; padding-right: 1%; padding-bottom: 2%;padding-top: 1rem; margin-top: 1rem; margin-bottom: 1%; border-top: 0% dashed #dcdee0; border: 0px dashed #dcdee0; border-top: 2px dashed blue">
+
                     {{ post.excerpt }}
 
                 </div>
                 <div align="right">
                     <img class="tbc" src="{{ site.baseurl }}/assets/images/continued.png"
-                        style="max-width: 16%; padding: 0%; border: 0px solid blue;; " alt="link" />
+                        style="max-width: 16%; padding: 0%; border: 0px solid blue; " alt="link" />
                     <br />
                     <br />
                 </div>

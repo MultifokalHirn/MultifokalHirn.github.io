@@ -6,11 +6,12 @@ layout: compress
 
 {% include head.html %}
 
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
+<body style="display: flex; flex-direction: column; min-height: 100vh; ">
 
   {% include header.html %}
   <div id="content-container" class="container" style="flex: 1; padding-left: 1%; padding-right: 1%;">
-    <main id="main" aria-label="Content">
+    <main id="main" aria-label="Content"
+      style="width: 94%; margin-top: 1%; padding-left: 1%; padding-right: 1%; margin-left: auto; margin-right: auto; ">
       {{ content }}
       <br />
     </main>

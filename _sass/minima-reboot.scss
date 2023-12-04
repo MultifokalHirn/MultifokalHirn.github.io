@@ -6,8 +6,14 @@
 }
 
 @font-face {
-  font-family: "Latex Bold";
+  font-family: "Latex Italic";
   src: url("../../assets/fonts/LM/LM-italic.ttf");
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Latex Bold";
+  // uglyy
+  src: url("../../assets/fonts/LM/LM-bold.ttf");
 }
 
 @font-face {
@@ -59,9 +65,9 @@ $base-font-family:
   sans-serif !default;
 $code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono",
   "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
-$base-font-size: 1rem !default;
+$base-font-size: 1.2rem !default;
 $base-font-weight: 500 !default;
-$small-font-size: 0.875rem !default;
+$small-font-size: 0.8rem !default;
 $base-line-height: 1.35 !default;
 $brand-color: blue !default;
 $spacing-unit: 1.2rem !default;
@@ -93,6 +99,18 @@ pre {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+}
+
+p,
+span,
+li,
+td,
+th {
+  font-weight: $base-font-weight;
+  font-size: $base-font-size;
+  color: black;
+  text-decoration: none;
+  text-decoration-style: none;
 }
 
 // Adjust content width and spacing for larger screens
