@@ -12,7 +12,7 @@ author_gravatar: aa4d7d1621a82415168ad023db78c870 # Your Gravatar md5 hash here 
 
 # Site Settings
 url: https://multifokalhirn.github.io
-remote_theme: aterenin/minima-reboot
+# remote_theme: aterenin/minima-reboot
 
 plugins:
   - jekyll-redirect-from

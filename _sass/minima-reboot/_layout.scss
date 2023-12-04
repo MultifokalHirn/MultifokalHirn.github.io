@@ -1,32 +1,17 @@
-// $layout-color-border: #e9ecef !default;
 $layout-color-border: black !default;
 $layout-color-background: #fdfdfd !default;
 $layout-color-syntax-highlighting-background: #fafafa !default;
-// $layout-responsive-nav-cutoff: 768px !default; // Consider adjusting based on design needs
-$layout-responsive-nav-cutoff: 1024px !default; // Consider adjusting based on design needs
+$layout-responsive-nav-cutoff: 1024px !default;
 $base-text-decoration-thickness: 5px !default;
 
 html {
-  // body,
-  // header {
-  //   border-bottom: 2px dashed $layout-color-border;
-  // }
-
   header {
-    // border-bottom: 1px dotted $layout-color-border;
     white-space: nowrap;
     color: #000 !important;
-    // text-decoration-thickness: $base-text-decoration-thickness;
-    // color: $brand-color !important;
-    // text-decoration: underline;
-    // text-decoration-thickness: 2.5px;
     text-decoration-style: dotted;
-    // text-decoration-color: $brand-color !important;
   }
 
   footer {
-    // border-top: 2px dashed $layout-color-border;
-
     .container {
       z-index: 500;
       border-top: 2px solid $layout-color-border;
@@ -39,59 +24,32 @@ html {
 html,
 body {
   overflow-x: hidden;
-
-  // color: $brand-color !important;
 }
 
 body {
   position: relative;
-}
-
-// span,
-// p {
-//   font-size: 1.2rem;
-// }
-
-body {
-  // border-left: 2px dashed $layout-color-border;
-  // border-right: 2px dashed $layout-color-border;
   font-family: $base-font-family;
   background-color: $layout-color-background !important;
-  // margin-top: 2%;
 
-  // text-decoration-thickness: $base-text-decoration-thickness;
   .container {
-    // border-bottom: 2px dashed $layout-color-border !important;
     border-left: 2px solid $layout-color-border;
     border-right: 2px solid $layout-color-border;
   }
-  // .content {
-  //   a {
-  //     color: blue;
-  //     text-decoration: none;
-  //     background-color: inherit;
-  //   }
 }
 
 header {
-  // border-bottom: 3px solid $layout-color-border !important;
   color: black;
 
   h2 {
     font-family: "Latex Italic";
     font-style: normal;
-    // text-decoration-thickness: $base-text-decoration-thickness;
-    // color: $brand-color !important;
-    // text-decoration: underline;
-    // text-decoration-thickness: 2.5px;
     text-decoration-style: dotted;
-    // text-decoration-color: $brand-color !important;
   }
 }
 
 #nav-header {
   font-family: "Latex Regular";
-  color: black; // border-top: 3px dashed !important;;
+  color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
 }
 
@@ -100,25 +58,19 @@ img.mystery-green-area {
 }
 
 .mystery-green-area {
-  padding: 1% 1% 1% 1%;
+  // padding: 1% 1% 1% 1%;
   font-size: 1.1rem;
-  // padding-bottom: 10%; // min-height: 5%;
   border: 0px dotted rgba(0, 128, 0, 0.9);
-  border-bottom: 0.3rem dashed rgba(0, 128, 0, 0.7);
-  background: rgba(30, 200, 30, 0.02);
+  // border-bottom: 0.3rem dashed rgba(0, 128, 0, 0.7);
+  // background: rgba(30, 200, 30, 0.02);
   opacity: 1;
-  // max-height: 20%;
   transition: opacity 2.5s ease-in-out;
   transition-delay: 3s;
-  // display: flex
 }
 
 .mystery-green-area:hover {
-  // border: 5px dotted rgba(136, 221, 136, 0.5);
-  // opacity: 0;
   transition: opacity 1s ease;
   transition-delay: 0.8s;
-  transition-delay: unset;
   transition: border 1s ease;
 }
 
@@ -126,63 +78,41 @@ img.mystery-green-area {
   height: 4.9rem;
   border-left: 2px dashed $layout-color-border;
   border-right: 2px dashed $layout-color-border;
-  // background: rgba(0, 0, 255, 0.02);
-  // box-shadow: 1rem 1rem 2rem 2rem rgba(0, 0, 0, 0.975);
-  // -moz-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
-  // -webkit-box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
-  // box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.4);
 }
 
 #nav-menu-container {
   font-family: $base-font-family;
-  // font-weight: "medium";
   color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
   background-color: $layout-color-background;
   margin-top: 0rem;
 
   @media (min-width: $layout-responsive-nav-cutoff) {
-    position: relative; // Adjust if needed for larger screens
+    position: relative;
     z-index: 100;
-    // right: 0.5rem;
-
-    // border: 1px solid $layout-color-border;
-    // background-color: transparent;
     background-color: $layout-color-background;
   }
 
   @media (max-width: 90%) {
-    //$layout-responsive-nav-cutoff - 1) {
     position: absolute;
     z-index: 100;
-    // top: 0.1rem;
-    // right: 0.5rem;
-
-    // border: 1px solid $layout-color-border;
-    // border-radius: .25rem;
     background-color: $layout-color-background;
   }
 }
 
 .menu-opts {
-  // padding: 5%;
   padding-right: 2rem;
   text-decoration-style: dotted !important;
   text-decoration-thickness: 2px;
   color: black;
   font-size: 1.2rem !important;
   text-decoration-color: blue !important;
-  // font-size: 1.0rem !important;
   line-height: 1.6rem;
   text-decoration: underline;
-  // text-decoration-style: wavy !important;
 }
 
-// text-decoration-thickness: 5px
-// border-left: 2px dashed $layout-color-border;
-// border-right: 2px dashed $layout-color-border;
 .menu-opts:hover {
-  font-size: 1.1rem !important;
+  font-size: 1.2rem !important;
   text-decoration-color: blue !important;
   text-decoration-thickness: 2px;
   text-decoration-style: wavy !important;
@@ -202,44 +132,30 @@ img.mystery-green-area {
 #nav-trigger:checked ~ .navbar-toggler-icon {
   display: hidden;
   cursor: pointer;
-  // margin-top: 5%;
 }
 
 .navbar-toggler-icon {
   display: flex;
-  // justify-content: center;
-  // align-items: center;
 }
 
 #content-container {
   padding-top: 1.5rem;
-  // font-size: 1.2rem;
-  // border-top: 5px solid $layout-color-border !important;
-  // border-top: 1px solid green !important;
 }
 
 .link-area-lw {
   text-decoration: none;
   text-decoration-style: none;
-  // text-decoration-thickness: $base-text-decoration-thickness;
   a,
   p,
   span {
-    // color: black;
     text-decoration: none;
     font-size: inherit;
-    // font-size: 1.2rem;
   }
   .highlight pre {
     font-size: 0.8rem;
   }
 
   color: black !important;
-  // font-size: inherit;
-  // text-decoration: inherit;
-  // text-decoration-style: inherit;
-  // text-decoration-thickness: 2.5px;
-  // text-decoration-color: white;
 }
 
 #overlayed-link div {
@@ -247,7 +163,6 @@ img.mystery-green-area {
   span {
     color: inherit;
     font-size: inherit;
-    // text-decoration: none;
   }
 }
 
@@ -255,10 +170,6 @@ img.mystery-green-area {
 li {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   transition: background-color 0.5s ease-out;
-  // transition-delay: 0.1s;
-  // transition: border 0.25s linear;
-  // transition-delay: 0.5s;
-  // transition-delay: 0.3s;
   border: 3px dashed blue;
   border-bottom: 3px dotted blue;
   border-top: 0px dotted blue;
@@ -272,59 +183,34 @@ li:hover {
     rgba(0, 0, 255, 0.2),
     rgba(0, 0, 255, 0.9)
   ) !important;
-
   transition: background-color 1s;
-  // transition-delay: 0.1s;
-  // border-spacing: 1px;
   border: 3px solid blue;
-  // transition: border 0.1s linear;
-  // transition-delay: 0.1s;
-  // border-spacing: -100px;
   border-bottom: 3px solid blue;
   border-top: 0px dotted blue;
-  // border-top: 0px dotted blue;
-  // invert all colors
-  // background-color: blue;
-
-  // transition: color 1s;
-  // p,
-  // span,
-  // h1,
-  // h2,
-  // h3,
-  // h4 {
-  //   color: white !important;
-  //   transition: color 0.2s;
-  // }
 }
 
 .website-title {
-  // font-size: 1.7rem;
-  font-size: 1.8rem !important;
+  font-size: 1.75rem !important;
   line-height: auto;
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-decoration-style: wavy !important;
   text-decoration-color: green !important;
-  transition: text-decoration-thickness 0.9s;
-  transition-delay: 0.1s;
+  transition: text-decoration-thickness 0.05s;
+  transition-delay: 0s;
   color: black;
-  max-width: 90%;
+  // max-width: 90%;
   overflow-x: visible;
 }
 
 .website-title:hover {
-  // font-size: 1.7rem !important;
-  // text-decoration: underline;
   text-decoration-thickness: 5px;
   text-decoration-style: wavy !important;
   transition-delay: 0s;
-  // text-decoration-color: green !important;
   transition: text-decoration-thickness 0.05s;
 }
 
 .author-image {
-  background-color: rgba(255, 0, 0, 0);
   background-color: rgba(255, 0, 0, 0);
   transition: background-color 0.8s ease;
   transition-delay: 0.3s;
@@ -351,18 +237,8 @@ li:hover {
     text-decoration-thickness: 0px;
   }
 
-  // .link a {
-  //   // text-decoration-thickness: $base-text-decoration-thickness;
-  //   color: $brand-color !important;
-  //   text-decoration: underline;
-  //   // text-decoration-thickness: 2.5px;
-  //   text-decoration-style: dotted;
-  //   // text-decoration-color: $brand-color !important;
-  // }
-
   blockquote {
     border-left: 4px solid $layout-color-border;
-    // padding-left: 1rem;
     font-style: italic;
     font-size: 0.8rem;
   }
@@ -377,11 +253,7 @@ li:hover {
   font-family: "Hack Nerd Font Mono";
   text-align: right;
 
-  // border-left: 2px dashed $layout-color-border;
-  // border-right: 2px dashed $layout-color-border;
-
   .container {
-    // border-bottom: 2px dashed $layout-color-border !important;
     border-top: 2px solid $layout-color-border;
     border-right: 2px dashed $layout-color-border;
     border-left: 2px dashed $layout-color-border;
@@ -393,17 +265,11 @@ li:hover {
 }
 
 .text-secondary {
-  // color: #555555 !important;
   font-family: "Hack Nerd Font Mono";
-  // font-size: small;
   color: black !important;
   margin-bottom: 0.5rem;
-  // font-size: 0.8rem;
 }
-// .highlight div {
-//   width: 90%;
-//   margin: 0 1.25rem auto auto;
-// }
+
 .highlight pre {
   font-family: "Hack Nerd Font Mono";
   border: 1px dotted $layout-color-border;
@@ -413,11 +279,6 @@ li:hover {
   margin: 0.5rem auto 1.25rem auto;
   padding: 1rem 1rem 1.5rem 1rem;
   background-color: $layout-color-syntax-highlighting-background;
-  // padding: 1rem;
-  // margin-bottom: 1.25rem;
-  // white-space: break-spaces;
-  // font-size: 0.8rem;
-  text-decoration: none !important;
 }
 
 .contact-list,
@@ -428,6 +289,6 @@ li:hover {
 
 .footer-col-wrapper,
 .social-links {
-  @include relative-font-size(0.9375); // Adjust if needed
+  @include relative-font-size(0.9375);
   color: $brand-color;
 }

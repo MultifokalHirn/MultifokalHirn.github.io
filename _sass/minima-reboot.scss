@@ -10,44 +10,39 @@
   src: url("../../assets/fonts/LM/LM-italic.ttf");
   font-stretch: normal;
 }
+
 @font-face {
   font-family: "Latex Bold";
-  // uglyy
   src: url("../../assets/fonts/LM/LM-bold.ttf");
 }
 
 @font-face {
   font-family: "Geist Mono";
   src: url("../../assets/fonts/Geist/GeistMonoVF.ttf");
-  font-weight: "medium";
+  font-weight: medium;
 }
 
 @font-face {
   font-family: "FiraCode";
   src: url("../../assets/fonts/FiraCode/FiraCode-Medium.ttf");
-  // font-weight: "medium";
 }
 
 @font-face {
   font-family: "FiraCodeNerdFontMonoLight";
   src: url("../../assets/fonts/FiraCode/FiraCodeNerdFontMono-Light.ttf");
-  // font-weight: "medium";
 }
 
 @font-face {
   font-family: "FiraCodeNerdFontMono";
   src: url("../../assets/fonts/FiraCode/FiraCodeNerdFontMono-Medium.ttf");
-  // font-weight: "medium";
 }
 
 @font-face {
   font-family: "Hack Nerd Font Mono";
   src:
-    local(Hack Nerd Font Mono Regular),
+    local("Hack Nerd Font Mono Regular"),
     url("/assets/fonts/Hack/HackNerdFontMono-Regular.ttf") format("truetype");
   font-stretch: normal;
-  // font-style: normal;
-  // font-weight: 700;
 }
 
 $base-font-family:
@@ -63,16 +58,17 @@ $base-font-family:
   Helvetica,
   Arial,
   sans-serif !default;
+
 $code-font-family: "Hack Nerd Font Mono", "FiraCodeNerdFontMono", "Menlo", "Inconsolata", "Consolas", "Roboto Mono",
   "Ubuntu Mono", "Liberation Mono", "Courier New", monospace;
+
 $base-font-size: 1.2rem !default;
 $base-font-weight: 500 !default;
 $small-font-size: 0.9rem !default;
 $base-line-height: 1.35 !default;
 $small-line-height: 0.95rem !default;
 $brand-color: blue !default;
-$spacing-unit: 1.2rem !default;
-// $base-text-decoration-thickness: 1px !default;
+$spacing-unit: 0.7rem !default;
 $table-text-align: left !default;
 
 // Base content width for small devices
@@ -116,9 +112,6 @@ th {
 code {
   font-family: $code-font-family;
   font-size: $small-font-size;
-  // line-height: 1rem;
-  // font-weight: $base-font-weight;
-  // line-height: $base-line-height;
   color: black;
   text-decoration: none;
   text-decoration-style: none;
@@ -127,14 +120,11 @@ code {
   p {
     font-family: $code-font-family;
     font-size: $small-font-size;
-    // line-height: 1rem;
-    // font-weight: $base-font-weight;
-    // line-height: $base-line-height;
-    // color: black;
     text-decoration: none;
     text-decoration-style: none;
   }
 }
+
 // Adjust content width and spacing for larger screens
 @include media-query($breakpoint-palm) {
   .wrapper {
@@ -156,4 +146,5 @@ code {
   }
 }
 
-@import "minima-reboot/layout", "minima-reboot/syntax-highlighting";
+@import "minima-reboot/layout";
+@import "minima-reboot/syntax-highlighting";
