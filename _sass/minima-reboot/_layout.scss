@@ -42,6 +42,12 @@ body {
     text-decoration-style: solid;
     text-decoration-color: blue;
     // border: blue 2px dotted;
+    line-height: 140%;
+  }
+  #content-container a:hover {
+    color: white;
+    // text-decoration-color: black;
+    background-color: black;
   }
 }
 .asciinema {
@@ -139,11 +145,11 @@ ul {
 
 .menu-opts {
   padding-top: 0px;
-  // padding-bottom: 2px;
-  margin-bottom: 1px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-bottom: 2px;
+  padding-bottom: 1px;
+  margin-bottom: 0px;
+  // padding-left: 2px;
+  // padding-right: 2px;
+  margin-bottom: 0px;
   margin-left: 2px;
   margin-right: 2px;
   text-decoration-style: wavy !important;
@@ -154,19 +160,20 @@ ul {
   text-decoration-color: blue !important;
   // line-height: 1.8rem;
   text-decoration: underline;
+  border: white 2px dotted;
 }
 
 .menu-opts:hover {
   // padding-right: 0rem;
   // font-size: 1.2rem !important;
-  padding-bottom: 1px;
-  margin-top: 1px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
+  // padding-bottom: 0px;
+  // margin-top: 1px;
+  // margin-bottom: 3px;
+  // margin-left: 0px;
+  // margin-right: 0px;
   text-decoration-color: blue !important;
-  text-decoration-thickness: 2px;
-  text-decoration-style: wavy !important;
+  // text-decoration-thickness: 2px;
+  // text-decoration-style: wavy !important;
   text-decoration: underline;
   border: blue 2px dotted;
 }
@@ -224,7 +231,7 @@ ul {
   transition: background-color 0.5s ease-out;
   border: 3px dashed blue;
   border-bottom: 3px dotted blue;
-  border-top: 0px dotted blue;
+  border-top: 3px dotted white;
 }
 
 // #link-area-lw,
@@ -236,9 +243,9 @@ ul {
     rgba(0, 0, 255, 0.9)
   ) !important;
   transition: background-color 1s;
-  border: 3px solid blue;
-  border-bottom: 3px solid blue;
-  border-top: 0px dotted blue;
+  border: 3px solid black;
+  border-bottom: 3px solid black;
+  // border-top: 3px dotted black;
 }
 
 .website-title {
@@ -246,20 +253,25 @@ ul {
   line-height: auto;
   text-decoration: underline;
   text-decoration-thickness: 3px;
-  text-decoration-style: wavy !important;
-  text-decoration-color: green !important;
-  transition: text-decoration-thickness 0.05s;
-  transition-delay: 0s;
+  text-decoration-style: wavy;
+
+  // transition: text-decoration-thickness 0.05s;
+  // transition-delay: 0s;
   color: black;
   // max-width: 90%;
   overflow-x: visible;
 }
 
 .website-title:hover {
-  text-decoration-thickness: 5px;
-  text-decoration-style: wavy !important;
+  // text-decoration-thickness: 5px;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  // text-decoration-color: black;
+  text-decoration-color: green;
+  transition: text-decoration-color 0.05s;
   transition-delay: 0s;
-  transition: text-decoration-thickness 0.05s;
+  // transition: text-decoration-thickness 0.05s;
+  // color: yellow;
 }
 
 .author-image {
