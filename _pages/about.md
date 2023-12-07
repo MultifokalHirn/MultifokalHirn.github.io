@@ -6,7 +6,7 @@ redirect_from:
     - /home
     - /about
 ---
-Hi, my name is Lennard Wolf and I am a Software Engineer living and working in Berlin.
+My name is Lennard Wolf and I am a Software Engineer living and working in Berlin.
 I am Tech Lead at [*Signatrix*](https://www.signatrix.com) where develop software and devOps infrastructure using Python, Flask, React.js, Docker, Ansible and many more.
 
 - [CV](https://multifokalhirn.github.io/resume)

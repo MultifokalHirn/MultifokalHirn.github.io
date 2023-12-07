@@ -225,35 +225,49 @@ ul {
   }
 }
 
-// #link-area-lw,
+#link-area-lw div,
 .my-hover-class {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-  transition: background-color 0.5s ease-out;
-  border: 3px dashed blue;
-  border-bottom: 3px dotted blue;
-  border-top: 3px dotted white;
+  background: rgba(0, 0, 255, 0.03);
+  // transition: background-color 0.5s ease-out;
+  border: 3px dashed rgba(0, 0, 255, 0.03);
+  // border-bottom: 3px dotted white;
+  // border-top: 3px dotted white;
+  a {
+    // background-color: white !important;
+    background-color: rgba(0, 0, 255, 0) !important;
+    color: black !important;
+    text-decoration: none;
+  }
 }
 
-// #link-area-lw,
+#link-area-lw div,
 .my-hover-class:hover {
   background-color: linear-gradient(
     rgba(0, 0, 255, 1),
     rgba(0, 0, 255, 0.4),
-    rgba(0, 0, 255, 0.2),
+    rgba(0, 0, 255, 0.03),
     rgba(0, 0, 255, 0.9)
   ) !important;
-  transition: background-color 1s;
-  border: 3px solid black;
-  border-bottom: 3px solid black;
+  // background: rgba(0, 0, 255, 0);
+  // transition: background-color 1s;
+  border: 3px dashed blue;
+  // border-bottom: 3px solid black;
   // border-top: 3px dotted black;
+  a {
+    // background-color: white !important;
+    background-color: rgba(0, 0, 255, 0) !important;
+    color: black !important;
+    text-decoration: none;
+  }
 }
 
 .website-title {
   font-size: 1.75rem !important;
   line-height: auto;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-decoration-style: wavy;
+  // text-decoration: underline;
+  // text-decoration-thickness: 3px;
+  // text-decoration-style: wavy;
 
   // transition: text-decoration-thickness 0.05s;
   // transition-delay: 0s;
@@ -262,17 +276,17 @@ ul {
   overflow-x: visible;
 }
 
-.website-title:hover {
-  // text-decoration-thickness: 5px;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  // text-decoration-color: black;
-  text-decoration-color: green;
-  transition: text-decoration-color 0.05s;
-  transition-delay: 0s;
-  // transition: text-decoration-thickness 0.05s;
-  // color: yellow;
-}
+// .website-title:hover {
+//   // text-decoration-thickness: 5px;
+//   text-decoration: underline;
+//   text-decoration-style: wavy;
+//   // text-decoration-color: black;
+//   // text-decoration-color: green;
+//   // transition: text-decoration-color 0.05s;
+//   // transition-delay: 0s;
+//   // transition: text-decoration-thickness 0.05s;
+//   // color: yellow;
+// }
 
 .author-image {
   background-color: rgba(255, 0, 0, 0);
@@ -281,11 +295,11 @@ ul {
   padding-bottom: 1%;
 }
 
-.author-image:hover {
-  background-color: rgba(255, 0, 0, 0.05);
-  transition: background-color 0.1s;
-  transition-delay: 0s;
-}
+// .author-image:hover {
+//   background-color: rgba(255, 0, 0, 0.05);
+//   transition: background-color 0.1s;
+//   transition-delay: 0s;
+// }
 
 #content {
   h1,

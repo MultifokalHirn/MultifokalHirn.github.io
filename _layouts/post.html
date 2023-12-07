@@ -1,19 +1,23 @@
 ---
 layout: default
 ---
-<div style="width: 98%; margin-left: 1px; margin-right: 1px; border-top: 2px dashed black">
-  <header class="pt-2 pb-3">
-    <h2 itemprop="name headline"
-      style="text-decoration: underline; text-decoration-thickness: 2px;  text-decoration-color: blue; margin-top: 1rem; margin-bottom: 2%">
-      {{ page.title | escape }}
-    </h2>
-    <p style="font-family: 'Hack Nerd Font Mono'; ">
+<div style="width: 99%; margin-left: 1px; margin-right: 1px; border-top: 0px dashed black">
+  <!-- <header class="pt-2 pb-3"> -->
+  <h2 itemprop="name headline"
+    style="text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px;  text-decoration-color: blue; margin-top: 0%; margin-bottom: 0% padding: 1%; border: 0px dotted black">
+    {{ page.title | escape }}
+  </h2>
+  <!-- </header> -->
+
+  <div itemprop="articleBody" id="content"
+    style="padding-bottom: 0%; padding-top: 2px; padding-left: 0%; padding-right: 0%; border-top: 1px dotted blue">
+    <p style="font-family: 'Hack Nerd Font Mono'; font-size: small; color: blue; ">
       {% if page.author %}
       {% if page.author_url %}
       <a href="{{ page.author_url }}">
         {% endif %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name" style="font-size: 1.2rem;">
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="font-size: small; color: black">
+          <span itemprop="name" style="font-size: small; color: black">
             {{ page.author }}
           </span>
         </span>
@@ -27,11 +31,7 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
     </p>
-  </header>
-
-  <div itemprop="articleBody" id="content"
-    style="padding-top: 2%; padding-left: 0%; padding-right: 0%; border-top: 1px dotted blue">
-    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <article itemscope itemtype="http://schema.org/BlogPosting" style="margin-top: 3%">
       {{ content }}
     </article>
   </div>
