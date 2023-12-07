@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="pt-2 pb-3">
+        <h3 itemprop="name headline"
+            style="text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: blue; margin-bottom: 1rem">
+            .dotfiles </h3>
+        <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; "> <span itemprop="author" itemscope
+                itemtype="http://schema.org/Person"> <span itemprop="name" style="font-size: 1.2rem;"> Lennard Wolf
+                </span> </span> &bull; <time datetime="" itemprop="datePublished"> </time> </p>
+    </header>
+    <div class="text-justify" itemprop="articleBody" id="content"
+        style="width: 100%; padding-top: 2%; padding-left: 0%; padding-right: 0%; border-top: 2px dashed blue">
+        <p>I have created a <a href="https://github.com/MultifokalHirn/.dotfiles">repository</a> for my
+            <code class="language-plaintext highlighter-rouge">.dotfiles</code>.
+        </p>
+        <p>For now, it mainly consists of:</p>
+        <ul>
+            <li>documentation on how to set up a machine based on this repository</li>
+            <li>configuration for <ul>
+                    <li><code class="language-plaintext highlighter-rouge">zsh</code></li>
+                    <li><code class="language-plaintext highlighter-rouge">git</code></li>
+                    <li><code class="language-plaintext highlighter-rouge">ruby gem</code></li>
+                </ul>
+            </li>
+            <li>a <code class="language-plaintext highlighter-rouge">Brewfile</code> with <code
+                    class="language-plaintext highlighter-rouge">brew</code> packages I consider essential
+            </li>
+        </ul>
+        <p>I will add more content to this repository over time. <!--more--></p>
+        <p>The <code class="language-plaintext highlighter-rouge">README.md</code> of the repository is
+            included below: <!-- <div id="readme" class="readme blob instapaper_body markdown-body"> -->
+            <!-- <article class=" entry-content container-lg" itemprop="text"> --> # .dotfiles
+        </p>
+        <h2 id="overview">Overview</h2>
+        <p>For now, this repository mainly consists of:</p>
+        <ul>
+            <li>configuration for <ul>
+                    <li><code class="language-plaintext highlighter-rouge">zsh</code></li>
+                    <li><code class="language-plaintext highlighter-rouge">git</code></li>
+                    <li><code class="language-plaintext highlighter-rouge">ruby gem</code></li>
+                </ul>
+            </li>
+            <li>a <code class="language-plaintext highlighter-rouge">Brewfile</code> with <code
+                    class="language-plaintext highlighter-rouge">brew</code> packages I consider essential
+            </li>
+        </ul>
+        <p>I mainly use devices running macOS, so some of the topics here may be specific to that operating
+            system. However, most of the config files are platform agnostic and can be used anywhere you
+            would want to use them. <!--more--></p>
+        <h2 id="using-this-repository">Using this Repository</h2>
+        <p>I follow the approach described in <a href="https://drewdevault.com/">Drew DeVault</a>’s blog <a
+                href="https://drewdevault.com/2019/12/30/dotfiles.html">post</a> “<em>Managing my dotfiles
+                as a git repository</em>”.</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code><span class="nb">cd</span> ~
+git init
+git remote add origin https://github.com/MultifokalHirn/.dotfiles.git
+git fetch <span class="nt">--all</span>
+</code></pre>
+            </div>
+        </div>
+        <p>The next step will be to merge the repository contents with your current setup. <strong>Please be
+                very careful here!</strong></p>
+        <blockquote>
+            <p><strong>Attention!</strong> If you are not on a fresh system, make a backup before
+                proceeding! Or at least go through the repo’s contents, and for all files that you probably
+                do not want to get overwritten, rename them to <code
+                    class="language-plaintext highlighter-rouge">&lt;name&gt;.bak</code> or somesuch.</p>
+        </blockquote>
+        <p>I recommend you first run the following, which will already work, if your home folder does not
+            conflict with the repo</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>git checkout main  <span class="c"># 'main' is this repo's main branch </span>
+</code></pre>
+            </div>
+        </div>
+        <p>If that <em>did</em> produce an error, you <em>can</em> force the <code
+                class="language-plaintext highlighter-rouge">checkout</code> as per below.</p>
+        <p>Again, <strong><em>please</em> make backups and make sure that you will not be able to overwrite
+                anything that cannot be restored</strong>.</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>git checkout <span class="nt">--force</span> main
+</code></pre>
+            </div>
+        </div>
+        <h2 id="basic-setup">Basic Setup</h2>
+        <h3 id="iterm2">iTerm2</h3>
+        <p>I use <a href="https://iterm2.com">iTerm2</a> as a replacement for <em>Terminal</em>, which comes
+            shipped with macOS. Please refer to the iterm2 homepage to learn more about its features and how
+            to install it.</p>
+        <p><strong>Note:</strong> Whether you use iTerm2, Terminal, or some other terminal emulator has no
+            effect on the rest described herein.</p>
+        <h3 id="brew-packages"><code class="language-plaintext highlighter-rouge">brew</code> packages</h3>
+        <p><a href="https://brew.sh"><code class="language-plaintext highlighter-rouge">brew</code></a> is a
+            package manager for macOS similar to <code class="language-plaintext highlighter-rouge">apt-get</code> and
+            <code class="language-plaintext highlighter-rouge">yum</code>, meaing it can be used to install a
+            wide range of stuff - anything from fundamental (CLI) tools like <code
+                class="language-plaintext highlighter-rouge">ssh</code> or <code
+                class="language-plaintext highlighter-rouge">git</code> to GUI apps like Handbrake or
+            Firefox.
+        </p>
+        <p>You can install <code class="language-plaintext highlighter-rouge">brew</code> like so:</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre>
+            </div>
+        </div>
+        <p>In <a href="./Brewfile-MultifokalHirn"><code
+                    class="language-plaintext highlighter-rouge">Brewfile-MultifokalHirn</code></a> I have
+            collected a set of packages and applications that are essential to how I work and use my
+            computer. I added a short explanation for each, so please have a look at the <code
+                class="language-plaintext highlighter-rouge">Brewfile</code> to learn more.</p>
+        <p>You can install the packages contained within like so:</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>brew bundle <span class="nt">--file</span><span class="o">=</span>~/Brewfile-MultifokalHirn
+</code></pre>
+            </div>
+        </div>
+        <h3 id="zsh"><code class="language-plaintext highlighter-rouge">zsh</code></h3>
+        <p>I use <code class="language-plaintext highlighter-rouge">zsh</code> in combination with the
+            config framework <a href="https://github.com/ohmyzsh/ohmyzsh"><code
+                    class="language-plaintext highlighter-rouge">ohmyzsh</code></a> (mostly out of habit, I
+            have not looked at other alternatives to plain <code
+                class="language-plaintext highlighter-rouge">bash</code> so far).</p>
+        <p><code class="language-plaintext highlighter-rouge">zsh</code> will be installed if you used my
+            <code class="language-plaintext highlighter-rouge">Brewfile</code>, otherwise you can install it
+            like so:
+        </p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>brew <span class="nb">install </span>zsh  <span class="c"># consider setting it as you default shell</span>
+</code></pre>
+            </div>
+        </div>
+        <p>You can install <code class="language-plaintext highlighter-rouge">ohmyzsh</code> like so (please
+            refer to the <a href="https://github.com/ohmyzsh/ohmyzsh/wiki">official documentation</a> for
+            more information):</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code><span class="sb">`</span>sh <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://install.ohmyz.sh/<span class="si">)</span><span class="s2">"</span><span class="sb">`</span>
+</code></pre>
+            </div>
+        </div>
+        <h4 id="configuring-zsh">Configuring <code class="language-plaintext highlighter-rouge">zsh</code>
+        </h4>
+        <p>Please refer to my <a href=".zshrc"><code class="language-plaintext highlighter-rouge">.zshrc</code></a> to
+            check out the
+            configuration I use. For me, the config results in shell that extremely fun and quick to use,
+            while also being aesthetically pleasing (at least to me).</p>
+        <h4 id="extending-ohmyzsh">Extending <code class="language-plaintext highlighter-rouge">ohmyzsh</code></h4>
+        <p>To install custom themes or plugins, you have to be in the respective directory in the folder
+            assigned to <code class="language-plaintext highlighter-rouge">$ZSH_CUSTOM</code> (which is
+            usually <code class="language-plaintext highlighter-rouge">~/.oh-my-zsh/custom/</code>).</p>
+        <h5 id="themes">Themes</h5>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$ZSH_CUSTOM</span>/themes/ 
+</code></pre>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: left">Theme</th>
+                    <th style="text-align: left">Command</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">spaceship-prompt</code></td>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">git clone https://github.com/spaceship-prompt/spaceship-prompt.git</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h5 id="plugins">Plugins</h5>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code><span class="nb">cd</span> <span class="nv">$ZSH_CUSTOM</span>/plugins/ 
+</code></pre>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: left">Plugin</th>
+                    <th style="text-align: left">Command</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">zsh-autosuggestions</code></td>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">git clone https://github.com/zsh-users/zsh-autosuggestions.git</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">zsh-completions</code></td>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">git clone https://github.com/zsh-users/zsh-completions.git</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left"><code class="language-plaintext highlighter-rouge">zsh-nvm</code></td>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">git clone https://github.com/lukechilds/zsh-nvm.git</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">OhMyZsh-full-autoupdate</code></td>
+                    <td style="text-align: left"><code
+                            class="language-plaintext highlighter-rouge">git clone https://github.com/Pilaton/OhMyZsh-full-autoupdate.git</code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 id="setups-for-specific-languages">Setups for specific languages</h3>
+        <h4 id="python"><code class="language-plaintext highlighter-rouge">python</code></h4>
+        <p>I <em>always</em> recommend to use <code class="language-plaintext highlighter-rouge">pyenv</code> when
+            developing software using
+            <code class="language-plaintext highlighter-rouge">python</code>. It allows you to install and
+            switch between different versions of <code class="language-plaintext highlighter-rouge">python</code> and
+            decouples your development
+            environment from the system <code class="language-plaintext highlighter-rouge">python</code>
+            which Apple will update from time to time, potentially breaking your development setup.
+        </p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>brew <span class="nb">install </span>pyenv
+pyenv <span class="nb">install </span>3.12.0 <span class="c"># example version</span>
+pyenv global 3.12.0
+</code></pre>
+            </div>
+        </div>
+        <h5 id="pipx"><code class="language-plaintext highlighter-rouge">pipx</code></h5>
+        <p><code class="language-plaintext highlighter-rouge">pipx</code> is a tool to install and use
+            packages ‘globally’. It installs <code class="language-plaintext highlighter-rouge">pipx</code>
+            itself into a separate virtual environment from your default <code
+                class="language-plaintext highlighter-rouge">python</code> interpreter, and makes sure that
+            when you run <code class="language-plaintext highlighter-rouge">pipx</code> command, it uses the
+            <code class="language-plaintext highlighter-rouge">pipx</code> virtual environment.
+        </p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>python <span class="nt">-V</span> <span class="c"># check whether you are using the intended python version</span>
+pip <span class="nb">install</span> <span class="nt">--upgrade</span> pipx
+pipx ensurepath
+
+pipx <span class="nb">install </span>ruff virtualenvwrapper <span class="c"># example packages</span>
+</code></pre>
+            </div>
+        </div>
+        <h3 id="ruby"><code class="language-plaintext highlighter-rouge">ruby</code></h3>
+        <p>macOS has a built-in version of <code class="language-plaintext highlighter-rouge">ruby</code>.
+            However, I highly advise installing <em>separate</em> <code
+                class="language-plaintext highlighter-rouge">ruby</code> versions and <em>only</em> using
+            those in when developing. On a fresh system, you will see the following behavior:</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>which ruby
+<span class="c"># /usr/bin/ruby</span>
+
+/usr/bin/ruby <span class="nt">-v</span>
+<span class="c"># ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.x86_64-darwin21]</span>
+
+/usr/bin/ruby <span class="nt">-e</span> <span class="s1">'puts Gem.user_dir'</span>
+<span class="c"># /Users/my_user/.gem/ruby/2.6.0</span>
+</code></pre>
+            </div>
+        </div>
+        <p>To install a <code class="language-plaintext highlighter-rouge">ruby</code> version can run the
+            following:</p>
+        <blockquote>
+            <p><code class="language-plaintext highlighter-rouge">TODO</code> - rewrite using <code
+                    class="language-plaintext highlighter-rouge">rbenv</code></p>
+        </blockquote>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>brew <span class="nb">install </span>ruby
+</code></pre>
+            </div>
+        </div>
+        <p>Your <code class="language-plaintext highlighter-rouge">ruby</code> version should - at least
+            once you reload the shell - be the one installed by <code
+                class="language-plaintext highlighter-rouge">brew</code> and behave similar to the
+            following:</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>which ruby
+<span class="c"># /usr/local/opt/ruby/bin/ruby</span>
+
+ruby <span class="nt">-v</span>
+<span class="c"># ruby 3.2.2 (2023-03-30 revision e51014f9c0) [x86_64-darwin21]</span>
+
+ruby <span class="nt">-e</span> <span class="s1">'puts Gem.user_dir'</span>
+<span class="c"># /Users/my_user/.gem/ruby/3.2.0</span>
+</code></pre>
+            </div>
+        </div>
+        <h3 id="rust"><code class="language-plaintext highlighter-rouge">rust</code></h3>
+        <p>You can install <code class="language-plaintext highlighter-rouge">rustup</code> like so:</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>curl <span class="nt">--proto</span> <span class="s1">'=https'</span> <span class="nt">--tlsv1</span>.2 <span class="nt">-sSf</span> https://sh.rustup.rs | sh
+</code></pre>
+            </div>
+        </div>
+        <h4 id="sccache"><code class="language-plaintext highlighter-rouge">sccache</code></h4>
+        <p><code class="language-plaintext highlighter-rouge">sccache</code> is a compiler cache. It speeds
+            up compilation by caching previous compilations and detecting when the same compilation is being
+            done again.</p>
+        <div class="language-bash highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>cargo <span class="nb">install </span>sccache
+</code></pre>
+            </div>
+        </div>
+        <!-- #### fonts & icons ```bash brew tap shaunsingh/SFMono-Nerd-Font-Ligaturized brew install --cask font-sf-mono-nerd-font-ligaturized brew install hicolor-icon-theme wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip ~/Downloads/Hack.zip ``` brew install orbstack ``` -->
+        <!-- ```diff - plugins=(...) + plugins=(... evalcache) ``` -->
+        <div class="language-plaintext highlighter-rouge">
+            <div class="highlight">
+                <pre class="highlight"><code>&lt;!-- &lt;/article&gt; --&gt; &lt;!-- &lt;/div&gt; --&gt;
+</code></pre>
+            </div>
+        </div>
+    </div> <br /> <span style="font-size: small">[ <a href="/tag/dotfile"><code
+                class="highligher-rouge"><nobr>dotfile</nobr></code>&nbsp;</a> <a
+            href="/tag/configuration management"><code
+                class="highligher-rouge"><nobr>configuration management</nobr></code>&nbsp;</a> <a
+            href="/tag/shell"><code class="highligher-rouge"><nobr>shell</nobr></code>&nbsp;</a> ]</span>
+    <!-- -->
+</article> <br />
