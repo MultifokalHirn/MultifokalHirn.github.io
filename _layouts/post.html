@@ -1,54 +1,55 @@
 ---
 layout: default
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="pt-2 pb-3">
-    <h3 itemprop="name headline"
-      style="text-decoration: underline; text-decoration-thickness: 2px;  text-decoration-color: blue; margin-bottom: 1rem">
-      {{ page.title | escape }}
-    </h3>
-    <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; ">
-      {% if page.author %}
-      {% if page.author_url %}
-      <a href="{{ page.author_url }}">
-        {% endif %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span itemprop="name" style="font-size: 1.2rem;">
-            {{ page.author }}
-          </span>
+
+<header class="pt-2 pb-3">
+  <h3 itemprop="name headline"
+    style="text-decoration: underline; text-decoration-thickness: 2px;  text-decoration-color: blue; margin-bottom: 1rem">
+    {{ page.title | escape }}
+  </h3>
+  <p class="text-secondary" style="font-family: 'Hack Nerd Font Mono'; ">
+    {% if page.author %}
+    {% if page.author_url %}
+    <a href="{{ page.author_url }}">
+      {% endif %}
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name" style="font-size: 1.2rem;">
+          {{ page.author }}
         </span>
-        {% if page.author_url %}
-      </a>
-      {% endif %}
-      &bull;
-      {% endif %}
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-    </p>
-  </header>
+      </span>
+      {% if page.author_url %}
+    </a>
+    {% endif %}
+    &bull;
+    {% endif %}
+    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+      {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
+      {{ page.date | date: date_format }}
+    </time>
+  </p>
+</header>
 
-  <div class="text-justify" itemprop="articleBody" id="content"
-    style="width: 100%; padding-top: 2%; padding-left: 0%; padding-right: 0%; border-top: 2px dashed blue">
+<div itemprop="articleBody" id="content"
+  style="width: 98%; margin-left: 1px; margin-right: 1px; padding-top: 2%; padding-left: 0%; padding-right: 0%; border-top: 2px dashed blue">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
     {{ content }}
-  </div>
+  </article>
+</div>
 
-  {% for tag in post.tags %}
-  {% assign tag_slug = tag | slugify: "raw" %}
-  <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
-    #{{ tag }}
-  </a>
+{% for tag in post.tags %}
+{% assign tag_slug = tag | slugify: "raw" %}
+<a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
+  #{{ tag }}
+</a>
+{% endfor %}
+<br />
+<span style="font-size: small">[
+  {% for tag in page.tags %}
+  {% capture tag_name %}{{ tag }}{% endcapture %}
+  <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
   {% endfor %}
-  <br />
-  <span style="font-size: small">[
-    {% for tag in page.tags %}
-    {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
-    {% endfor %}
-    ]</span>
+  ]</span>
 
-  <!-- {% if site.disqus.shortname %}
+<!-- {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %} -->
-</article>

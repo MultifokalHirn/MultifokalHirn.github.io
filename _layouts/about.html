@@ -3,9 +3,9 @@ layout: default
 ---
 
 <!-- <div id="content" style="padding: 1%"> -->
-<div id="content" style="padding: 1%">
+<div id="content" style="margin: 1%">
     <div itemprop="articleBody">
-        <div class="row text-justify">
+        <div class="row text-justify" style="margin: 1%">
             <div class="col-md-3 col" style="margin-bottom: 2%;">
                 <div class=" author-image" style="border: 5px dashed #ff0000; border-bottom: 4px dotted #ff0000;">
                     <img src="{{ site.baseurl }}/assets/images/author.jpeg"
@@ -13,15 +13,13 @@ layout: default
                 </div>
                 <!-- <br /> -->
             </div>
-            <!-- <div class="col col-md-4"> -->
             <div class="mystery-green-area col-md-6" style="min-width: 70%">
                 <!-- <div style="margin-top: 0%; height: 100%; flex: 1; font-size: medium !important; color: white"> -->
                 <!-- <br /> -->
                 {{ content }}
             </div>
-            <!-- </div> -->
+
         </div>
-        <br />
         {% include blog.html %}
         {% comment %}
         <!-- <div style=" padding-left: 2%; padding-right: 2%; border: 2px dashed #e9ecef; margin-top: 2%;
