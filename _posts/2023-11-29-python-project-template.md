@@ -68,7 +68,7 @@ make test
 <!-- <div class="col" style="min-width: 0% !important; flex: 1;"> -->
 {% include asciinema.html id="template-project-make2" cast="/assets/casts/template-project-make-2.cast" %}
 <!-- </div> -->
-</div>
+<!-- </div> -->
 
 ### pre-commit hooks
 

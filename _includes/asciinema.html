@@ -1,9 +1,14 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/asciinema-player.css">
-<div id="{{ include.id }}"></div>
+<div class="asciinema" style="width: 90%; overflow: visible" id="{{ include.id }}">
+</div>
 <script src="/assets/js/asciinema-player.min.js"></script>
 <script>
-
     AsciinemaPlayer.create('{{ include.cast }}', document.getElementById('{{ include.id }}'), {
         terminalFontFamily: 'Hack Nerd Font Mono',
+        width: 90,
+        fontSize: 0.5,
+        theme: 'asciinema',
+        lineHeight: 1.4,
+        overflow: 'visible',
     });
 </script>

@@ -44,7 +44,24 @@ body {
     // border: blue 2px dotted;
   }
 }
-
+.asciinema {
+  // font-family: "Hack Nerd Font Mono";
+  // font-family: "FiraCode";
+  margin: auto;
+  // font-size: 0.7rem;
+  // line-height: 1.4rem;
+  overflow: visible;
+  // padding: 0;
+  // margin: 0;
+  span {
+    // font-family: "FiraCode";
+    // font-size: 0.7rem;
+    line-height: 1.6rem;
+    overflow: visible;
+    // padding: 0;
+    margin: 0;
+  }
+}
 header {
   color: black;
 
