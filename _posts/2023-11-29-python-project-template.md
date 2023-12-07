@@ -1,8 +1,7 @@
 ---
-title: Python Template Project
+title: Python Project Template 
 author: Lennard Wolf
 layout: post
-icon: fa-lightbulb
 ---
 <!-- This is [my](https://github.com/MultifokalHirn) personal template for python projects containing everything needed to start developing. -->
 

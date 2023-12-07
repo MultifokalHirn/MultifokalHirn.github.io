@@ -21,6 +21,7 @@ plugins:
   - jekyll-feed
   - tag-page-generator
   - jekyll-minifier
+  - jekyll-remote-include
   # - faraday-retry
 sass:
   sass_dir: _sass

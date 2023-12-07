@@ -35,6 +35,14 @@ body {
     border-left: 2px solid $layout-color-border;
     border-right: 2px solid $layout-color-border;
   }
+  #content-container a {
+    color: black;
+    // text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-style: solid;
+    text-decoration-color: blue;
+    // border: blue 2px dotted;
+  }
 }
 
 header {
@@ -68,6 +76,18 @@ img.mystery-green-area {
   transition-delay: 3s;
 }
 
+ul {
+  list-style: square;
+  // color: blue;
+
+  li::before {
+    color: blue; /* Change the color */
+    // font-weight: bold; /* If you want it to be bold */
+    // display: inline-block; /* Needed to add space between the bullet and the text */
+    // width: 1em; /* Also needed for space (tweak if needed) */
+    // margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+}
 .mystery-green-area:hover {
   transition: opacity 1s ease;
   transition-delay: 0.8s;
@@ -85,7 +105,7 @@ img.mystery-green-area {
   color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
   background-color: $layout-color-background;
-  margin-top: 0rem;
+  // margin-top: 0rem;
 
   @media (min-width: $layout-responsive-nav-cutoff) {
     position: relative;
@@ -101,22 +121,37 @@ img.mystery-green-area {
 }
 
 .menu-opts {
-  padding-right: 2rem;
-  text-decoration-style: dotted !important;
-  text-decoration-thickness: 2px;
+  padding-top: 0px;
+  // padding-bottom: 2px;
+  margin-bottom: 1px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  text-decoration-style: wavy !important;
+  text-decoration-thickness: 3px;
   color: black;
   font-size: 1.2rem !important;
+  // font-weight: 600;
   text-decoration-color: blue !important;
-  line-height: 1.6rem;
+  // line-height: 1.8rem;
   text-decoration: underline;
 }
 
 .menu-opts:hover {
-  font-size: 1.2rem !important;
+  // padding-right: 0rem;
+  // font-size: 1.2rem !important;
+  padding-bottom: 1px;
+  margin-top: 1px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
   text-decoration-color: blue !important;
   text-decoration-thickness: 2px;
   text-decoration-style: wavy !important;
   text-decoration: underline;
+  border: blue 2px dotted;
 }
 
 #nav-trigger:checked ~ #nav-menu {
@@ -145,7 +180,7 @@ img.mystery-green-area {
 .link-area-lw {
   text-decoration: none;
   text-decoration-style: none;
-  a,
+  // a,
   p,
   span {
     text-decoration: none;
@@ -166,8 +201,8 @@ img.mystery-green-area {
   }
 }
 
-#link-area-lw,
-li {
+// #link-area-lw,
+.my-hover-class {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   transition: background-color 0.5s ease-out;
   border: 3px dashed blue;
@@ -175,8 +210,8 @@ li {
   border-top: 0px dotted blue;
 }
 
-#link-area-lw,
-li:hover {
+// #link-area-lw,
+.my-hover-class:hover {
   background-color: linear-gradient(
     rgba(0, 0, 255, 1),
     rgba(0, 0, 255, 0.4),
