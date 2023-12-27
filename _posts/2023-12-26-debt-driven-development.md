@@ -1,9 +1,15 @@
 ---
-title: Debt Driven Development
+title: "[DRAFT] Debt Driven Development"
 author: Lennard Wolf
 layout: post
-tags: [programming, programming paradigms]
+tags: [programming, programming paradigms, tdd]
 ---
+
+In this article I want to coin the term "Debt Driven Development" for the
+default programming paradigm that projects like TDD want to replace. I will
+explore why this paradigm is the natural default, and why that may not be so
+bad after all.
+<!--more-->
 
 When given a task to fulfill, a (good) developer should put the stated goal
 into context with the overall goals of the organization or project.
@@ -35,14 +41,3 @@ such tests in their head.
 Of course, the player could still make a mistake, which is why, for any match
 with stakes, there should be an entity that checks the board for correctness -
 the human players should play, not check the board.
-
-   "Debt Driven Development",
-and I will explain why it is the default, and why it is so hard to replace.
-
-## FizzBuzz
-
-{% comment %}
-
-Principle of Least Astonishment
-
-{% endcomment %}
