@@ -3,6 +3,12 @@ $layout-color-background: #fdfdfd !default;
 $layout-color-syntax-highlighting-background: #fafafa !default;
 $layout-responsive-nav-cutoff: 1024px !default;
 $base-text-decoration-thickness: 5px !default;
+$base-font-family: "Hack Nerd Font Mono" !default;
+
+html,
+body {
+  overflow-x: hidden;
+}
 
 html {
   header {
@@ -21,9 +27,23 @@ html {
   }
 }
 
-html,
-body {
-  overflow-x: hidden;
+#page-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+}
+
+#content-container {
+  flex: 1;
+  padding-top: 1.5rem;
+}
+
+#main {
+  width: 98%;
+  margin-top: 2px;
+  margin-left: 1%;
+  margin-right: 1%;
 }
 
 body {
@@ -35,39 +55,31 @@ body {
     border-left: 2px solid $layout-color-border;
     border-right: 2px solid $layout-color-border;
   }
+
   #content-container a {
     color: black;
-    // text-decoration: underline;
     text-decoration-thickness: 2px;
     text-decoration-style: solid;
     text-decoration-color: blue;
-    // border: blue 2px dotted;
     line-height: 140%;
-  }
-  #content-container a:hover {
-    color: white;
-    // text-decoration-color: black;
-    background-color: black;
+
+    &:hover {
+      color: white;
+      background-color: black;
+    }
   }
 }
+
 .asciinema {
-  // font-family: "Hack Nerd Font Mono";
-  // font-family: "FiraCode";
   margin: auto;
-  // font-size: 0.7rem;
-  // line-height: 1.4rem;
-  overflow: visible;
-  // padding: 0;
-  // margin: 0;
+
   span {
-    // font-family: "FiraCode";
-    // font-size: 0.7rem;
     line-height: 1.6rem;
     overflow: visible;
-    // padding: 0;
     margin: 0;
   }
 }
+
 header {
   color: black;
 
@@ -89,28 +101,13 @@ img.mystery-green-area {
 }
 
 .mystery-green-area {
-  // padding: 1% 1% 1% 1%;
   font-size: 1.1rem;
   border: 0px dotted rgba(0, 128, 0, 0.9);
-  // border-bottom: 0.3rem dashed rgba(0, 128, 0, 0.7);
-  // background: rgba(30, 200, 30, 0.02);
   opacity: 1;
   transition: opacity 2.5s ease-in-out;
   transition-delay: 3s;
 }
 
-ul {
-  list-style: square;
-  // color: blue;
-
-  li::before {
-    color: blue; /* Change the color */
-    // font-weight: bold; /* If you want it to be bold */
-    // display: inline-block; /* Needed to add space between the bullet and the text */
-    // width: 1em; /* Also needed for space (tweak if needed) */
-    // margin-left: -1em; /* Also needed for space (tweak if needed) */
-  }
-}
 .mystery-green-area:hover {
   transition: opacity 1s ease;
   transition-delay: 0.8s;
@@ -128,7 +125,6 @@ ul {
   color: black;
   text-decoration-thickness: $base-text-decoration-thickness;
   background-color: $layout-color-background;
-  // margin-top: 0rem;
 
   @media (min-width: $layout-responsive-nav-cutoff) {
     position: relative;
@@ -147,35 +143,19 @@ ul {
   padding-top: 0px;
   padding-bottom: 1px;
   margin-bottom: 0px;
-  // padding-left: 2px;
-  // padding-right: 2px;
-  margin-bottom: 0px;
   margin-left: 2px;
   margin-right: 2px;
   text-decoration-style: wavy !important;
   text-decoration-thickness: 3px;
   color: black;
   font-size: 1.2rem !important;
-  // font-weight: 600;
   text-decoration-color: blue !important;
-  // line-height: 1.8rem;
-  text-decoration: underline;
-  border: white 2px dotted;
-}
 
-.menu-opts:hover {
-  // padding-right: 0rem;
-  // font-size: 1.2rem !important;
-  // padding-bottom: 0px;
-  // margin-top: 1px;
-  // margin-bottom: 3px;
-  // margin-left: 0px;
-  // margin-right: 0px;
-  text-decoration-color: blue !important;
-  // text-decoration-thickness: 2px;
-  // text-decoration-style: wavy !important;
-  text-decoration: underline;
-  border: blue 2px dotted;
+  &:hover {
+    text-decoration-color: blue !important;
+    text-decoration: underline;
+    border: blue 2px dotted;
+  }
 }
 
 #nav-trigger:checked ~ #nav-menu {
@@ -197,19 +177,16 @@ ul {
   display: flex;
 }
 
-#content-container {
-  padding-top: 1.5rem;
-}
-
 .link-area-lw {
   text-decoration: none;
   text-decoration-style: none;
-  // a,
+
   p,
   span {
     text-decoration: none;
     font-size: inherit;
   }
+
   .highlight pre {
     font-size: 0.8rem;
   }
@@ -229,12 +206,9 @@ ul {
 .my-hover-class {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
   background: rgba(0, 0, 255, 0.03);
-  // transition: background-color 0.5s ease-out;
   border: 3px dashed rgba(0, 0, 255, 0.03);
-  // border-bottom: 3px dotted white;
-  // border-top: 3px dotted white;
+
   a {
-    // background-color: white !important;
     background-color: rgba(0, 0, 255, 0) !important;
     color: black !important;
     text-decoration: none;
@@ -249,13 +223,9 @@ ul {
     rgba(0, 0, 255, 0.03),
     rgba(0, 0, 255, 0.9)
   ) !important;
-  // background: rgba(0, 0, 255, 0);
-  // transition: background-color 1s;
   border: 3px dashed blue;
-  // border-bottom: 3px solid black;
-  // border-top: 3px dotted black;
+
   a {
-    // background-color: white !important;
     background-color: rgba(0, 0, 255, 0) !important;
     color: black !important;
     text-decoration: none;
@@ -265,28 +235,8 @@ ul {
 .website-title {
   font-size: 1.75rem !important;
   line-height: auto;
-  // text-decoration: underline;
-  // text-decoration-thickness: 3px;
-  // text-decoration-style: wavy;
-
-  // transition: text-decoration-thickness 0.05s;
-  // transition-delay: 0s;
   color: black;
-  // max-width: 90%;
-  overflow-x: visible;
 }
-
-// .website-title:hover {
-//   // text-decoration-thickness: 5px;
-//   text-decoration: underline;
-//   text-decoration-style: wavy;
-//   // text-decoration-color: black;
-//   // text-decoration-color: green;
-//   // transition: text-decoration-color 0.05s;
-//   // transition-delay: 0s;
-//   // transition: text-decoration-thickness 0.05s;
-//   // color: yellow;
-// }
 
 .author-image {
   background-color: rgba(255, 0, 0, 0);
@@ -294,12 +244,6 @@ ul {
   transition-delay: 0.3s;
   padding-bottom: 1%;
 }
-
-// .author-image:hover {
-//   background-color: rgba(255, 0, 0, 0.05);
-//   transition: background-color 0.1s;
-//   transition-delay: 0s;
-// }
 
 #content {
   h1,
@@ -369,4 +313,12 @@ ul {
 .social-links {
   @include relative-font-size(0.9375);
   color: $brand-color;
+}
+
+ul {
+  list-style: square;
+
+  li::before {
+    color: blue;
+  }
 }
