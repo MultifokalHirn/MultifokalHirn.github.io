@@ -269,7 +269,28 @@ img.mystery-green-area {
     text-align: left;
   }
 }
+.cv-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+}
 
+.cv-content-container {
+  flex: 1;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+}
+
+.cv-main {
+  width: 100%;
+  margin-top: 2px;
+  border: 2px dashed blue;
+}
+
+.cv-iframe {
+  overflow-y: scroll;
+}
 #site-footer {
   font-size: small;
   font-family: "Hack Nerd Font Mono";

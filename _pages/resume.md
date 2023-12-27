@@ -7,14 +7,3 @@ redirect_from:
     - /cv
 ---
 
-
-<div align="center">
-    <!-- <object data="../assets/lennard-wolf_cv_2023-11-25.pdf" border="0" width="800" height="1100" type='application/pdf'
-        standby="Loading CV..." style="overflow-y: scroll;">
-    </object> -->
-    <!-- <embed src="../assets/lennard-wolf_cv_2023-11-25.pdf" type="application/pdf" width="90%" height="1000px"
-        style="overflow-y: scroll;" />
-    <br /> -->
-    <!-- <iframe src="../assets/lennard-wolf_cv_2023-11-25.pdf" width="90%" height="1000px" align="center" loading="lazy"
-        title="Lennard Wolf CV"></iframe> -->
-</div>
