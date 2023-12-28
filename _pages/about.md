@@ -7,13 +7,14 @@ redirect_from:
     - /about
 ---
 My name is Lennard Wolf and I am a Software Engineer living and working in Berlin.
-I am Tech Lead at [*Signatrix*](https://www.signatrix.com) where develop software and devOps infrastructure using Python, Flask, React.js, Docker, Ansible and many more.
+I am Tech Lead at [*Signatrix*](https://www.signatrix.com) where I develop software and devOps infrastructure using Python, Flask, React.js, Docker, Ansible and many more.
 
-- [CV](https://multifokalhirn.github.io/resume)
-- [LinkedIn](https://www.linkedin.com/in/lennardwolf/)
+- [about.me](https://about,.me/lennardwolf)
 - [Github](https://github.com/MultifokalHirn)
-  - [`.dotfiles`](https://github.com/MultifokalHirn/.dotfiles)
-  - [`python_template_repo`](https://github.com/MultifokalHirn/python_template_repo)
+- [LinkedIn](https://www.linkedin.com/in/lennardwolf/)
+- [CV](https://multifokalhirn.github.io/resume)
+  <!-- - [`.dotfiles`](https://github.com/MultifokalHirn/.dotfiles) -->
+  <!-- - [`python_template_repo`](https://github.com/MultifokalHirn/python_template_repo) -->
 
 {% comment %}
 
