@@ -1,11 +1,11 @@
 ---
-title: "[DRAFT] Preamble to Enterprise FizzBuzz, Dependency Inversion, and Capitalism"
+title: "[draft] Preamble: Enterprise FizzBuzz, Dependency Inversion, and Capitalism"
 author: Lennard Wolf
 layout: post
 tags: [programming, software architecture, dependency inversion, dependency injection, inversion of control, enterprise fizzbuzz, capitalism]
 ---
 
-This is a preamble to my series on _Enterprise FizzBuzz, Dependency Inversion,
+This is a preamble to my series _Enterprise FizzBuzz, Dependency Inversion,
 and Capitalism_. Generally, the series is written for an audience that is likely
 familiar with the titular topical, but I will still use this preamble to quickly
 introduce them. I will end this preamble with the questions that I want to

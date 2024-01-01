@@ -121,6 +121,7 @@ ul {
   height: 4.9rem;
   border-left: 2px dashed $layout-color-border;
   border-right: 2px dashed $layout-color-border;
+  border-bottom: 2px dashed $layout-color-border;
 }
 
 #nav-menu-container {
@@ -279,9 +280,9 @@ ul {
 .website-title {
   font-size: 1.75rem !important;
   line-height: auto;
-  // text-decoration: underline;
-  // text-decoration-thickness: 3px;
-  // text-decoration-style: wavy;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-style: dotted;
 
   // transition: text-decoration-thickness 0.05s;
   // transition-delay: 0s;

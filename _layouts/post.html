@@ -1,17 +1,15 @@
 ---
 layout: default
 ---
-<div style="width: 99%; margin-left: 1px; margin-right: 1px; border-top: 0px dashed black">
-  <!-- <header class="pt-2 pb-3"> -->
-  <h2 itemprop="name headline"
-    style="text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 1px;  text-decoration-color: blue; margin-top: 0%; margin-bottom: 0% padding: 1%; border: 0px dotted black">
+<div style="width: 99%; margin-left: 1px; margin-right: 1px; border-top: 0px dashed black; padding: auto">
+  <h3 itemprop="name"
+    style="text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 0px;  text-decoration-color: blue; margin-top: 0%; margin-bottom: 0%; border: 0px dotted black">
     {{ page.title | escape }}
-  </h2>
-  <!-- </header> -->
+  </h3>
 
   <div itemprop="articleBody" id="content"
-    style="padding-bottom: 0%; padding-top: 2px; padding-left: 0%; padding-right: 0%; border-top: 1px dotted blue">
-    <p style="font-family: 'Hack Nerd Font Mono'; font-size: small; color: blue; ">
+    style="padding-bottom: 0%; padding-top: 2px; padding-left: 0%; padding-right: 0%; margin-top: 1px; border-top: 2px dotted blue">
+    <p style="font-family: 'Hack Nerd Font Mono'; font-size: small; color: black; ">
       {% if page.author %}
       {% if page.author_url %}
       <a href="{{ page.author_url }}">
@@ -31,25 +29,29 @@ layout: default
         {{ page.date | date: date_format }}
       </time>
     </p>
-    <article itemscope itemtype="http://schema.org/BlogPosting" style="margin-top: 3%">
+    <article itemscope itemtype="http://schema.org/BlogPosting" style="margin-top: 2%">
       {{ content }}
+      <h4 align="left" style="font-size: large; color: blue">
+        ◻
+      </h4>
     </article>
   </div>
 
-  {% for tag in post.tags %}
-  {% assign tag_slug = tag | slugify: "raw" %}
-  <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
-    #{{ tag }}
-  </a>
-  {% endfor %}
-  <br />
-  <span style="font-size: small">[
-    {% for tag in page.tags %}
-    {% capture tag_name %}{{ tag }}{% endcapture %}
-    <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+  <div align="right">
+    {% for tag in post.tags %}
+    {% assign tag_slug = tag | slugify: "raw" %}
+    <a class="tag-link" href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }} rel="category tag">
+      #{{ tag }}
+    </a>
     {% endfor %}
-    ]</span>
 
+    <span align="right" style="font-size: small">[
+      {% for tag in page.tags %}
+      {% capture tag_name %}{{ tag }}{% endcapture %}
+      <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+      {% endfor %}
+      ]</span>
+  </div>
   <!-- {% if site.disqus.shortname %}
     {% include disqus_comments.html %}
   {% endif %} -->

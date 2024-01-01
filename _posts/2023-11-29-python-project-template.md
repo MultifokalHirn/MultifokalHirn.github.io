@@ -187,8 +187,3 @@ make ci            <span class="c"># runs formatter, linter, typechecker, and te
 <p><img src="https://img.shields.io/github/license/MultifokalHirn/python_template_repo"
         alt="License" />
 </p>
-<div class="language-plaintext highlighter-rouge">
-    <div class="highlight">
-        <pre class="highlight"><code>&lt;!-- &lt;/article&gt; --&gt; &lt;!-- &lt;/div&gt; --&gt; </code></pre>
-    </div>
-</div>
