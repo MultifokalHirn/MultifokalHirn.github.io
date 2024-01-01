@@ -78,6 +78,9 @@ exclude:
   - LICENSE
   - Rakefile
   - README.md
+  - assets/lennard-wolf_cv_2023-11-17.pdf
+  - assets/lennard-wolf_cv_2023-11-25.pdf
+  - assets/lennard-wolf_cv_2023-12-28.pdf
 
 jekyll-minifier:
   preserve_php: false # Default: false
