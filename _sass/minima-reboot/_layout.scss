@@ -291,7 +291,9 @@ ul {
   overflow-x: visible;
 }
 
-// .website-title:hover {
+.website-title:hover {
+  text-decoration-style: solid;
+}
 //   // text-decoration-thickness: 5px;
 //   text-decoration: underline;
 //   text-decoration-style: wavy;
