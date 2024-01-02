@@ -242,15 +242,15 @@ ul {
 
 #link-area-lw div,
 .my-hover-class {
-  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
-  background: rgba(0, 0, 255, 0.03);
+  // background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  // background: rgba(0, 0, 255, 0.03);
   // transition: background-color 0.5s ease-out;
-  border: 3px dashed rgba(0, 0, 255, 0.03);
+  border: 3px dashed rgba(0, 0, 255, 0.1);
   // border-bottom: 3px dotted white;
   // border-top: 3px dotted white;
   a {
     // background-color: white !important;
-    background-color: rgba(0, 0, 255, 0) !important;
+    // background-color: rgba(0, 0, 255, 0) !important;
     color: black !important;
     text-decoration: none;
   }
@@ -258,12 +258,12 @@ ul {
 
 #link-area-lw div,
 .my-hover-class:hover {
-  background-color: linear-gradient(
-    rgba(0, 0, 255, 1),
-    rgba(0, 0, 255, 0.4),
-    rgba(0, 0, 255, 0.03),
-    rgba(0, 0, 255, 0.9)
-  ) !important;
+  // background-color: linear-gradient(
+  //   rgba(0, 0, 255, 1),
+  //   rgba(0, 0, 255, 0.4),
+  //   rgba(0, 0, 255, 0.03),
+  //   rgba(0, 0, 255, 0.9)
+  // ) !important;
   // background: rgba(0, 0, 255, 0);
   // transition: background-color 1s;
   border: 3px dashed blue;
@@ -271,7 +271,7 @@ ul {
   // border-top: 3px dotted black;
   a {
     // background-color: white !important;
-    background-color: rgba(0, 0, 255, 0) !important;
+    // background-color: rgba(0, 0, 255, 0) !important;
     color: black !important;
     text-decoration: none;
   }
