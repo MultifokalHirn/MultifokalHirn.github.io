@@ -1,35 +1,40 @@
 ---
 layout: default
 ---
-<br />
-<div style="width: 99%; margin-left: 1px; margin-right: 1px; border-top: 0px dashed black; padding: auto">
-  <h3 itemprop="name"
-    style="text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 0px;  text-decoration-color: blue; margin-top: 0%; margin-bottom: 0%; border: 0px dotted black">
-    {{ page.title | escape }}
-  </h3>
 
-  <div itemprop="articleBody" id="content"
-    style="padding-bottom: 0%; padding-top: 2px; padding-left: 0%; padding-right: 0%; margin-top: 1px; border-top: 2px dotted blue">
-    <p style="font-family: 'Hack Nerd Font Mono'; font-size: small; color: black; ">
-      {% if page.author %}
-      {% if page.author_url %}
-      <a href="{{ page.author_url }}">
-        {% endif %}
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="font-size: small; color: black">
-          <span itemprop="name" style="font-size: small; color: black">
-            {{ page.author }}
-          </span>
-        </span>
-        {% if page.author_url %}
-      </a>
-      {% endif %}
-      &bull;
-      {% endif %}
+
+<div style="border-top: 0px dashed black; padding: auto">
+  <div style="border-bottom: 1px solid blue">
+    <h2 itemprop="name"
+      style="text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 0px; padding-bottom: 4px; text-decoration-color: blue; margin-top: 0%; margin-bottom: 0%; border: 0px dotted black">
+      {{ page.title | escape }}
+    </h2>
+  </div>
+  <div align="right">
+    <span style="font-family: 'Hack Nerd Font Mono'; font-size: 7pt !important; color: black; ">
+      <!-- {% if page.author %}
+  {% if page.author_url %}
+  <a href="{{ page.author_url }}">
+    {% endif %}
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="font-size: 8pt; color: black">
+      <span itemprop="name" style="font-size: 8pt; color: black">
+        {{ page.author }}
+      </span>
+    </span>
+    {% if page.author_url %}
+  </a>
+  {% endif %}
+  &bull;
+  {% endif %} -->
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {% assign date_format = site.minima_reboot.date_format | default: "%b %-d, %Y" %}
         {{ page.date | date: date_format }}
       </time>
-    </p>
+    </span>
+  </div>
+  <div itemprop="articleBody" id="content"
+    style="width: 99%; margin-left: 1px; margin-right: 1px; padding-bottom: 0%; padding-top: 1%; padding-left: 0%; padding-right: 0%; margin-top: 1%; border-top: 0px dotted blue">
+
     <article itemscope itemtype="http://schema.org/BlogPosting" style="margin-top: 2%">
       {{ content }}
       <h4 align="left" style="font-size: large; color: blue">

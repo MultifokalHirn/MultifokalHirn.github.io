@@ -39,6 +39,7 @@ body {
     color: black;
     // text-decoration: underline;
     text-decoration-thickness: 2px;
+    // border: rgba($color: #000000, $alpha: 0) 1px dashed;
     text-decoration-style: solid;
     text-decoration-color: blue;
     // border: blue 2px dotted;
@@ -46,6 +47,7 @@ body {
   }
   #content-container a:hover {
     color: white;
+    // border: black 1px dashed;
     // text-decoration-color: black;
     background-color: black;
   }
@@ -196,8 +198,8 @@ ul {
 #nav-trigger:checked ~ #nav-menu {
   display: block !important;
   position: relative !important;
-  margin-top: 4.2rem;
-  border: 1px dashed $layout-color-border;
+  margin-top: 4.3rem;
+  border: 2px dashed $layout-color-border;
   padding: 4% !important;
   padding-right: 5%;
   font-size: medium;
@@ -249,7 +251,7 @@ ul {
   // border-bottom: 3px dotted white;
   // border-top: 3px dotted white;
   a {
-    // background-color: white !important;
+    background-color: white !important;
     // background-color: rgba(0, 0, 255, 0) !important;
     color: black !important;
     text-decoration: none;
@@ -278,8 +280,7 @@ ul {
 }
 
 .website-title {
-  font-size: 1.75rem !important;
-  line-height: auto;
+  font-size: 1.65rem !important;
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-style: dotted;
@@ -376,14 +377,14 @@ ul {
   background-color: $layout-color-syntax-highlighting-background;
 }
 
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
+// .contact-list,
+// .social-media-list {
+//   list-style: none;
+//   margin-left: 0;
+// }
 
-.footer-col-wrapper,
-.social-links {
-  @include relative-font-size(0.9375);
-  color: $brand-color;
-}
+// .footer-col-wrapper,
+// .social-links {
+//   @include relative-font-size(0.9375);
+//   color: $brand-color;
+// }
