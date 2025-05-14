@@ -1,5 +1,5 @@
 ---
-title: Python Project Template 
+title: [OUTDATED] Python Project Template 
 author: Lennard Wolf
 layout: post
 tags: [python]
