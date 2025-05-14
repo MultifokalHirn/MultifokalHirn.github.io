@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/netrics/jekyll-remote-include.git
-  revision: 39ae1a1744c8837d5ee64b11c5f982304ea940e5
-  specs:
-    jekyll-remote-include (1.0.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -292,7 +286,6 @@ DEPENDENCIES
   github-pages
   jekyll-minifier (~> 0.1.10)
   jekyll-pre-commit
-  jekyll-remote-include!
   webrick (~> 1.8)
 
 BUNDLED WITH

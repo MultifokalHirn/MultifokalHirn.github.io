@@ -60,15 +60,15 @@ collections:
 header_pages:
   - _pages/about.md
   - _pages/resume.md
-  - _pages/posts.md
+  # - _pages/posts.md
   - _pages/github.md
   - _pages/linkedin.md
 
 include:
   - _pages
-  - _posts
 
 exclude:
+  - _posts
   - _post-drafts
   - .gitignore
   - docker-compose.yml
