@@ -48,7 +48,7 @@
 	font-stretch: normal;
 }
 
-// Base styles
+/* Base styles */
 body {
 	font-family: var(--base-font-family);
 	font-size: var(--base-font-size);
@@ -280,13 +280,13 @@ ul {
 	background-color: var(--layout-color-background, #fff);
 	/* margin-top: 0rem; */
 
-	@media (min-width: var(--layout-responsive-nav-cutoff, 900px)) {
+	@media (min-width: 900px) {
 		position: relative;
 		z-index: 100;
 		background-color: var(--layout-color-background, #fff);
 	}
 
-	@media (max-width: 90%) {
+	@media (max-width: 899px) {
 		position: absolute;
 		z-index: 100;
 		background-color: var(--layout-color-background, #fff);
