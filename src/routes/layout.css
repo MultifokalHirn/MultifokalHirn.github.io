@@ -443,7 +443,7 @@ ul {
 	h2,
 	h3,
 	h4 {
-		font-family: 'Latex Regular';
+		font-family: 'Latex Regular', serif;
 		margin-top: 2rem;
 		margin-bottom: 1rem;
 		text-align: left;
@@ -477,5 +477,5 @@ ul {
 	line-height: 1.1rem;
 	margin: 0.5rem auto 1.25rem auto;
 	padding: 1rem 1rem 1.5rem 1rem;
-	background-color: var(--layout-color-syntax-highlighting-background);
+	background-color: var(--layout-color-syntax-highlighting-background, #000);
 }

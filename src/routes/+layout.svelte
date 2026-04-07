@@ -9,15 +9,19 @@
 
 <Head title="Home" />
 
-<div class="wrapper">
+<div id="content" class="wrapper">
 	<Header title="Home" />
-	<div class="container">
-		{@render children()}
+
+	<div id="content-container" class="container" style="flex: 1; ">
+		<main>
+			{@render children()}
+		</main>
 	</div>
+
 	<Footer author="Lennard Wolf" />
 </div>
 
-<style lang="scss">
+<style>
 	.wrapper {
 		min-height: 100vh;
 		display: flex;

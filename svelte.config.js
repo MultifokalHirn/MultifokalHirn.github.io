@@ -7,7 +7,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : 'https://multifokalhirn.github.io/'
+			base: process.argv.includes('dev') ? '' : ''
 		}
 	}
 };

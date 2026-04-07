@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite dev",
     "app:dev": "npm run dev",
+    "app:preview": "npm run preview",
+    "app:build": "npm run build",
     "build": "vite build",
     "preview": "vite preview",
     "prepare": "playwright install && svelte-kit sync || echo ''",
