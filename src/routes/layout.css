@@ -44,7 +44,7 @@
 	font-family: 'Hack Nerd Font Mono';
 	src:
 		local('Hack Nerd Font Mono Regular'),
-		url('/assets/fonts/Hack/HackNerdFontMono-Regular.ttf') format('truetype');
+		url('../lib/assets/fonts/Hack/HackNerdFontMono-Regular.ttf') format('truetype');
 	font-stretch: normal;
 }
 
@@ -115,13 +115,11 @@ code {
 }
 
 @theme {
-	--base-font-family:
-		'Hack Nerd Font Mono', 'Latex Regular', 'Latex Italic', 'Hack Nerd Font Mono', 'FiraCode',
-		sans-serif;
 	--layout-color-border: #000000;
 	--layout-color-background: #ffffff;
 	--layout-color-syntax-highlighting-background: rgba(0, 0, 255, 0.02);
 	--layout-responsive-nav-cutoff: 900px;
+	--base-text-decoration-thickness: 5px;
 
 	--base-font-family:
 		'Latex Regular', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Emoji',
@@ -425,6 +423,19 @@ ul {
 	}
 }
 
+.website-title {
+	font-size: 1.65rem !important;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-style: dotted;
+	color: black;
+	overflow-x: visible;
+}
+
+.website-title:hover {
+	text-decoration-style: solid;
+}
+
 .author-image {
 	background-color: rgba(255, 0, 0, 0);
 	transition: background-color 0.8s ease;
@@ -469,6 +480,28 @@ ul {
 	margin-bottom: 0.5rem;
 }
 
+#site-footer {
+	font-size: small;
+	font-family: 'Hack Nerd Font Mono';
+	text-align: right;
+
+	.container {
+		border-top: 2px solid var(--layout-color-border, #000);
+		border-right: 2px dashed var(--layout-color-border, #000);
+		border-left: 2px dashed var(--layout-color-border, #000);
+		padding-top: 0.75rem;
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
+		padding-bottom: 0.2rem;
+	}
+}
+
+.ipa {
+	font-family: 'Assistant', sans-serif;
+	font-weight: 300;
+	font-size: 34px;
+}
+
 .highlight pre {
 	font-family: 'Hack Nerd Font Mono';
 	border: 1px dotted var(--layout-color-border, black);
@@ -478,4 +511,135 @@ ul {
 	margin: 0.5rem auto 1.25rem auto;
 	padding: 1rem 1rem 1.5rem 1rem;
 	background-color: var(--layout-color-syntax-highlighting-background, #000);
+}
+
+.highlight {
+	font-size: inherit;
+
+	.c,
+	.cm,
+	.c1 {
+		color: #998;
+		font-style: italic;
+	}
+
+	.err {
+		color: #a61717;
+		background-color: #e3d2d2;
+	}
+
+	.cp,
+	.gh,
+	.bp {
+		color: #999;
+	}
+
+	.cs {
+		color: #999;
+		font-style: italic;
+	}
+
+	.gd {
+		color: #000;
+		background-color: #fdd;
+	}
+
+	.gd .x {
+		color: #000;
+		background-color: #faa;
+	}
+
+	.ge {
+		font-style: italic;
+	}
+
+	.gr,
+	.gt,
+	.ne,
+	.nf {
+		color: #900;
+	}
+
+	.gi {
+		color: #000;
+		background-color: #dfd;
+	}
+
+	.gi .x {
+		color: #000;
+		background-color: #afa;
+	}
+
+	.go {
+		color: #888;
+	}
+
+	.gp,
+	.nn {
+		color: #555;
+	}
+
+	.gu {
+		color: #aaa;
+	}
+
+	.kt,
+	.nc {
+		color: #458;
+	}
+
+	.m,
+	.mf,
+	.mh,
+	.mi,
+	.mo,
+	.il {
+		color: #099;
+	}
+
+	.s,
+	.sb,
+	.sc,
+	.sd,
+	.s2,
+	.se,
+	.sh,
+	.si,
+	.sx,
+	.s1 {
+		color: #d14;
+	}
+
+	.na,
+	.no,
+	.nv,
+	.vc,
+	.vg,
+	.vi {
+		color: #008080;
+	}
+
+	.nb {
+		color: #0086b3;
+	}
+
+	.ni {
+		color: #800080;
+	}
+
+	.nt {
+		color: #000080;
+	}
+
+	.sr {
+		color: #009926;
+	}
+
+	.ss {
+		color: #990073;
+	}
+
+	.w {
+		color: #bbb;
+	}
 }
