@@ -12,9 +12,7 @@ describe('site.ts', () => {
 
 		expect(navigation).toEqual([
 			{ title: '~', href: '/', isHome: true },
-			{ title: 'CV', href: '/resume' },
-			{ title: 'GitHub', href: '/github' },
-			{ title: 'LinkedIn', href: '/linkedin' }
+			{ title: 'CV', href: '/resume' }
 		]);
 	});
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
-	import { getAccentValue, type UiAccent } from './ui';
+	import { getAccentInk, getAccentValue, type UiAccent } from './ui';
 
 	type ButtonSize = 'small' | 'medium' | 'large';
 	type ButtonVariant = 'solid' | 'outline' | 'ghost';
@@ -26,6 +26,7 @@
 	}: Props = $props();
 
 	let accentValue = $derived(getAccentValue(tone));
+	let accentInk = $derived(getAccentInk(tone));
 </script>
 
 <button
@@ -41,6 +42,7 @@
 		className
 	]}
 	style:--ui-accent={accentValue}
+	style:--ui-accent-ink={accentInk}
 >
 	{#if children}{@render children()}{:else}{label}{/if}
 </button>
@@ -74,6 +76,11 @@
 
 	.variant-solid {
 		background-color: var(--ui-accent);
+		color: var(--ui-accent-ink);
+	}
+
+	.variant-solid :global(*) {
+		color: inherit;
 	}
 
 	.variant-outline {

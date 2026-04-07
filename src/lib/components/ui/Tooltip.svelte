@@ -38,6 +38,7 @@
 <style>
 	.ui-tooltip-shell {
 		display: inline-grid;
+		overflow: visible;
 		position: relative;
 	}
 

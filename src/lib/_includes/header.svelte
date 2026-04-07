@@ -9,7 +9,7 @@
 	let pathname = $derived(page.url.pathname);
 	let mobileMenuOpen = $state(false);
 
-	const navAccents = ['white', 'blue', 'orange', 'green', 'violet'] as const;
+	const navAccents = ['blue', 'orange', 'green', 'violet'] as const;
 
 	function getNavLabel(title: string, isHome?: boolean) {
 		return isHome ? 'Home' : title;
@@ -19,7 +19,7 @@
 <header id="nav-header" class="border-left-0 border-right-0">
 	<div
 		id="nav-container"
-		class="position-relative d-flex justify-content-between align-items-center container"
+		class="position-relative d-flex justify-content-between align-items-center container flex-wrap"
 	>
 		<a class="website-title h3 m-0 mr-0" href={resolve('/')}>{site.description}</a>
 
@@ -34,7 +34,7 @@
 				}}
 			/>
 
-			<div id="nav-menu" class=" d-md-flex nav-pill-row">
+			<div id="nav-menu" class="d-none d-md-flex nav-pill-row">
 				{#each navigation as item, index (item.href)}
 					<TagPill
 						label={item.title}
@@ -81,14 +81,38 @@
 <style>
 	.nav-pill-row {
 		align-items: center;
+		flex-wrap: wrap;
 		gap: 0.55rem;
+		justify-content: flex-end;
 	}
-	.nav-pill-row:is(:hover, :focus-within) .top {
-		transform: translate(-50%, 0);
+
+	:global(#nav-header) {
+		white-space: normal;
+	}
+
+	:global(#nav-container) {
+		gap: 0.9rem;
+		height: auto;
+		min-height: 4.9rem;
+		padding-block: 0.7rem;
+	}
+
+	:global(#nav-menu-container) {
+		margin-left: auto;
+		position: static;
+	}
+
+	.website-title {
+		flex: 1 1 14rem;
+		line-height: 1.1;
+		max-inline-size: min(100%, 21rem);
+		min-width: 0;
+		text-wrap: balance;
+		white-space: normal;
 	}
 
 	:global(.nav-trigger-button) {
-		margin: 0.75rem 0;
+		margin: 0;
 	}
 
 	.mobile-drawer-nav {
@@ -117,5 +141,16 @@
 	.mobile-link-url {
 		font-family: var(--ui-font-code);
 		font-size: 0.82rem;
+	}
+
+	@media (max-width: 899px) {
+		:global(#nav-container) {
+			align-items: flex-start;
+		}
+
+		.website-title {
+			font-size: clamp(1.15rem, 4.5vw, 1.45rem) !important;
+			max-inline-size: min(100%, 15rem);
+		}
 	}
 </style>

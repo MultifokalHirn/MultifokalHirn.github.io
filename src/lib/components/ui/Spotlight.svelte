@@ -14,15 +14,15 @@
 	let {
 		children,
 		title,
-		eyebrow = 'Spotlight',
+		eyebrow,
 		body,
 		accent = 'pink',
 		class: className,
 		...props
 	}: Props = $props();
 
-	let pointerX = $state(100);
-	let pointerY = $state(50);
+	let pointerX = $state(-100);
+	let pointerY = $state(-50);
 	let accentValue = $derived(getAccentValue(accent));
 	let spotlightX = $derived(`${pointerX}%`);
 	let spotlightY = $derived(`${pointerY}%`);
@@ -40,8 +40,8 @@
 	}
 
 	function resetPointer() {
-		pointerX = 100;
-		pointerY = 0;
+		pointerX = -100;
+		pointerY = -50;
 	}
 </script>
 
@@ -55,7 +55,8 @@
 	onpointerleave={resetPointer}
 	onmouseleave={resetPointer}
 >
-	<p class="ui-eyebrow">{eyebrow}</p>
+	{#if eyebrow}
+		<p class="ui-eyebrow">{eyebrow}</p>{/if}
 
 	{#if title}<h3>{title}</h3>{/if}
 	{#if children}<div class="content">{@render children()}</div>{:else if body}<p class="content">
@@ -67,7 +68,8 @@
 	.ui-spotlight {
 		display: grid;
 		gap: 0.8rem;
-		overflow: hidden;
+		isolation: isolate;
+		overflow: visible;
 		padding: 1.2rem;
 		position: relative;
 	}
@@ -76,10 +78,11 @@
 		background: radial-gradient(
 			circle at var(--spotlight-x) var(--spotlight-y),
 			color-mix(in srgb, var(--ui-accent) 42%, white),
-			transparent 20%
+			transparent 10%
 		);
 		content: '';
 		inset: 0;
+		pointer-events: none;
 		position: absolute;
 		transition: opacity var(--ui-transition-fast);
 		z-index: 0;

@@ -9,18 +9,17 @@
 		{
 			label: 'software engineer',
 			accent: 'green',
-			tooltip:
-				'with 7+ years of professional experience as full-stack developer, IAM specialist, and technical leader'
+			tooltip: 'with 7+ years of professional experience'
 		},
 		{
 			label: 'IAM consultant',
 			accent: 'pink',
-			tooltip: 'Providing expert advice and solutions in various domains'
+			tooltip: '@ amiconsult'
 		}
 	] as const;
 
 	const primaryLinks = [
-		{ label: 'Resume', href: resolve('/resume'), accent: 'orange' },
+		// { label: 'CV', href: resolve('/resume'), accent: 'orange' },
 		{ label: 'GitHub', href: resolve('/github'), accent: 'violet' },
 		{ label: 'LinkedIn', href: resolve('/linkedin'), accent: 'blue' }
 	] as const;
@@ -40,33 +39,36 @@
 	const workflowSnippet = ['bun run check', 'bun run test', 'bun run build-storybook'].join('\n');
 </script>
 
-<Spotlight title="" eyebrow="hello" accent="blue" class="mb-4">
+<Spotlight title="" eyebrow="welcome" accent="blue" class="mb-4">
 	<p class="lead-copy">
 		Hello, my name is Lennard Wolf. I am a
-		{#each roleTags as role (role.label)}
-			<!-- <TagPill label={} accent={role.accent} /> -->
+		{#each roleTags as role, index (role.label)}
 			<Tooltip label={role.label} text={role.tooltip} position="bottom" accent={role.accent} />
+			{#if !(index === roleTags.length - 1)}<span> & </span>{:else}
+				<span> </span>{/if}
 		{/each}
 		based in Berlin.
 	</p>
 	<br />
-</Spotlight>
-<div class="pill-row">
-	<FocusRing
-		// title="Keyboard-friendly quick links"
-		// description="The interactive surfaces on the site are designed to stay compact, readable, and easy to tab through."
-		accent="white"
-	>
-		<div class="pill-row">
-			{#each [...primaryLinks, ...elsewhereLinks] as link (link.label)}
-				<TagPill label={link.label} href={link.href} accent={link.accent} />
-			{/each}
-		</div>
-	</FocusRing>
-	<!-- {#each primaryLinks as link (link.label)}
+	<br />
+	<div class="pill-row">
+		<FocusRing
+			// title="Keyboard-friendly quick links"
+			// description="The interactive surfaces on the site are designed to stay compact, readable, and easy to tab through."
+			accent="white"
+		>
+			<div class="pill-row">
+				{#each [...primaryLinks, ...elsewhereLinks] as link (link.label)}
+					<TagPill label={link.label} href={link.href} accent={link.accent} />
+				{/each}
+			</div>
+		</FocusRing>
+		<!-- {#each primaryLinks as link (link.label)}
 			<TagPill label={link.label} href={link.href} accent={link.accent} />
 		{/each} -->
-</div>
+	</div>
+</Spotlight>
+
 <div class="row g-3 mt-1">
 	<!-- <div class="col-lg-7 d-grid gap-3">
 		<Card eyebrow="Current toolkit" title="What I use to ship and test the site" accent="yellow">
@@ -127,11 +129,5 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.65rem;
-	}
-
-	.tooltip-row {
-		align-items: center;
-		display: flex;
-		justify-content: flex-start;
 	}
 </style>

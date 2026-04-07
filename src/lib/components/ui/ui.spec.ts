@@ -1,11 +1,23 @@
 import { describe, expect, it } from 'vitest';
 import * as publicComponents from '$lib';
-import { createPaginationTokens, getAccentValue, getInitials, withBasePath } from './ui';
+import {
+	createPaginationTokens,
+	getAccentInk,
+	getAccentValue,
+	getInitials,
+	withBasePath
+} from './ui';
 
 describe('ui helpers', () => {
 	it('returns accent colors by token name', () => {
 		expect(getAccentValue('blue')).toBe('#1d4ed8');
 		expect(getAccentValue('violet')).toBe('#8b5cf6');
+	});
+
+	it('chooses readable ink colors for accent fills', () => {
+		expect(getAccentInk('blue')).toBe('#ffffff');
+		expect(getAccentInk('black')).toBe('#ffffff');
+		expect(getAccentInk('yellow')).toBe('#000000');
 	});
 
 	it('builds initials from names and falls back for blank values', () => {

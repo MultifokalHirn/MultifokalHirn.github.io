@@ -16,6 +16,41 @@ export function getAccentValue(accent: UiAccent = 'blue'): string {
 	return UI_ACCENTS[accent];
 }
 
+function getRelativeLuminance(channel: number): number {
+	const normalized = channel / 255;
+
+	return normalized <= 0.03928 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+}
+
+function parseHexColor(color: string): [number, number, number] {
+	const normalized = color.replace('#', '');
+	const safeColor =
+		normalized.length === 3
+			? normalized
+					.split('')
+					.map((part) => `${part}${part}`)
+					.join('')
+			: normalized;
+
+	return [
+		Number.parseInt(safeColor.slice(0, 2), 16),
+		Number.parseInt(safeColor.slice(2, 4), 16),
+		Number.parseInt(safeColor.slice(4, 6), 16)
+	];
+}
+
+export function getAccentInk(accent: UiAccent = 'blue'): string {
+	const [red, green, blue] = parseHexColor(getAccentValue(accent));
+	const luminance =
+		0.2126 * getRelativeLuminance(red) +
+		0.7152 * getRelativeLuminance(green) +
+		0.0722 * getRelativeLuminance(blue);
+	const contrastWithBlack = (luminance + 0.05) / 0.05;
+	const contrastWithWhite = 1.05 / (luminance + 0.05);
+
+	return contrastWithWhite >= contrastWithBlack ? '#ffffff' : '#000000';
+}
+
 export function getInitials(name: string): string {
 	const parts = name.trim().split(/\s+/).filter(Boolean);
 

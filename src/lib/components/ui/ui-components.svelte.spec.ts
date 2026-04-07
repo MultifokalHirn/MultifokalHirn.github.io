@@ -100,8 +100,9 @@ describe('ui components', () => {
 
 		document.body.innerHTML = initialBody;
 
-		render(TagPill, { label: 'svelte', href: '/tags/svelte', selected: true });
+		render(TagPill, { label: 'svelte', href: '/tags/svelte', accent: 'blue', selected: true });
 		expect(document.querySelector('a')?.getAttribute('aria-current')).toBe('page');
+		expect(getComputedStyle(document.querySelector('a')!).color).toBe('rgb(255, 255, 255)');
 
 		document.body.innerHTML = initialBody;
 
@@ -116,11 +117,14 @@ describe('ui components', () => {
 
 	it('renders snippet-based variants for button, card, focus ring, tooltip, and spotlight', () => {
 		render(Button, {
+			tone: 'blue',
+			variant: 'solid',
 			children: createSnippet('<span data-testid="button-child">Snippet CTA</span>')
 		});
 		expect(document.querySelector('[data-testid="button-child"]')?.textContent).toContain(
 			'Snippet CTA'
 		);
+		expect(getComputedStyle(document.querySelector('button')!).color).toBe('rgb(255, 255, 255)');
 
 		document.body.innerHTML = initialBody;
 
@@ -166,6 +170,7 @@ describe('ui components', () => {
 			)
 		});
 		expect(document.querySelector('.ui-spotlight h3')).toBeNull();
+		expect(getComputedStyle(document.querySelector('.ui-spotlight')!).overflow).toBe('visible');
 		expect(document.querySelector('[data-testid="spotlight-button"]')?.textContent).toContain(
 			'Follow the beam'
 		);

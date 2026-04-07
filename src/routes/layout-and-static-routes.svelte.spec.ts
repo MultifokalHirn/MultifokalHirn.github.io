@@ -67,7 +67,7 @@ describe('layout and static route components', () => {
 		render(RootPage);
 
 		expect(document.title).toBe('Lennard Wolf');
-		expect(document.querySelector('img[alt="Lennard Wolf"]')).not.toBeNull();
+		expect(document.querySelector('img[alt="Portrait of Lennard Wolf"]')).not.toBeNull();
 		expect(document.body.textContent).toContain('Hello, my name is Lennard Wolf');
 		expect(document.querySelector('a[href="/resume"]')?.textContent).toContain('Resume');
 	});
