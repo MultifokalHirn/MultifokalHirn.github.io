@@ -1,0 +1,107 @@
+:root {
+	--ui-font-body: var(--base-font-family, 'Latex Regular', serif);
+	--ui-font-code: var(--code-font-family, 'Hack Nerd Font Mono', monospace);
+	--ui-surface: #ffffff;
+	--ui-ink: #000000;
+	--ui-muted: rgba(0, 0, 0, 0.72);
+	--ui-line: rgba(0, 0, 0, 0.2);
+	--ui-accent-blue: #1d4ed8;
+	--ui-accent-pink: #ec4899;
+	--ui-accent-yellow: #facc15;
+	--ui-accent-green: #22c55e;
+	--ui-accent-orange: #f97316;
+	--ui-accent-violet: #8b5cf6;
+	--ui-radius-sm: 0.45rem;
+	--ui-radius-md: 0.8rem;
+	--ui-radius-lg: 1.2rem;
+	--ui-space-1: 0.4rem;
+	--ui-space-2: 0.7rem;
+	--ui-space-3: 1rem;
+	--ui-space-4: 1.4rem;
+	--ui-space-5: 1.9rem;
+	--ui-shadow-rest: 0.35rem 0.35rem 0 0 var(--ui-accent, var(--ui-accent-blue));
+	--ui-shadow-hover: 0.55rem 0.55rem 0 0 var(--ui-accent, var(--ui-accent-blue));
+	--ui-border: 2px;
+	--ui-ring-size: 4px;
+	--ui-transition-fast: 140ms ease;
+	--ui-transition-base: 180ms ease;
+}
+
+.ui-component {
+	color: var(--ui-ink);
+	font-family: var(--ui-font-body);
+}
+
+.ui-muted {
+	color: var(--ui-muted);
+}
+
+.ui-eyebrow {
+	font-family: var(--ui-font-code);
+	font-size: 0.82rem;
+	letter-spacing: 0.08em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.ui-pop-surface {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.92)),
+		repeating-linear-gradient(
+			-35deg,
+			color-mix(in srgb, var(--ui-accent, var(--ui-accent-blue)) 12%, transparent) 0 0.9rem,
+			transparent 0.9rem 1.8rem
+		);
+	border: var(--ui-border) dashed var(--ui-ink);
+	border-radius: var(--ui-radius-md);
+	box-shadow: var(--ui-shadow-rest);
+	transition:
+		box-shadow var(--ui-transition-base),
+		transform var(--ui-transition-base),
+		border-color var(--ui-transition-base),
+		background-position var(--ui-transition-base);
+}
+
+.ui-pop-surface:is(:hover, :focus-visible, [data-open='true'], [data-current='true']) {
+	border-style: solid;
+	box-shadow: var(--ui-shadow-hover);
+	transform: translate(-0.12rem, -0.12rem) rotate(-0.35deg);
+}
+
+.ui-focusable:focus-visible {
+	outline: none;
+	box-shadow:
+		0 0 0 var(--ui-ring-size) var(--ui-surface),
+		0 0 0 calc(var(--ui-ring-size) * 2) var(--ui-accent, var(--ui-accent-blue)),
+		var(--ui-shadow-hover);
+}
+
+.ui-sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+@keyframes ui-skeleton-shimmer {
+	0% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ui-pop-surface,
+	.ui-focusable {
+		animation: none !important;
+		transition: none !important;
+	}
+}

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Footer from '$lib/_includes/footer.svelte';
+	import '$lib/components/ui/styles.css';
 	import Header from '$lib/_includes/header.svelte';
 	import { site } from '$lib/site';
 	import './layout.css';

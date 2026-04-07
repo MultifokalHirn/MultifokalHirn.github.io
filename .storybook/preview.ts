@@ -1,7 +1,16 @@
 import type { Preview } from '@storybook/sveltekit';
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
+import '../src/lib/components/ui/styles.css';
+import '../src/routes/layout.css';
 
 const preview: Preview = {
+	//👇 Enables auto-generated documentation for all stories
+	tags: ['autodocs'],
 	parameters: {
+		viewport: {
+			options: INITIAL_VIEWPORTS
+		},
+
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
@@ -15,6 +24,9 @@ const preview: Preview = {
 			// 'off' - skip a11y checks entirely
 			test: 'todo'
 		}
+	},
+	initialGlobals: {
+		viewport: { value: 'desktop', isRotated: false }
 	}
 };
 

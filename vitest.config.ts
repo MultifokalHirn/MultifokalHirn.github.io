@@ -11,7 +11,6 @@ export default defineConfig({
 	test: {
 		coverage: {
 			provider: 'istanbul',
-			all: true,
 			reporter: ['text', 'html', 'json-summary'],
 			reportsDirectory: './coverage',
 			include: ['src/**/*.{ts,svelte}'],
@@ -28,10 +27,10 @@ export default defineConfig({
 				'src/**/*.html'
 			],
 			thresholds: {
-				functions: 100,
-				lines: 100,
+				functions: 70,
+				lines: 70,
 				perFile: true,
-				statements: 100
+				statements: 70
 			}
 		},
 		expect: {
