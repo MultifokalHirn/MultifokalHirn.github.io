@@ -59,7 +59,7 @@
 			opacity var(--ui-transition-fast),
 			transform var(--ui-transition-fast);
 		width: max-content;
-		z-index: 20;
+		z-index: 200;
 	}
 
 	.top {

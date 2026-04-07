@@ -1,4 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { page as browserPage } from 'vitest/browser';
+import { tick } from 'svelte';
 import Footer from '$lib/_includes/footer.svelte';
 import Head from '$lib/_includes/head.svelte';
 import SiteHeader from '$lib/_includes/header.svelte';
@@ -28,6 +30,7 @@ const { mockPageState, mockResolve } = vi.hoisted(() => ({
 }));
 
 vi.mock('$app/paths', () => ({
+	base: '',
 	resolve: mockResolve
 }));
 
@@ -99,15 +102,28 @@ describe('shared app components', () => {
 		);
 	});
 
-	it('renders the site header with the current page highlighted', () => {
+	it('renders the site header with the current page highlighted', async () => {
 		mockPageState.url = new URL('https://multifokalhirn.test/resume');
 
 		render(SiteHeader);
 
 		expect(document.querySelector('.website-title')?.textContent).toBe(site.description);
-		expect(document.querySelector('.menu-opts-home')).not.toBeNull();
+		expect(document.querySelector('a[href="/"]')?.textContent).toContain(site.description);
 		expect(document.querySelector('a[aria-current="page"]')?.textContent?.trim()).toBe('CV');
-		expect(document.querySelector('label[aria-label="Toggle navigation"]')).not.toBeNull();
+		expect(document.querySelector('button')?.textContent).toContain('Menu');
+
+		await browserPage.getByRole('button', { name: 'Menu' }).click();
+		expect(document.body.textContent).toContain('Navigate');
+		expect(document.querySelector('.mobile-link-title')?.textContent).toBe('Home');
+
+		document.querySelector<HTMLButtonElement>('.ui-drawer-panel .close')?.click();
+		await tick();
+		expect(document.querySelector('.mobile-drawer-nav')).toBeNull();
+
+		await browserPage.getByRole('button', { name: 'Menu' }).click();
+		document.querySelector<HTMLAnchorElement>('.mobile-link')?.click();
+		await tick();
+		expect(document.querySelector('.mobile-drawer-nav')).toBeNull();
 	});
 
 	it('renders the footer with and without an optional description', () => {
@@ -117,20 +133,23 @@ describe('shared app components', () => {
 		});
 
 		expect(getNormalizedBodyText()).toContain('Testing setup reference footer.');
-		expect(getNormalizedBodyText()).toContain(`© ${new Date().getFullYear()} - Lennard Wolf`);
+		expect(getNormalizedBodyText()).toContain(`© ${new Date().getFullYear()}`);
+		expect(getNormalizedBodyText()).toContain('Lennard Wolf');
 
 		document.body.innerHTML = initialBody;
 
 		render(Footer, { author: 'Lennard Wolf' });
 
 		expect(document.querySelector('.text-secondary')).toBeNull();
-		expect(getNormalizedBodyText()).toContain(`© ${new Date().getFullYear()} - Lennard Wolf`);
+		expect(getNormalizedBodyText()).toContain(`© ${new Date().getFullYear()}`);
+		expect(getNormalizedBodyText()).toContain('Lennard Wolf');
 
 		document.body.innerHTML = initialBody;
 
 		render(Footer);
 
-		expect(getNormalizedBodyText()).toContain(`© ${new Date().getFullYear()} - Lennard Wolf`);
+		expect(getNormalizedBodyText()).toContain(`© ${new Date().getFullYear()}`);
+		expect(getNormalizedBodyText()).toContain('Lennard Wolf');
 	});
 
 	it('renders the not-found message with default and custom statuses', () => {

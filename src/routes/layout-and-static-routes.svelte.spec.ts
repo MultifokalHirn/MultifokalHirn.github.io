@@ -33,6 +33,7 @@ const { mockPageState, mockResolve } = vi.hoisted(() => ({
 }));
 
 vi.mock('$app/paths', () => ({
+	base: '',
 	resolve: mockResolve
 }));
 
@@ -68,7 +69,7 @@ describe('layout and static route components', () => {
 		expect(document.title).toBe('Lennard Wolf');
 		expect(document.querySelector('img[alt="Lennard Wolf"]')).not.toBeNull();
 		expect(document.body.textContent).toContain('Hello, my name is Lennard Wolf');
-		expect(document.querySelector('a[href="/resume"]')?.textContent).toContain('here');
+		expect(document.querySelector('a[href="/resume"]')?.textContent).toContain('Resume');
 	});
 
 	it('renders the framework error page for both 404 and 500 states', () => {

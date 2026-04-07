@@ -4,7 +4,9 @@ export const UI_ACCENTS = {
 	yellow: '#facc15',
 	green: '#22c55e',
 	orange: '#f97316',
-	violet: '#8b5cf6'
+	violet: '#8b5cf6',
+	white: '#ffffff',
+	black: '#000000'
 } as const;
 
 export type UiAccent = keyof typeof UI_ACCENTS;

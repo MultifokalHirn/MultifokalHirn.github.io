@@ -16,6 +16,7 @@ const { mockResolve } = vi.hoisted(() => ({
 }));
 
 vi.mock('$app/paths', () => ({
+	base: '',
 	resolve: mockResolve
 }));
 
@@ -43,6 +44,6 @@ describe('posts index empty state', () => {
 		render(PostsPage);
 
 		expect(document.title).toBe('Posts | Lennard Wolf');
-		expect(document.body.textContent).toContain('No posts yet.');
+		expect(document.body.textContent).toContain('No posts yet');
 	});
 });

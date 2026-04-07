@@ -20,9 +20,9 @@ export const site = {
 
 export const navigation = [
 	{ title: '~', href: '/', isHome: true },
-	{ title: 'CV', href: '/resume' },
-	{ title: 'GitHub', href: '/github' },
-	{ title: 'LinkedIn', href: '/linkedin' }
+	{ title: 'CV', href: '/resume' }
+	// { title: 'GitHub', href: '/github' },
+	// { title: 'LinkedIn', href: '/linkedin' }
 ] as const satisfies NavItem[];
 
 export function formatDate(date: string): string {

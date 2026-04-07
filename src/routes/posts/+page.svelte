@@ -1,8 +1,16 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
+	import Card from '$lib/components/ui/Card.svelte';
+	import Spotlight from '$lib/components/ui/Spotlight.svelte';
+	import TagPill from '$lib/components/ui/TagPill.svelte';
 	import { publishedPosts } from '$lib/content/posts';
 	import Head from '$lib/_includes/head.svelte';
-	import { formatDate } from '$lib/site';
+	import { formatDate, slugifyTag } from '$lib/site';
+
+	const breadcrumbItems = [{ label: 'Home', href: '/' }, { label: 'Posts' }] as const;
+
+	const cardAccents = ['orange', 'blue', 'green', 'violet'] as const;
 </script>
 
 <Head
@@ -12,44 +20,71 @@
 	tags={['blog', 'posts']}
 />
 
-<article>
-	<header class="pb-1">
-		<h2 style="margin-top: 0px;">Posts</h2>
-	</header>
+<section class="posts-index">
+	<Breadcrumbs items={[...breadcrumbItems]} accent="orange" />
+	<Spotlight
+		title="Posts"
+		eyebrow="Writing archive"
+		body="Published notes, experiments, and project write-ups."
+		accent="orange"
+	/>
 
-	<div style="width: 100%;">
-		{#if publishedPosts.length === 0}
-			<p>No posts <i>yet</i>.</p>
-		{:else}
-			<ul
-				class="list-unstyled m-0"
-				style="margin-top: 1%; padding-top: 0%; padding-left: 0%; padding-right: 0%; margin-bottom: 3%; margin-block-start: 0em; margin-block-end: 0em; padding-inline-start: 0px;"
-			>
-				{#each publishedPosts as post (post.slug)}
-					<li
-						class="link-area-lw my-hover-class list-unstyled"
-						style="width: 100%; margin-left: 0px; margin-right: 0px; padding-left: 1%; padding-right: 1%; padding-bottom: 1%; margin-bottom: 3%; padding-top: 1%"
+	{#if publishedPosts.length === 0}
+		<Card
+			title="No posts yet"
+			body="Fresh notes will show up here once they are published."
+			accent="orange"
+		/>
+	{:else}
+		<ul class="post-grid">
+			{#each publishedPosts as post, index (post.slug)}
+				<li>
+					<Card
+						eyebrow={formatDate(post.date)}
+						title={post.title}
+						accent={cardAccents[index % cardAccents.length]}
 					>
-						<a href={resolve('/posts/[slug]', { slug: post.slug })} style="display: block">
-							<span
-								style="font-family: 'Hack Nerd Font Mono'; padding-left: 2px; padding-right: 2px; font-size: 9pt;"
-							>
-								{formatDate(post.date)}
-							</span>
-							<h4
-								class="mt-0"
-								style="text-decoration: underline; text-decoration-thickness: 2px; text-decoration-color: blue; color: #000000"
-							>
-								{post.title}
-							</h4>
-							<br />
-							<div style="border-top: 0px dotted blue">
-								<p>{post.excerpt}</p>
-							</div>
-						</a>
-					</li>
-				{/each}
-			</ul>
-		{/if}
-	</div>
-</article>
+						<p>{post.excerpt}</p>
+						<div class="post-links">
+							<TagPill
+								label="Read post"
+								href={resolve('/posts/[slug]', { slug: post.slug })}
+								accent="blue"
+							/>
+
+							{#each post.tags as tag (tag)}
+								<TagPill
+									label={tag}
+									href={resolve('/tags/[tag]', { tag: slugifyTag(tag) })}
+									accent="violet"
+								/>
+							{/each}
+						</div>
+					</Card>
+				</li>
+			{/each}
+		</ul>
+	{/if}
+</section>
+
+<style>
+	.posts-index {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.post-grid {
+		display: grid;
+		gap: 1rem;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.post-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		margin-top: 0.85rem;
+	}
+</style>

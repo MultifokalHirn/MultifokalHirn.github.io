@@ -5,7 +5,7 @@ test('home page links to the resume page', async ({ page }) => {
 
 	await expect(page.getByText(/Hello, my name is Lennard Wolf/i)).toBeVisible();
 
-	await page.getByRole('link', { name: 'here' }).click();
+	await page.locator('main').getByRole('link', { name: 'Resume' }).first().click();
 
 	await page.waitForURL('**/resume');
 	await expect(page.getByTitle('Lennard Wolf Resume')).toBeVisible();
@@ -23,7 +23,7 @@ test('posts pages link through to tag archives', async ({ page }) => {
 
 	await expect(page.getByRole('heading', { name: 'Posts' })).toBeVisible();
 
-	await page.getByRole('link', { name: /Python Project Template/i }).click();
+	await page.locator('a[href="/posts/python-project-template"]').click();
 
 	await page.waitForURL('**/posts/python-project-template');
 	await expect(
@@ -34,9 +34,8 @@ test('posts pages link through to tag archives', async ({ page }) => {
 
 	await page.waitForURL('**/tags/python');
 	await expect(page.getByRole('heading', { name: 'Tag: python' })).toBeVisible();
-	await expect(
-		page.getByRole('link', { name: /\[OUTDATED\] Python Project Template/i })
-	).toBeVisible();
+	await expect(page.getByText(/\[OUTDATED\] Python Project Template/i)).toBeVisible();
+	await expect(page.locator('a[href="/posts/python-project-template"]')).toBeVisible();
 });
 
 test('unknown routes render the not found message', async ({ page }) => {

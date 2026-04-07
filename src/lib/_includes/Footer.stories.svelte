@@ -20,7 +20,8 @@
 	play={async ({ canvasElement }) => {
 		const text = canvasElement.textContent?.replace(/\s+/g, ' ').trim() ?? '';
 
-		expect(text).toContain(`© ${currentYear} - Lennard Wolf`);
+		expect(text).toContain(`© ${currentYear}`);
+		expect(text).toContain('Lennard Wolf');
 		expect(text).not.toContain('Testing setup reference footer.');
 	}}
 />
@@ -32,6 +33,7 @@
 		const text = canvasElement.textContent?.replace(/\s+/g, ' ').trim() ?? '';
 
 		expect(text).toContain('Testing setup reference footer.');
-		expect(text).toContain(`© ${currentYear} - Lennard Wolf`);
+		expect(text).toContain(`© ${currentYear}`);
+		expect(text).toContain('Lennard Wolf');
 	}}
 />

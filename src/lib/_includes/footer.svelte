@@ -1,25 +1,36 @@
 <script lang="ts">
+	import TagPill from '$lib/components/ui/TagPill.svelte';
+
 	interface Props {
 		author?: string;
 		description?: string;
 	}
 
 	let { author = 'Lennard Wolf', description }: Props = $props();
+	const year = new Date().getFullYear();
 </script>
 
 <footer id="site-footer">
 	<div class="container">
-		<div class="row">
-			{#if description}
-				<div class="col-lg col-12">
-					<p class="text-secondary text-justify">{description}</p>
-				</div>
-			{/if}
+		{#if description}
+			<p class="text-secondary footer-description text-justify">{description}</p>
+		{/if}
+
+		<div class="footer-meta pb-2">
+			<TagPill label={`© ${year} - ${author}`} accent="green" />
 		</div>
-		<p style="font-size: small; color: black; text-align: right">
-			<!-- istanbul ignore next -->
-			© {new Date().getFullYear()} -
-			{author}
-		</p>
 	</div>
 </footer>
+
+<style>
+	.footer-description {
+		margin-bottom: 0.85rem;
+	}
+
+	.footer-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		justify-content: flex-end;
+	}
+</style>

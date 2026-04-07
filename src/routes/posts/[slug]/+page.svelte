@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
+	import Spotlight from '$lib/components/ui/Spotlight.svelte';
+	import TagPill from '$lib/components/ui/TagPill.svelte';
 	import type { BlogPost } from '$lib/content/posts';
 	import Head from '$lib/_includes/head.svelte';
 	import { formatDate, slugifyTag } from '$lib/site';
@@ -12,6 +15,11 @@
 
 	let { data }: Props = $props();
 	let PostContent = $derived(data.post.component);
+	let breadcrumbItems = $derived([
+		{ label: 'Home', href: '/' },
+		{ label: 'Posts', href: '/posts' },
+		{ label: data.post.title }
+	]);
 </script>
 
 <Head
@@ -21,43 +29,74 @@
 	path={data.post.path}
 />
 
-<div style="border-top: 0px dashed black; padding: auto">
-	<div style="border-bottom: 1px solid blue">
-		<h2
-			itemprop="name"
-			style="text-decoration: underline; text-decoration-style: wavy; text-decoration-thickness: 0px; padding-bottom: 4px; text-decoration-color: blue; margin-top: 0%; margin-bottom: 0%; border: 0px dotted black"
-		>
-			{data.post.title}
-		</h2>
+<section class="post-page">
+	<Breadcrumbs items={breadcrumbItems} accent="blue" />
+
+	<Spotlight
+		title={data.post.title}
+		eyebrow="Post"
+		body={data.post.description}
+		accent="blue"
+		itemprop="name"
+	/>
+
+	<div class="post-meta">
+		<time datetime={data.post.date} itemprop="datePublished">
+			{formatDate(data.post.date)}
+		</time>
 	</div>
-	<div style="text-align: right">
-		<span style="font-family: 'Hack Nerd Font Mono'; font-size: 7pt !important; color: black;">
-			<time datetime={data.post.date} itemprop="datePublished">
-				{formatDate(data.post.date)}
-			</time>
-		</span>
-	</div>
-	<div
-		itemprop="articleBody"
-		style="width: 99%; margin-left: 1px; margin-right: 1px; padding-bottom: 0%; padding-top: 1%; padding-left: 0%; padding-right: 0%; margin-top: 1%; border-top: 0px dotted blue"
-	>
-		<article itemscope itemtype="http://schema.org/BlogPosting" style="margin-top: 2%">
+
+	<div itemprop="articleBody" class="post-body-shell">
+		<article itemscope itemtype="http://schema.org/BlogPosting" class="post-body">
 			<PostContent />
-			<h4 style="font-size: large; color: blue; text-align: left">◻</h4>
+			<h4 class="post-end-marker">◻</h4>
 		</article>
 	</div>
 
 	{#if data.post.tags.length > 0}
-		<div style="text-align: right">
-			<span style="font-size: small"
-				>[
-				{#each data.post.tags as tag (tag)}
-					<a href={resolve('/tags/[tag]', { tag: slugifyTag(tag) })}
-						><code class="highligher-rouge"><nobr>{tag}</nobr></code>&nbsp;</a
-					>
-				{/each}
-				]</span
-			>
+		<div class="post-tags">
+			{#each data.post.tags as tag (tag)}
+				<TagPill
+					label={tag}
+					href={resolve('/tags/[tag]', { tag: slugifyTag(tag) })}
+					accent="violet"
+				/>
+			{/each}
 		</div>
 	{/if}
-</div>
+</section>
+
+<style>
+	.post-page {
+		display: grid;
+		gap: 0.9rem;
+	}
+
+	.post-meta {
+		display: flex;
+		font-family: var(--ui-font-code);
+		font-size: 0.82rem;
+		justify-content: flex-end;
+	}
+
+	.post-body-shell {
+		margin-top: 0.5rem;
+	}
+
+	.post-body {
+		margin-top: 0;
+	}
+
+	.post-end-marker {
+		color: blue;
+		font-size: large;
+		text-align: left;
+	}
+
+	.post-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+		justify-content: flex-end;
+	}
+</style>

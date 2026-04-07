@@ -12,8 +12,8 @@
 
 	let {
 		children,
-		title = 'Focus ring',
-		description = 'Tab into the content below to preview the shared keyboard-focus treatment.',
+		title,
+		description,
 		accent = 'orange',
 		class: className,
 		...props
@@ -27,11 +27,12 @@
 	class={['ui-component', 'ui-focus-ring', className]}
 	style:--ui-accent={accentValue}
 >
-	<header>
-		<h3>{title}</h3>
-		<p>{description}</p>
-	</header>
-
+	{#if title || description}
+		<header>
+			{#if title}<h3>{title}</h3>{/if}
+			{#if description}<p>{description}</p>{/if}
+		</header>
+	{/if}
 	<div class="frame">
 		{#if children}{@render children()}{:else}<p class="ui-muted">
 				Add focusable content inside the FocusRing component.

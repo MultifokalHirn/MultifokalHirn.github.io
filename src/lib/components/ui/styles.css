@@ -5,6 +5,8 @@
 	--ui-ink: #000000;
 	--ui-muted: rgba(0, 0, 0, 0.72);
 	--ui-line: rgba(0, 0, 0, 0.2);
+	--ui-accent-white: #ffffff;
+	--ui-accent-black: #000000;
 	--ui-accent-blue: #1d4ed8;
 	--ui-accent-pink: #ec4899;
 	--ui-accent-yellow: #facc15;

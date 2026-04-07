@@ -1,20 +1,137 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import FocusRing from '$lib/components/ui/FocusRing.svelte';
+	import Spotlight from '$lib/components/ui/Spotlight.svelte';
+	import TagPill from '$lib/components/ui/TagPill.svelte';
+	import Tooltip from '$lib/components/ui/Tooltip.svelte';
+
+	const roleTags = [
+		{
+			label: 'software engineer',
+			accent: 'green',
+			tooltip:
+				'with 7+ years of professional experience as full-stack developer, IAM specialist, and technical leader'
+		},
+		{
+			label: 'IAM consultant',
+			accent: 'pink',
+			tooltip: 'Providing expert advice and solutions in various domains'
+		}
+	] as const;
+
+	const primaryLinks = [
+		{ label: 'Resume', href: resolve('/resume'), accent: 'orange' },
+		{ label: 'GitHub', href: resolve('/github'), accent: 'violet' },
+		{ label: 'LinkedIn', href: resolve('/linkedin'), accent: 'blue' }
+	] as const;
+
+	const elsewhereLinks = [
+		{ label: 'letterboxd', href: 'https://letterboxd.com/MultifokalHirn', accent: 'pink' },
+		{ label: 'about.me', href: 'https://about.me/lennardwolf', accent: 'green' }
+	] as const;
+
+	const stackTags = [
+		{ label: 'SvelteKit', accent: 'blue' },
+		{ label: 'Storybook', accent: 'orange' },
+		{ label: 'Playwright', accent: 'green' },
+		{ label: 'Vitest', accent: 'violet' }
+	] as const;
+
+	const workflowSnippet = ['bun run check', 'bun run test', 'bun run build-storybook'].join('\n');
 </script>
 
-<p>
-	Hello, my name is Lennard Wolf and I am a <span style="color: green">software</span>
-	<span style="color: red">engineer</span> and <span style="color: purple">consultant</span>
-	from Berlin.
-</p>
+<Spotlight title="" eyebrow="hello" accent="blue" class="mb-4">
+	<p class="lead-copy">
+		Hello, my name is Lennard Wolf. I am a
+		{#each roleTags as role (role.label)}
+			<!-- <TagPill label={} accent={role.accent} /> -->
+			<Tooltip label={role.label} text={role.tooltip} position="bottom" accent={role.accent} />
+		{/each}
+		based in Berlin.
+	</p>
+	<br />
+</Spotlight>
+<div class="pill-row">
+	<FocusRing
+		// title="Keyboard-friendly quick links"
+		// description="The interactive surfaces on the site are designed to stay compact, readable, and easy to tab through."
+		accent="white"
+	>
+		<div class="pill-row">
+			{#each [...primaryLinks, ...elsewhereLinks] as link (link.label)}
+				<TagPill label={link.label} href={link.href} accent={link.accent} />
+			{/each}
+		</div>
+	</FocusRing>
+	<!-- {#each primaryLinks as link (link.label)}
+			<TagPill label={link.label} href={link.href} accent={link.accent} />
+		{/each} -->
+</div>
+<div class="row g-3 mt-1">
+	<!-- <div class="col-lg-7 d-grid gap-3">
+		<Card eyebrow="Current toolkit" title="What I use to ship and test the site" accent="yellow">
+			<div class="pill-row">
+				{#each stackTags as tag (tag.label)}
+					<TagPill label={tag.label} accent={tag.accent} />
+				{/each}
+			</div>
 
-<br />
+			<div class="tooltip-row">
+				<Tooltip
+					label="Why show the workflow?"
+					text="These are the commands I usually run while iterating on the site."
+					position="bottom"
+				/>
+			</div>
 
-<p>You can check out my CV <a href={resolve('/resume')}><em>here</em></a> and some links below:</p>
+			<CodeSnippet
+				filename="site-workflow.sh"
+				language="bash"
+				code={workflowSnippet}
+				accent="blue"
+			/>
+		</Card>
+	</div> -->
 
-<ul>
-	<li><a href={resolve('/github')}>GitHub</a></li>
-	<li><a href={resolve('/linkedin')}>LinkedIn</a></li>
-	<li><a href="https://letterboxd.com/MultifokalHirn">letterboxd</a></li>
-	<li><a href="https://about.me/lennardwolf">about.me</a></li>
-</ul>
+	<div class="col-lg-5 d-grid gap-3">
+		<!-- <FocusRing
+			title="Keyboard-friendly quick links"
+			description="The interactive surfaces on the site are designed to stay compact, readable, and easy to tab through."
+			accent="orange"
+		>
+			<div class="pill-row">
+				{#each [...primaryLinks, ...elsewhereLinks] as link (link.label)}
+					<TagPill label={link.label} href={link.href} accent={link.accent} />
+				{/each}
+			</div>
+		</FocusRing> -->
+
+		<!-- <Card
+			eyebrow="Elsewhere"
+			title="A few places I spend time online"
+			body="GitHub and LinkedIn are the main professional touchpoints, with a couple of more informal links nearby when you feel like wandering."
+			accent="green"
+		/> -->
+	</div>
+</div>
+
+<style>
+	.lead-copy {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.pill-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem;
+	}
+
+	.tooltip-row {
+		align-items: center;
+		display: flex;
+		justify-content: flex-start;
+	}
+</style>

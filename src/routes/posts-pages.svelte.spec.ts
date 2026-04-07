@@ -20,6 +20,7 @@ const { mockResolve } = vi.hoisted(() => ({
 }));
 
 vi.mock('$app/paths', () => ({
+	base: '',
 	resolve: mockResolve
 }));
 
@@ -53,7 +54,7 @@ describe('posts and tag pages', () => {
 			});
 
 			expect(document.title).toBe(`${post.title} | Lennard Wolf`);
-			expect(document.querySelector('h2')?.textContent).toBe(post.title);
+			expect(document.querySelector('.ui-spotlight h3')?.textContent).toBe(post.title);
 			expect(document.querySelector('time')?.getAttribute('datetime')).toBe(post.date);
 			expect(getNormalizedBodyText().length).toBeGreaterThan(100);
 		});
@@ -69,7 +70,7 @@ describe('posts and tag pages', () => {
 			}
 		});
 
-		expect(document.querySelectorAll('code.highligher-rouge')).toHaveLength(0);
+		expect(document.querySelector('.post-tags')).toBeNull();
 	});
 
 	it('renders a tag page and links back to the tagged posts', () => {
@@ -81,9 +82,10 @@ describe('posts and tag pages', () => {
 		});
 
 		expect(document.title).toBe('Tag: python | Lennard Wolf');
-		expect(document.querySelector('h1')?.textContent).toBe('Tag: python');
+		expect(document.querySelector('.ui-spotlight h3')?.textContent).toBe('Tag: python');
+		expect(document.body.textContent).toContain('[OUTDATED] Python Project Template');
 		expect(document.querySelector('a[href="/posts/python-project-template"]')?.textContent).toBe(
-			'[OUTDATED] Python Project Template'
+			'Open post'
 		);
 	});
 
@@ -96,6 +98,6 @@ describe('posts and tag pages', () => {
 		});
 
 		expect(document.title).toBe('Tag: missing | Lennard Wolf');
-		expect(document.querySelectorAll('li')).toHaveLength(0);
+		expect(document.querySelector('.tag-posts')).toBeNull();
 	});
 });
