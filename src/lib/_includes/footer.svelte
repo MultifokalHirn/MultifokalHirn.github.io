@@ -2,9 +2,9 @@
 	interface Props {
 		author?: string;
 		default_paths?: string[];
-		header_pages?: string[];
+		description?: string;
 	}
-	let { author = 'Lennard Wolf', default_paths }: Props = $props();
+	let { author = 'Lennard Wolf', default_paths, description }: Props = $props();
 </script>
 
 <footer id="site-footer">
@@ -59,10 +59,11 @@
       </ul>
       {% endif %} -->
 
-			<!-- <div class="col-12 col-lg">
-        <p class="text-secondary text-justify">{{ site.description | escape }}</p>
-      </div> -->
-			<!-- </div> -->
+			{#if description}
+				<div class="col-lg col-12">
+					<p class="text-secondary text-justify">{description}</p>
+				</div>
+			{/if}
 		</div>
 		<p align="right" style="font-size: small; color: black">
 			© {new Date().getFullYear()} -
@@ -72,7 +73,8 @@
 </footer>
 
 <style lang="scss">
-	#site-footer {
+	.site-footer {
+		position: absolute;
 		font-size: small;
 		font-family: 'Hack Nerd Font Mono';
 		text-align: right;
