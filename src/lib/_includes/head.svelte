@@ -31,6 +31,7 @@
 </script>
 
 <svelte:head>
+	<!-- istanbul ignore next -->
 	<title>{pageTitle}</title>
 	<meta name="description" content={description} />
 	<meta name="author" content={site.author} />

@@ -17,6 +17,7 @@
 			{/if}
 		</div>
 		<p style="font-size: small; color: black; text-align: right">
+			<!-- istanbul ignore next -->
 			© {new Date().getFullYear()} -
 			{author}
 		</p>

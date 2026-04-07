@@ -2,13 +2,38 @@ import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 import { playwright } from '@vitest/browser-playwright';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { defineConfig } from 'vitest/config';
+import { coverageConfigDefaults, defineConfig } from 'vitest/config';
 
 const dirname =
 	typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
 	test: {
+		coverage: {
+			provider: 'istanbul',
+			all: true,
+			reporter: ['text', 'html', 'json-summary'],
+			reportsDirectory: './coverage',
+			include: ['src/**/*.{ts,svelte}'],
+			exclude: [
+				...coverageConfigDefaults.exclude,
+				'src/**/*.stories.svelte',
+				'src/**/*.{spec,test,e2e}.{js,ts,svelte}',
+				'src/test/**',
+				'src/app.d.ts',
+				'src/lib/assets/**',
+				'src/**/*.md',
+				'src/**/*.svx',
+				'src/**/*.mdx',
+				'src/**/*.html'
+			],
+			thresholds: {
+				functions: 100,
+				lines: 100,
+				perFile: true,
+				statements: 100
+			}
+		},
 		expect: {
 			requireAssertions: true
 		},
@@ -41,7 +66,7 @@ export default defineConfig({
 				}
 			},
 			{
-				extends: true,
+				extends: './vite.config.ts',
 				plugins: [
 					storybookTest({
 						configDir: path.join(dirname, '.storybook')

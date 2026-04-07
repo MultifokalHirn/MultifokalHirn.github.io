@@ -22,12 +22,14 @@
 />
 
 <article class="post">
+	<!-- istanbul ignore next -->
 	<h1>Tag: {data.tag}</h1>
 	<ul>
 		{#each data.posts as post (post.slug)}
 			<li>
 				<a href={resolve('/posts/[slug]', { slug: post.slug })}>{post.title}</a>
 				({formatDate(post.date)})<br />
+				<!-- istanbul ignore next -->
 				{post.description}
 			</li>
 		{/each}

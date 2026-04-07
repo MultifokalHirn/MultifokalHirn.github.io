@@ -1,42 +1,67 @@
-# sv
+# MultifokalHirn.github.io
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Personal SvelteKit site for Lennard Wolf, with Storybook, Vitest, and Playwright configured as a reference-quality testing setup.
 
-## Creating a project
+## Development
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
+Install dependencies and start the app locally:
 
 ```sh
-# recreate this project
-bun x sv@0.14.1 create --template minimal --types ts --add prettier mcp="ide:claude-code,vscode+setup:local" storybook devtools-json sveltekit-adapter="adapter:static" tailwindcss="plugins:typography" playwright vitest="usages:unit,component" eslint --install bun ./
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
+Useful app commands:
 
 ```sh
-npm run build
+npm run app:build
+npm run app:preview
+npm run check
+npm run lint
+npm run format
 ```
 
-You can preview the production build with `npm run preview`.
+## Testing
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+The repository uses three complementary layers:
+
+1. **Vitest** for unit tests, route loader tests, and browser-mode component tests.
+2. **Storybook** for component reference stories and interaction tests via play functions.
+3. **Playwright** for end-to-end route and navigation coverage against the built app.
+
+Primary commands:
+
+```sh
+npm run test:unit
+npm run test:coverage
+npm run test:storybook
+npm run test:e2e
+npm run test
+```
+
+`npm run test` runs the same sequence expected for CI: coverage, Storybook interaction tests, and Playwright end-to-end tests.
+
+## Coverage policy
+
+Coverage is enforced at **100% for lines, statements, and functions** across all testable source files in `src/`, including the starter/demo components that ship with the Svelte template.
+
+Branch coverage is still reported, but it is not used as a hard gate because Svelte template instrumentation produces synthetic branch misses for simple interpolations such as metadata titles and text nodes. Those reports remain visible so regressions are still easy to inspect.
+
+## Storybook scope
+
+Storybook includes both the starter example stories and app-specific stories for reusable components such as:
+
+- `Footer`
+- `LegacyHtmlContent`
+- `NotFoundMessage`
+
+These stories double as executable interaction tests through Storybook play functions.
+
+## Playwright scope
+
+The Playwright suite covers real route behavior, including:
+
+- navigation from the home page to the resume page
+- redirects such as `/blog -> /posts`
+- post-to-tag browsing flows
+- not-found rendering for unknown routes
