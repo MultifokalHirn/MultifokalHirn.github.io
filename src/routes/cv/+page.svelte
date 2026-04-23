@@ -5,7 +5,7 @@
 
 <RedirectPage
 	to={resolve('/resume')}
-	title="Redirecting"
+	title="Redirecting to CV"
 	description="Redirecting to the resume page."
 	path="/cv"
-/>
+></RedirectPage>

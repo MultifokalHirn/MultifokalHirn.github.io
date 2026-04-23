@@ -3,13 +3,14 @@
 	import { getAccentInk, getAccentValue, type UiAccent, withBasePath } from './ui';
 
 	interface Props {
+		class?: string;
 		label: string;
 		href?: string;
 		accent?: UiAccent;
 		selected?: boolean;
 	}
 
-	let { label, href, accent = 'violet', selected = false }: Props = $props();
+	let { class: className, label, href, accent = 'violet', selected = false }: Props = $props();
 	let accentValue = $derived(getAccentValue(accent));
 	let accentInk = $derived(getAccentInk(accent));
 	let resolvedHref = $derived(href ? withBasePath(href, base) : undefined);
@@ -18,7 +19,7 @@
 {#if resolvedHref}
 	<a
 		href={resolvedHref}
-		class={['ui-component', 'ui-tag-pill', 'ui-focusable', selected && 'selected']}
+		class={['ui-component', 'ui-tag-pill', 'ui-focusable', className, selected && 'selected']}
 		style:--ui-accent={accentValue}
 		style:--ui-accent-ink={accentInk}
 		aria-current={selected ? 'page' : undefined}>{label}</a
@@ -40,7 +41,7 @@
 		display: inline-flex;
 		font-family: var(--ui-font-code);
 		font-size: 0.88rem;
-		padding: 0.35rem 0.75rem;
+		padding: 0.35rem 1.75rem;
 		text-decoration: none;
 		transition:
 			box-shadow var(--ui-transition-fast),

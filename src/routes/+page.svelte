@@ -6,7 +6,7 @@
 	import { site } from '$lib/site';
 </script>
 
-<Head title={site.title} description={site.description} path="/" />
+<Head title={site.title} description={site.description} path="/"></Head>
 
 <section class="home-shell" itemprop="articleBody">
 	<div class="row g-4 align-items-start">
@@ -23,7 +23,7 @@
 							accent="blue"
 						/>
 					</div> -->
-				<img src={authorImage} alt="Portrait of Lennard Wolf" loading="lazy" />
+				<img height="300px" src={authorImage} alt="Portrait of Lennard Wolf" loading="lazy" />
 				<!-- <Image
 					class="profile-image"
 					src={authorImage}
@@ -40,15 +40,13 @@
 			<!-- </Card> -->
 		</div>
 
-		<div class=" col-md-8 col-lg-9">
-			<HomeContent />
+		<div class="col-md-8 col-lg-9">
+			<HomeContent></HomeContent>
 		</div>
 	</div>
 </section>
 
 <style>
-	.profile-image {
-	}
 	.home-shell {
 		margin: 0 0.5%;
 	}
@@ -58,10 +56,5 @@
 		height: 100%;
 		object-fit: cover;
 		width: 100%;
-	}
-
-	.profile-stack {
-		display: grid;
-		gap: 1rem;
 	}
 </style>

@@ -7,4 +7,4 @@
 	title="GitHub"
 	description="Redirecting to Lennard Wolf's GitHub profile."
 	path="/github"
-/>
+></RedirectPage>

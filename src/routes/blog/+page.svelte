@@ -5,7 +5,7 @@
 
 <RedirectPage
 	to={resolve('/posts')}
-	title="Redirecting"
+	title="Redirecting to Lennard Wolf's Blog"
 	description="Redirecting to the posts page."
 	path="/blog"
-/>
+></RedirectPage>

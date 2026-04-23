@@ -14,7 +14,7 @@
 		{
 			label: 'IAM consultant',
 			accent: 'pink',
-			tooltip: '@ amiconsult'
+			tooltip: '@amiconsult'
 		}
 	] as const;
 
@@ -36,7 +36,7 @@
 		{ label: 'Vitest', accent: 'violet' }
 	] as const;
 
-	const workflowSnippet = ['bun run check', 'bun run test', 'bun run build-storybook'].join('\n');
+	// const workflowSnippet = ['bun run check', 'bun run test', 'bun run build-storybook'].join('\n');
 </script>
 
 <Spotlight title="" eyebrow="welcome" accent="blue" class="mb-4">
@@ -44,8 +44,7 @@
 		Hello, my name is Lennard Wolf. I am a
 		{#each roleTags as role, index (role.label)}
 			<Tooltip label={role.label} text={role.tooltip} position="bottom" accent={role.accent} />
-			{#if !(index === roleTags.length - 1)}<span> & </span>{:else}
-				<span> </span>{/if}
+			{#if !(index === roleTags.length - 1)}<span> {' & '}</span>{:else}{/if}
 		{/each}
 		based in Berlin.
 	</p>

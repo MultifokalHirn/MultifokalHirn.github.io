@@ -25,18 +25,19 @@
 
 		<nav id="nav-menu-container" class="navbar-light" aria-label="Primary">
 			<Button
-				class="d-inline-flex d-md-none nav-trigger-button"
+				class="d-inline-flex d-md-none nav-trigger-button "
 				label="Menu"
 				tone="orange"
 				size="small"
 				onclick={() => {
 					mobileMenuOpen = true;
 				}}
-			/>
+			></Button>
 
 			<div id="nav-menu" class="d-none d-md-flex nav-pill-row">
 				{#each navigation as item, index (item.href)}
 					<TagPill
+						class="trigger-button"
 						label={item.title}
 						href={item.href}
 						accent={navAccents[index % navAccents.length]}
@@ -65,9 +66,9 @@
 									mobileMenuOpen = false;
 								}}
 							>
-								<span class="mobile-link-title"
-									>{getNavLabel(item.title, 'isHome' in item ? item.isHome : undefined)}</span
-								>
+								<span class="mobile-link-title">
+									{getNavLabel(item.title, 'isHome' in item ? item.isHome : undefined) + ' '}
+								</span>
 								<span class="mobile-link-url">{resolve(item.href)}</span>
 							</a>
 						{/each}

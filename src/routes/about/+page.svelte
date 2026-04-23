@@ -8,4 +8,4 @@
 	title="Redirecting"
 	description="Redirecting to the home page."
 	path="/about"
-/>
+></RedirectPage>
