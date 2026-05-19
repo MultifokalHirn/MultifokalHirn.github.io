@@ -1,0 +1,65 @@
+@font-face {
+	font-family: 'Latex Regular';
+	src: url('/fonts/LM/LM-regular.ttf');
+}
+
+@font-face {
+	font-family: 'Latex Italic';
+	src: url('/fonts/LM/LM-italic.ttf');
+	font-stretch: normal;
+}
+
+@font-face {
+	font-family: 'Latex Bold';
+	src: url('/fonts/LM/LM-bold.ttf');
+}
+
+@font-face {
+	font-family: 'Geist Mono';
+	src: url('/fonts/Geist/GeistMonoVF.ttf');
+	font-weight: medium;
+}
+
+@font-face {
+	font-family: 'FiraCode';
+	src: url('/fonts/FiraCode/FiraCode-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'FiraCodeNerdFontMonoLight';
+	src: url('/fonts/FiraCode/FiraCodeNerdFontMono-Light.ttf');
+}
+
+@font-face {
+	font-family: 'FiraCodeNerdFontMono';
+	src: url('/fonts/FiraCode/FiraCodeNerdFontMono-Medium.ttf');
+}
+
+@font-face {
+	font-family: 'Hack Nerd Font Mono';
+	src:
+		local('Hack Nerd Font Mono Regular'),
+		url('/fonts/Hack/HackNerdFontMono-Regular.ttf') format('truetype');
+	font-stretch: normal;
+}
+
+/* Font for easily rendering Charts from data */
+@font-face {
+	font-family: 'Datatype';
+	src: url('/fonts/Datatype.woff2') format('woff2');
+	font-weight: 100 900;
+	font-stretch: 0% 100%;
+	font-display: swap;
+}
+
+/* Apply Datatype Font whereever font-chart is used */
+.font-chart {
+	font-family: 'Datatype', sans-serif;
+	/* Optional: adjust axes */
+	font-variation-settings: 'wdth' 15;
+	font-weight: 400;
+	font-feature-settings:
+		'liga' 1,
+		'calt' 1;
+	font-variant-ligatures: common-ligatures contextual;
+}

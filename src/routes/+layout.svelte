@@ -4,6 +4,7 @@
 	import '$lib/components/ui/styles.css';
 	import { site } from '$lib/site';
 	import { onMount } from 'svelte';
+	import './fonts.css';
 	import './layout.css';
 
 	let { children } = $props();
